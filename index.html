@@ -13,6 +13,8 @@
             header {
                 background-color: black; /* Sets the background color of the header bar to black */
                 padding: 10px 20px; /* Adds space inside the header for better spacing */
+                box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
+
             }
 
             /* Style for the nav element inside the header */
@@ -48,13 +50,12 @@
             }
 
             /* Center content inside each section */
-            section {
+            .content-wrapper {
+                background-color: orange;
+                max-width: 100%;
                 text-align: center; /* Centers text and inline elements horizontally within the section */
-                max-width: 800px; /* Optional: Limits the section width to make content easier to read */
                 margin: 200px auto; /* Centers the section container itself within the page */
                 padding: 20px; /* Adds padding around the section content for spacing */
-                border: 5px solid; /* Adds a border to each section */
-                border-radius: 10px; /* Rounds the corners of each section */
             }
 
             /* Additional styling for buttons/links inside the section */
@@ -70,12 +71,12 @@
             }
 
             h1 {
-                margin: 20px;
+                margin: 20px; /* Adds space between */
             }
 
             p {
-                margin: 20px;
-                padding: 0 50px 0 50px;
+                margin: 20px auto; /* Adds space between */
+                padding: 0 500px 0 500px; /* Adds space between */
             }
 
             /* Optional: Center-align content in the difficulty card container */
@@ -89,11 +90,27 @@
 
             .difficulty-cards {
                 background-color: #f0f0f0; /* Light background for each card */
+                margin-bottom: 20px;
                 padding: 20px; /* Adds space inside each card */
                 border-radius: 5px; /* Rounds the corners of each card */
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
                 width: 150px; /* Sets a fixed width for each card */
                 text-align: center; /* Centers content inside each card */
+            }
+
+            footer {
+                box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
+                color: rgb(0, 0, 0);
+                padding: 1rem;
+                text-align: center;
+                z-index: 1;
+                width: 100%;
+                position: relative;
+                bottom: 0;
+            }
+
+            footer .social-icons a {
+                margin: 0 10px;
             }
 
 
@@ -112,16 +129,18 @@
             </nav>
         </header>
 
-        <section>
-            <h1>Game Title</h1>
+        <section class="content-wrapper">
+            <div>
+                <h1>Game Title</h1>
             <p>
                 The worlds most challenging memory game, let’s see if you have what it takes to remember...
             </p>
             <a href="">Quick Play</a>
             <a href="">Choose Difficulty</a>
+            </div>
         </section>
 
-        <section>
+        <section class="content-wrapper">
             <div>
                 <h1>How To Play</h1>
                 <div>
@@ -140,8 +159,9 @@
             </div>
         </section>
 
-        <section>
-            <h1>Game Difficulty</h1>
+        <section class="content-wrapper">
+            <div>
+                <h1>Game Difficulty</h1>
             <p>
                 Sharpen your memory and put your skills to the test. Choose from 3 levels of difficulty to get started:
             </p>
@@ -156,10 +176,19 @@
                     <a href="">Hard</a>
                 </div>
             </div>
+            </div>
         </section>
         
         <footer>
-
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener"><img src="./Resources/Icons/facebook.png" alt="Facebook"></a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener"><img src="./Resources/Icons/twitter-alt.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener"><img src="./Resources/Icons/instagram.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener"><img src="./Resources/Icons/youtube.png" alt="YouTube"></a>
+                <a href="https://www.snapchat.com" target="_blank" rel="noopener"><img src="./Resources/Icons/snapchat.png" alt="Snapchat"></a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener"><img src="./Resources/Icons/tik-tok.png" alt="Tik Tok"></a>
+            </div>
+            <p>The Memory Game Ltd 2024</p>
         </footer>
     </body>
     <script src="script.js"></script>
