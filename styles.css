@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Ensures padding and border are included in element width/height */
+    font-family: "Permanent Marker", serif;
+
 }
 
 /* Ensure body and html elements fit the viewport */
