@@ -16,7 +16,8 @@
                 background-color: black; /* Sets the background color of the header bar to black */
                 padding: 10px 20px; /* Adds space inside the header for better spacing */
                 box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
-
+                position: sticky;
+                top: 0;
             }
 
             /* Style for the nav element inside the header */
@@ -59,6 +60,10 @@
                 padding: 20px; /* Adds padding around the section content for spacing */
             }
 
+            .container-wrapper {
+                margin: 150px;
+            }
+
             /* Additional styling for buttons/links inside the section */
             section a {
                 display: inline-block; /* Allows padding and margins to be applied like a button */
@@ -77,7 +82,7 @@
 
             p {
                 margin: 20px auto; /* Adds space between */
-                padding: 0 500px 0 500px; /* Adds space between */
+                padding: 0 300px 0 300px; /* Adds space between */
                 font-size: 1.5rem;
             }
 
@@ -102,9 +107,10 @@
             }
 
             footer {
+                background-color: black; /* Sets the background color of the header bar to black */
                 box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
+                padding: 20px;
                 color: rgb(0, 0, 0);
-                padding: 1rem;
                 text-align: center;
                 z-index: 1;
                 width: 100%;
@@ -124,8 +130,8 @@
             <nav>
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="">Difficulty</a></li>
-                    <li><a href="">How To Play</a></li>
+                    <li><a href="#difficulty-section">Difficulty</a></li>
+                    <li><a href="#instructions-section">How To Play</a></li>
                     <li><a href="">Leaderboard</a></li>
                     <li><a href="">Settings</a></li>
                 </ul>
@@ -133,7 +139,7 @@
         </header>
 
         <section class="content-wrapper">
-            <div>
+            <div class="container-wrapper">
                 <h1>Game Title</h1>
             <p>
                 The worlds most challenging memory game, let’s see if you have what it takes to remember...
@@ -143,8 +149,8 @@
             </div>
         </section>
 
-        <section class="content-wrapper">
-            <div>
+        <section class="content-wrapper" id="instructions-section">
+            <div class="container-wrapper">
                 <h1>How To Play</h1>
                 <div>
                     <p>
@@ -162,8 +168,8 @@
             </div>
         </section>
 
-        <section class="content-wrapper">
-            <div>
+        <section class="content-wrapper" id="difficulty-section">
+            <div class="container-wrapper">
                 <h1>Game Difficulty</h1>
             <p>
                 Sharpen your memory and put your skills to the test. Choose from 3 levels of difficulty to get started:
@@ -191,7 +197,6 @@
                 <a href="https://www.snapchat.com" target="_blank" rel="noopener"><img src="./Resources/Icons/snapchat.png" alt="Snapchat"></a>
                 <a href="https://www.tiktok.com" target="_blank" rel="noopener"><img src="./Resources/Icons/tik-tok.png" alt="Tik Tok"></a>
             </div>
-            <p>The Memory Game Ltd 2024</p>
         </footer>
     </body>
     <script src="script.js"></script>
