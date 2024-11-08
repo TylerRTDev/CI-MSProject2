@@ -53,9 +53,20 @@
                 text-decoration: underline; /* Adds underline when hovering to indicate interactivity */
             }
 
+            .background-image {
+                opacity: 70%;
+                position: fixed;
+                background-size: 50%;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+            }
+
             /* Center content inside each section */
             .content-wrapper {
-                background-color: orange;
                 max-width: 100%;
                 text-align: center; /* Centers text and inline elements horizontally within the section */
                 margin: 200px auto; /* Centers the section container itself within the page */
@@ -65,8 +76,7 @@
             .container-wrapper {
                 background-color: #6352CF;
                 margin: 150px auto;
-                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;                border-radius: 20px;
                 max-width: 70%;
             }
 
@@ -133,7 +143,7 @@
     </head>
     <body>
         <div>
-            <img class="background-image" src="./Resources/Media/pexels-bemistermister-3490348-min.jpg" alt="background image">
+            <img class="background-image" src="./5073414.jpg" alt="background image">
         </div>
         <header>
             <nav>
