@@ -16,8 +16,10 @@
                 background-color: black; /* Sets the background color of the header bar to black */
                 padding: 10px 20px; /* Adds space inside the header for better spacing */
                 box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
-                position: sticky;
+                position: fixed;
                 top: 0;
+                width: 100%; /* Makes sure the header spans the full width of the viewport */
+                z-index: 1000; /* Ensures the header stays on top of other elements */
             }
 
             /* Style for the nav element inside the header */
