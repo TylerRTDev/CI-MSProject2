@@ -63,19 +63,24 @@
             }
 
             .container-wrapper {
-                margin: 150px;
+                background-color: #6352CF;
+                margin: 150px auto;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                border-radius: 10px;
+                max-width: 70%;
             }
 
             /* Additional styling for buttons/links inside the section */
-            section a {
+            .content-wrapper a {
                 display: inline-block; /* Allows padding and margins to be applied like a button */
-                margin: 10px; /* Adds space between each link or button */
+                margin: 10px 10px 20px 10px; /* Adds space between each link or button */
                 padding: 10px 40px; /* Adds space inside the link for a button-like appearance */
-                background-color: #007bff; /* Sets a background color for contrast */
+                background-color: #4A007F; /* Sets a background color for contrast */
                 color: white; /* Sets the text color to white for readability */
                 text-decoration: none; /* Removes underline from links */
                 border-radius: 10px; /* Rounds the corners of the button */
                 font-size: 1.5rem;
+                box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
             }
 
             h1 {
@@ -85,7 +90,7 @@
 
             p {
                 margin: 20px auto; /* Adds space between */
-                padding: 0 300px 0 300px; /* Adds space between */
+                padding: 0 300px 20px 300px; /* Adds space between */
                 font-size: 1.5rem;
             }
 
@@ -104,8 +109,6 @@
                 padding: 20px; /* Adds space inside each card */
                 border-radius: 5px; /* Rounds the corners of each card */
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
-                width: 350px; /* Sets a fixed width for each card */
-                height: 250px;
                 text-align: center; /* Centers content inside each card */
             }
 
@@ -129,6 +132,9 @@
         </style>
     </head>
     <body>
+        <div>
+            <img class="background-image" src="./Resources/Media/pexels-bemistermister-3490348-min.jpg" alt="background image">
+        </div>
         <header>
             <nav>
                 <ul>
@@ -189,7 +195,7 @@
                     <a href="">Hard</a>
                 </div>
             </div>
-            <p>Challenge yourself further and adjust the speed of the game in the settings.</p>
+            <p id="challenge-text">Challenge yourself further and adjust the speed of the game in the settings.</p>
             </div>
         </section>
         
