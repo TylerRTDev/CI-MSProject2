@@ -4,13 +4,15 @@
     padding: 0;
     box-sizing: border-box; /* Ensures padding and border are included in element width/height */
     font-family: "Permanent Marker", serif;
-
+    color: white;
 }
 
 /* Ensure body and html elements fit the viewport */
 html, body {
     width: 100%;
     overflow-x: hidden; /* Prevents horizontal scrolling caused by overflow */
-    
 }
 
+a {
+    transition: color 0.3s ease; /* Smooth transition effect */
+}
