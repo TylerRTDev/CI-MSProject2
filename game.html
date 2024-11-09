@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles.css">
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
             .game-container {
                 display: flex;
                 flex-direction: column;
@@ -54,26 +56,75 @@
         </style>
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Choose Game</a></li>
-            </ul>
-        </nav>
-        <div class="game-container">
-            <div class="button-container">
-                <div class="pattern-button" id="btn1"></div>
-                <div class="pattern-button" id="btn2"></div>
-                <div class="pattern-button" id="btn3"></div>
-                <div class="pattern-button" id="btn4"></div>
+        <header>
+            <a class="website-logo-header" href="index.html"><img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="40" height="40" alt="site-logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="#instructions-section">How To Play</a></li>
+                    <li><a href="#difficulty-section">Difficulty</a></li>
+                    <li><a href="">Leaderboard</a></li>
+                    <li><a href="">Settings</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section>
+            <div class="game-container">
+                <div class="button-container">
+                    <div class="pattern-button" id="btn1"></div>
+                    <div class="pattern-button" id="btn2"></div>
+                    <div class="pattern-button" id="btn3"></div>
+                    <div class="pattern-button" id="btn4"></div>
+                </div>
+                <div class="controls">
+                    <button id="start-game">Start Game</button>
+                    <button id="start-game">End Game</button>
+                    <div id="message">Press Start to begin!</div>
+                    <div id="score">Score: 0</div>
+                </div>
             </div>
-            <div class="controls">
-                <button id="start-game">Start Game</button>
-                <button id="start-game">End Game</button>
-                <div id="message">Press Start to begin!</div>
-                <div id="score">Score: 0</div>
+        </section>
+            
+        <section>
+            <div class="game-container">
+                <div class="button-container">
+                    <div class="pattern-button" id="btn1"></div>
+                    <div class="pattern-button" id="btn2"></div>
+                    <div class="pattern-button" id="btn3"></div>
+                    <div class="pattern-button" id="btn4"></div>
+                    <div class="pattern-button" id="btn5"></div>
+                </div>
+                <div class="controls">
+                    <button id="start-game">Start Game</button>
+                    <button id="start-game">End Game</button>
+                    <div id="message">Press Start to begin!</div>
+                    <div id="score">Score: 0</div>
+                </div>
             </div>
-        </div>       
+        </section>
+
+        <section>
+            <div class="game-container">
+                <div class="button-container">
+                    <div class="pattern-button" id="btn1"></div>
+                    <div class="pattern-button" id="btn2"></div>
+                    <div class="pattern-button" id="btn3"></div>
+                    <div class="pattern-button" id="btn4"></div>
+                    <div class="pattern-button" id="btn5"></div>
+                    <div class="pattern-button" id="btn6"></div>
+                    <div class="pattern-button" id="btn7"></div>
+                    <div class="pattern-button" id="btn8"></div>
+                    <div class="pattern-button" id="btn9"></div>
+                </div>
+                <div class="controls">
+                    <button id="start-game">Start Game</button>
+                    <button id="start-game">End Game</button>
+                    <div id="message">Press Start to begin!</div>
+                    <div id="score">Score: 0</div>
+                </div>
+            </div>
+        </section>
     </body>
     <script src="script.js"></script>
 </html>

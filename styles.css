@@ -13,6 +13,76 @@ html, body {
     overflow-x: hidden; /* Prevents horizontal scrolling caused by overflow */
 }
 
-a {
-    transition: color 0.3s ease; /* Smooth transition effect */
+body {
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(74,0,127,1) 90%, rgba(52,9,121,1) 100%);
+}
+
+/* Style for the header section */
+header {
+    background: url(./pexels-felixmittermeier-957061.jpg);
+    padding: 10px 20px; /* Adds space inside the header for better spacing */
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
+    position: fixed;
+    top: 0;
+    width: 100%; /* Makes sure the header spans the full width of the viewport */
+    z-index: 1000; /* Ensures the header stays on top of other elements */
+}
+
+.website-logo-header {
+    position: absolute;
+    left: 30px;
+}
+
+/* Style for the nav element inside the header */
+header nav {
+    text-align: right; /* Aligns the content (navigation links) to the right */
+}
+
+/* Remove default list styles for the navigation links */
+header nav ul {
+    list-style: none; /* Removes bullet points from the list */
+    margin: 0; /* Removes default margin to keep the list flush with the nav */
+    padding: 0; /* Removes default padding from the list */
+    display: flex; /* Displays list items in a row, making the nav horizontal */
+    justify-content: flex-end; /* Pushes the list items to the right side of the nav */
+}
+
+/* Style for each list item inside the nav */
+header nav ul li {
+    margin-left: 40px; /* Adds space between each link */
+    font-size: 1.5rem;
+}
+
+/* Style for the anchor tags within each list item */
+header nav ul li a {
+    color: hsl(0, 0%, 85%); /* Sets the text color to white for contrast against the black header */
+    text-decoration: none; /* Removes the underline from the links */
+    font-weight: bold; /* Makes the links bold for better readability */
+}
+
+/* Optional: Hover effect for navigation links */
+header nav ul li a:hover {
+    text-decoration: underline; /* Adds underline when hovering to indicate interactivity */
+}
+
+footer {
+    background: url(./pexels-felixmittermeier-957061.jpg);
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+}
+
+footer .social-icons a {
+    margin: 0 30px;
 }

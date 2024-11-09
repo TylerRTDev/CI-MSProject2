@@ -11,59 +11,6 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
             
-            /* Style for the header section */
-            header {
-                background: url(./pexels-felixmittermeier-957061.jpg);
-                padding: 10px 20px; /* Adds space inside the header for better spacing */
-                box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
-                position: fixed;
-                top: 0;
-                width: 100%; /* Makes sure the header spans the full width of the viewport */
-                z-index: 1000; /* Ensures the header stays on top of other elements */
-            }
-
-            .website-logo-header {
-                position: absolute;
-                left: 30px;
-            }
-
-            body {
-                background: rgb(2,0,36);
-                background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(74,0,127,1) 90%, rgba(52,9,121,1) 100%);
-            }
-
-            /* Style for the nav element inside the header */
-            header nav {
-                text-align: right; /* Aligns the content (navigation links) to the right */
-            }
-
-            /* Remove default list styles for the navigation links */
-            header nav ul {
-                list-style: none; /* Removes bullet points from the list */
-                margin: 0; /* Removes default margin to keep the list flush with the nav */
-                padding: 0; /* Removes default padding from the list */
-                display: flex; /* Displays list items in a row, making the nav horizontal */
-                justify-content: flex-end; /* Pushes the list items to the right side of the nav */
-            }
-
-            /* Style for each list item inside the nav */
-            header nav ul li {
-                margin-left: 40px; /* Adds space between each link */
-                font-size: 1.5rem;
-            }
-
-            /* Style for the anchor tags within each list item */
-            header nav ul li a {
-                color: hsl(0, 0%, 85%); /* Sets the text color to white for contrast against the black header */
-                text-decoration: none; /* Removes the underline from the links */
-                font-weight: bold; /* Makes the links bold for better readability */
-            }
-
-            /* Optional: Hover effect for navigation links */
-            header nav ul li a:hover {
-                text-decoration: underline; /* Adds underline when hovering to indicate interactivity */
-            }
-
             /* Center content inside each section */
             .content-wrapper {
                 max-width: 100%;
@@ -108,6 +55,11 @@
                 text-decoration: underline;
             }
 
+            .in-text-link:hover {
+                color:blueviolet;
+                transition: color 0.3s ease; /* Smooth transition effect */
+            }
+
             /* Optional: Center-align content in the difficulty card container */
             .difficulty-card-container {
                 display: flex; /* Makes the cards layout flexible */
@@ -126,34 +78,9 @@
                 text-align: center; /* Centers content inside each card */
             }
 
-            footer {
-                background: url(./pexels-felixmittermeier-957061.jpg);
-                box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
-                padding: 20px;
-                color: rgb(0, 0, 0);
-                text-align: center;
-                z-index: 1;
-                width: 100%;
-                position: relative;
-                bottom: 0;
-            }
-
-            .social-icons img {
-                width: 50px;
-                height: 50px;
-            }
-
-            footer .social-icons a {
-                margin: 0 30px;
-            }
-
-
         </style>
     </head>
     <body>
-        <div class="content-background">
-            <!-- <img class="background-image" src="./pexels-mart-production-8885140.jpg" alt="background image"> -->
-        </div>
         <header>
             <a class="website-logo-header" href="index.html"><img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="40" height="40" alt="site-logo"></a>
             <nav>
@@ -198,7 +125,7 @@
                         If you click the wrong colour, the game ends, and your final score will be displayed. To win, you’ll need sharp focus and a great memory!
                     </p>
                 </div>
-            <a class="cta-button" href="">Leaderboards</a>
+            <a class="cta-button" href="">Start Game</a>
             </div>
         </section>
 
@@ -219,7 +146,7 @@
                     <a class="cta-button" href="">Hard</a>
                 </div>
             </div>
-            <p id="challenge-text">Challenge yourself further and adjust the speed of the game in the <a class="in-text-link" href="/settings.html">settings</a>.</p>
+            <p id="challenge-text">Challenge yourself further and adjust the speed of the game in <a class="in-text-link" href="/settings.html">settings</a>.</p>
             </div>
         </section>
         
