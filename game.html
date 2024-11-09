@@ -10,6 +10,13 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+            .content-wrapper {
+                max-width: 100%;
+                text-align: center; /* Centers text and inline elements horizontally within the section */
+                margin: 150px auto; /* Centers the section container itself within the page */
+                padding: 20px; /* Adds padding around the section content for spacing */
+            }
+            
             .game-container {
                 display: flex;
                 flex-direction: column;
@@ -41,6 +48,7 @@
             }
             
             .controls {
+                display: inline;
                 margin-top: 20px;
             }
             
@@ -69,8 +77,10 @@
             </nav>
         </header>
         
-        <section>
+        <div class="content-wrapper">
             <div class="game-container">
+                <h1>Round:</h1>
+                <h2>Mulitplier:</h2>
                 <div class="button-container">
                     <div class="pattern-button" id="btn1"></div>
                     <div class="pattern-button" id="btn2"></div>
@@ -84,9 +94,9 @@
                     <div id="score">Score: 0</div>
                 </div>
             </div>
-        </section>
+        </div>
             
-        <section>
+        <!-- <section>
             <div class="game-container">
                 <div class="button-container">
                     <div class="pattern-button" id="btn1"></div>
@@ -124,7 +134,18 @@
                     <div id="score">Score: 0</div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener"><img src="./Resources/Icons/facebook.svg" alt="Facebook"></a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener"><img src="./Resources/Icons/x-social.svg" alt="Twitter"></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener"><img src="./Resources/Icons/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener"><img src="./Resources/Icons/youtube.svg" alt="YouTube"></a>
+                <a href="https://www.snapchat.com" target="_blank" rel="noopener"><img src="./Resources/Icons/snapchat.svg" alt="Snapchat"></a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener"><img src="./Resources/Icons/tik-tok.svg" alt="Tik Tok"></a>
+            </div>
+        </footer>
     </body>
     <script src="script.js"></script>
 </html>
