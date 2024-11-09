@@ -22,9 +22,14 @@
                 z-index: 1000; /* Ensures the header stays on top of other elements */
             }
 
-            .website-logo {
+            .website-logo-header {
                 position: absolute;
                 left: 30px;
+            }
+
+            body {
+                background: rgb(2,0,36);
+                background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,9,121,1) 90%, rgba(52,9,121,1) 100%);
             }
 
             /* Style for the nav element inside the header */
@@ -59,23 +64,11 @@
                 text-decoration: underline; /* Adds underline when hovering to indicate interactivity */
             }
 
-            .background-image {
-                opacity: 70%;
-                position: fixed;
-                background-size: 50%;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                z-index: -1;
-            }
-
             /* Center content inside each section */
             .content-wrapper {
                 max-width: 100%;
                 text-align: center; /* Centers text and inline elements horizontally within the section */
-                margin: 200px auto; /* Centers the section container itself within the page */
+                margin: 150px auto; /* Centers the section container itself within the page */
                 padding: 20px; /* Adds padding around the section content for spacing */
             }
 
@@ -83,8 +76,8 @@
                 background: url(./pexels-felixmittermeier-957061.jpg);
                 margin: 150px auto;
                 box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;                border-radius: 20px;
-                max-width: 70%;
-                padding: 10px;
+                max-width: 60%;
+                padding: 20px 100px 20px 100px;
             }
 
             /* Additional styling for buttons/links inside the section */
@@ -107,7 +100,7 @@
 
             p {
                 margin: 20px auto; /* Adds space between */
-                padding: 0 300px 20px 300px; /* Adds space between */
+                padding: 0 0 20px 0; /* Adds space between */
                 font-size: 1.5rem;
             }
 
@@ -153,11 +146,11 @@
         </style>
     </head>
     <body>
-        <div>
-            <img class="background-image" src="./pexels-mart-production-8885140.jpg" alt="background image">
+        <div class="content-background">
+            <!-- <img class="background-image" src="./pexels-mart-production-8885140.jpg" alt="background image"> -->
         </div>
         <header>
-            <a class="website-logo" href="index.html"><img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="40" height="40" alt="site-logo"></a>
+            <a class="website-logo-header" href="index.html"><img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="40" height="40" alt="site-logo"></a>
             <nav>
                 <ul>
                     <li><a href="">Home</a></li>
@@ -171,13 +164,17 @@
 
         <section class="content-wrapper" id="title-section">
             <div class="container-wrapper">
+                <img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="70" height="70" alt="site-logo">
                 <h1>Do You Remember?</h1>
-            <p>
-                The worlds most challenging memory game, let’s see if you have what it takes to remember...
-            </p>
-            <a class="cta-button" href="game.html">Quick Play</a>
-            <a class="cta-button" href="#difficulty-section">Choose Difficulty</a>
-            <a class="cta-button" href="">How To Play</a>
+                <p>
+                    The worlds most challenging memory game, let’s see if you have what it takes to remember...
+                </p>
+                <div>
+                    <a class="cta-button" href="game.html">Quick Play</a>
+                    <a class="cta-button" href="#difficulty-section">Choose Difficulty</a>
+                    <a class="cta-button" href="">How To Play</a>
+                </div>
+                
             </div>
         </section>
 
