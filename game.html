@@ -10,10 +10,17 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+            .game-info-bar {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 40px;
+            }
+            
             .content-wrapper {
                 max-width: 100%;
                 text-align: center; /* Centers text and inline elements horizontally within the section */
-                margin: 150px auto; /* Centers the section container itself within the page */
+                margin: 50px auto; /* Centers the section container itself within the page */
                 padding: 20px; /* Adds padding around the section content for spacing */
                 height: 100vh;
             }
@@ -72,7 +79,7 @@
                 margin: 10px;
             }
             
-            #score {
+            #player-score {
                 font-size: 1.2em;
                 margin: 10px;
             }
@@ -91,11 +98,17 @@
                 </ul>
             </nav>
         </header>
-        
+
         <div class="content-wrapper">
+            <div class="game-info-bar">
+                <h2>Difficulty:<br>Easy </h2>
+                <h1>Level:<br>999 </h1>
+                <h2>Mulitplier:<br>2x </h2>
+            </div>
             <div class="game-container">
-                <h1>Round:</h1>
-                <h2>Mulitplier:</h2>
+                <div id="player-score">
+                    <h1>Score: </h1>
+                </div>
                 <div class="button-container">
                     <div class="pattern-button" id="btn1"></div>
                     <div class="pattern-button" id="btn2"></div>
@@ -106,7 +119,6 @@
                     <button class="cta-button" id="start-game">Start Game</button>
                     <button class="cta-button" id="start-game">End Game</button>
                     <div id="message">Press Start to begin!</div>
-                    <div id="score">Score: 0</div>
                 </div>
             </div>
         </div>
