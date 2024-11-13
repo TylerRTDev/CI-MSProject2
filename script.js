@@ -5,7 +5,13 @@ const scoreDisplay = document.getElementById('score');
 
 let gamePattern = [];
 let userPattern = [];
-let score = 0;
+let gameMode = []; 
+let gameScore = 0;
+let gameLevel = 1;
+let startMessage = 'Press Start To Begin'
+let gameMessage = 'Watch The Pattern Closely!'
+let gameOverMessage = `Game Over! You Guesses Wrong.\n Final Score: ${gameScore}\n Press Start To Try Again.`
+let levelMultiplier = 0;
 
 // Function to generate a random pattern
 function generatePattern() {
@@ -38,8 +44,8 @@ startButton.addEventListener('click', () => {
     score = 0;
     gamePattern = [];
     userPattern = [];
-    scoreDisplay.textContent = `Score: ${score}`;
-    messageDisplay.textContent = 'Watch the pattern!';
+    scoreDisplay.textContent = `Current Score: ${gameScore}`;
+    messageDisplay.textContent = `${gameMessage}`;
     generatePattern();
 });
 
@@ -58,14 +64,14 @@ function checkUserInput() {
     if (userPattern[currentStep] === gamePattern[currentStep]) {
         if (userPattern.length === gamePattern.length) {
             score++;
-            scoreDisplay.textContent = `Score: ${score}`;
+            scoreDisplay.textContent = `Current Score: ${score}`;
             userPattern = [];
             setTimeout(() => {
-                messageDisplay.textContent = 'Watch the next pattern!';
+                messageDisplay.textContent = `${gameMessage}`;
                 generatePattern();
             }, 1000);
         }
     } else {
-        messageDisplay.textContent = 'Game Over! Press Start to try again!';
+        messageDisplay.textContent = `${gameOverMessage}`;
     }
 }
