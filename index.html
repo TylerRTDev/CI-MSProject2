@@ -12,6 +12,36 @@
             @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
             
             /* Center content inside each section */
+
+            .container-wrapper-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./pexels-felixmittermeier-957061.jpg) center no-repeat;
+                background-size: cover;
+                position: relative;
+                margin: 50px auto;
+                width: 100%;
+                text-align: center; /* Centers text and inline elements horizontally within the section */
+                padding: 20px 0 60px 0; /* Adds padding around the section content for spacing */
+                z-index: 1;
+                overflow:hidden
+            }
+
+            .container-wrapper-hero .cta-button {
+                display: inline-block; /* Allows padding and margins to be applied like a button */
+                margin: 10px 10px 20px 10px; /* Adds space between each link or button */
+                padding: 10px 40px; /* Adds space inside the link for a button-like appearance */
+                background-color: rgb(74, 0, 127); /* Sets a background color for contrast */
+                color: hsl(0, 0%, 85%); /* Sets the text color to white for readability */
+                text-decoration: none; /* Removes underline from links */
+                border-radius: 10px; /* Rounds the corners of the button */
+                font-size: 1.5rem;
+                box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+            }
+
+            .container-wrapper-hero img {
+                margin-top: 50px ;
+            }
+
             .content-wrapper {
                 max-width: 100%;
                 text-align: center; /* Centers text and inline elements horizontally within the section */
@@ -51,7 +81,7 @@
             }
 
             .in-text-link {
-                text-decoration: underline;
+                text-decoration: underline rgba(74, 0, 127, 0);
             }
 
             .in-text-link:hover {
@@ -84,16 +114,29 @@
             <a class="website-logo-header" href="index.html"><img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="40" height="40" alt="site-logo"></a>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="#instructions-section">How To Play</a></li>
-                    <li><a href="#difficulty-section">Difficulty</a></li>
-                    <li><a href="">Leaderboard</a></li>
-                    <li><a href="">Settings</a></li>
+                    <li><a class="in-text-link" href="">Home</a></li>
+                    <li><a class="in-text-link" href="#instructions-section">How To Play</a></li>
+                    <li><a class="in-text-link" href="#difficulty-section">Difficulty</a></li>
+                    <li><a class="in-text-link" href="">Leaderboard</a></li>
+                    <li><a class="in-text-link" href="">Settings</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section class="content-wrapper" id="title-section">
+        <div class="container-wrapper-hero">
+            <div class="logo-container">
+                <img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="300" height="300" alt="site-logo">
+            </div>
+            <h1>Do You Remember?</h1>
+            <p>
+                The worlds most challenging memory game, let’s see if you have what it takes to remember...
+            </p>
+            <div>
+                <a class="cta-button" href="game.html">Quick Play</a>
+            </div>
+        </div>
+
+        <!-- <section class="content-wrapper" id="title-section">
             <div class="container-wrapper">
                 <img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="70" height="70" alt="site-logo">
                 <h1>Do You Remember?</h1>
@@ -107,10 +150,11 @@
                 </div>
                 
             </div>
-        </section>
+        </section> -->
 
         <section class="content-wrapper" id="instructions-section">
             <div class="container-wrapper">
+                <img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="70" height="70" alt="site-logo">
                 <h1>How To Play</h1>
                 <div>
                     <p>
@@ -124,28 +168,29 @@
                         If you click the wrong colour, the game ends, and your final score will be displayed. To win, you’ll need sharp focus and a great memory!
                     </p>
                 </div>
-            <a class="cta-button" href="">Start Game</a>
+            <a class="cta-button" href="">Choose Difficulty</a>
             </div>
         </section>
 
         <section class="content-wrapper" id="difficulty-section">
             <div class="container-wrapper">
+                <img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="70" height="70" alt="site-logo">
                 <h1>Game Difficulty</h1>
-            <p>
-                Sharpen your memory and put your skills to the test. Choose from 3 levels of difficulty to get started:
-            </p>
-            <div class="difficulty-card-container">
-                <div class="difficulty-cards">
-                    <a class="cta-button" href="">Easy</a>
+                <p>
+                    Sharpen your memory and put your skills to the test. Choose from 3 levels of difficulty to get started:
+                </p>
+                <div class="difficulty-card-container">
+                    <div class="difficulty-cards">
+                        <a class="cta-button" href="">Easy</a>
+                    </div>
+                    <div class="difficulty-cards">
+                        <a class="cta-button" href="">Medium</a>
+                    </div>
+                    <div class="difficulty-cards">
+                        <a class="cta-button" href="">Hard</a>
+                    </div>
                 </div>
-                <div class="difficulty-cards">
-                    <a class="cta-button" href="">Medium</a>
-                </div>
-                <div class="difficulty-cards">
-                    <a class="cta-button" href="">Hard</a>
-                </div>
-            </div>
-            <p id="challenge-text">Challenge yourself further and adjust the speed of the game in <a class="in-text-link" href="/settings.html">settings</a>.</p>
+                <p id="challenge-text">Challenge yourself further and adjust the speed of the game in <a class="in-text-link" href="/settings.html">settings</a>.</p>
             </div>
             <a class="cta-button" href="">Top Page</a>
         </section>

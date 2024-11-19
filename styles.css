@@ -10,6 +10,7 @@
 /* Ensure body and html elements fit the viewport */
 html, body {
     width: 100%;
+    height: 100%;
     overflow-x: hidden; /* Prevents horizontal scrolling caused by overflow */
 }
 
@@ -20,7 +21,9 @@ body {
 
 /* Style for the header section */
 header {
-    background: url(./pexels-felixmittermeier-957061.jpg);
+    /* background: url(./pexels-felixmittermeier-957061.jpg); */
+    background-color: black;
+    transition: top 0.2s ease-in-out;
     padding: 10px 20px; /* Adds space inside the header for better spacing */
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
     position: fixed;
@@ -65,11 +68,6 @@ header nav ul li a {
     color: hsl(0, 0%, 85%); /* Sets the text color to white for contrast against the black header */
     text-decoration: none; /* Removes the underline from the links */
     font-weight: bold; /* Makes the links bold for better readability */
-}
-
-/* Optional: Hover effect for navigation links */
-header nav ul li a:hover {
-    text-decoration: underline; /* Adds underline when hovering to indicate interactivity */
 }
 
 footer {
