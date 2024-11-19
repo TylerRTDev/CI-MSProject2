@@ -34,6 +34,12 @@ header {
     left: 30px;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Style for the nav element inside the header */
 header nav {
     text-align: right; /* Aligns the content (navigation links) to the right */
