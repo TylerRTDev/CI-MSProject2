@@ -4,6 +4,8 @@ const resetButton = document.getElementById('');
 const startMessageDisplay = document.getElementById('startMessage');
 const endMessageDisplay = document.getElementById('endMessage');
 const scoreDisplay = document.getElementById('score');
+const levelDisplay = document.getElementById('level')
+
 
 let gamePattern = [];
 let userPattern = [];
@@ -63,6 +65,7 @@ buttons.forEach(button => {
 function checkUserInput() {
     const currentStep = userPattern.length - 1;
     if (userPattern[currentStep] === gamePattern[currentStep]) {
+        // levelDisplay.textContent = gameLevel++;
         if (userPattern.length === gamePattern.length) {
             gameScore++;
             scoreDisplay.textContent = `Current Score: ${gameScore}`;
