@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
 /* Remove all default margin and padding */
 * {
     margin: 0;
@@ -11,6 +14,7 @@
 html, body {
     width: 100%;
     overflow-x: hidden; /* Prevents horizontal scrolling caused by overflow */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -62,15 +66,163 @@ header nav ul li {
 
 /* Style for the anchor tags within each list item */
 header nav ul li a {
-    color: hsl(0, 0%, 85%); /* Sets the text color to white for contrast against the black header */
+    color: hsla(0, 0%, 85%, 0.29); /* Sets the text color to white for contrast against the black header */
     text-decoration: none; /* Removes the underline from the links */
     font-weight: bold; /* Makes the links bold for better readability */
+    transition: 1.3s;
 }
 
 /* Optional: Hover effect for navigation links */
 header nav ul li a:hover {
-    text-decoration: underline; /* Adds underline when hovering to indicate interactivity */
+    text-decoration: none; /* Adds underline when hovering to indicate interactivity */
+    color: #ffffff;
+    transition: 0.5s;
 }
+            
+/* Center content inside each section */
+.content-wrapper-home {
+    background: no-repeat center/100% url(./pexels-felixmittermeier-957061.jpg);
+    max-width: 100%;
+    text-align: center; /* Centers text and inline elements horizontally within the section */
+    padding: 20px; /* Adds padding around the section content for spacing */
+    box-shadow: rgb(0, 0, 0) 5px 20px 24px;
+
+}
+
+.content-wrapper {
+    max-width: 100%;
+    text-align: center; /* Centers text and inline elements horizontally within the section */
+    padding: 20px; /* Adds padding around the section content for spacing */
+}
+
+.container-wrapper-home {
+    margin: 150px auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 20px;
+    max-width: 60%;
+    padding: 20px 100px 20px 100px;
+}
+
+.container-wrapper {
+    background: url(./pexels-felixmittermeier-957061.jpg);
+    margin: 150px auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 20px;
+    max-width: 60%;
+    padding: 20px 100px 20px 100px;
+}
+
+/* Additional styling for buttons/links inside the section */
+.content-wrapper-home .content-wrapper, .cta-button, .reset-button, .settings-button {
+    transition: 2s;
+    border: none;
+    display: inline-block; /* Allows padding and margins to be applied like a button */
+    margin: 10px 10px 20px 10px; /* Adds space between each link or button */
+    padding: 10px 40px; /* Adds space inside the link for a button-like appearance */
+    background-color: rgb(74, 0, 127); /* Sets a background color for contrast */
+    color: hsla(0, 0%, 85%, 0.29); /* Sets the text color to white for readability */
+    text-decoration: none; /* Removes underline from links */
+    border-radius: 10px; /* Rounds the corners of the button */
+    font-size: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.cta-button:hover, .reset-button:hover, .settings-button:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.2);
+    transition: 1.5s;
+}
+
+/* General Styling */
+
+h1 {
+    margin: 20px; /* Adds space between */
+    font-size: 3rem;
+}
+
+p {
+    margin: 20px auto; /* Adds space between */
+    padding: 0 0 20px 0; /* Adds space between */
+    font-size: 1.5rem;
+}
+
+.in-text-link {
+    text-decoration: underline;
+    transition: 1.3s;
+}
+
+.in-text-link:hover {
+    color:blueviolet;
+    transition: color 0.3s ease; /* Smooth transition effect */
+    text-decoration: none;
+}
+
+/* Optional: Center-align content in the difficulty card container */
+.difficulty-card-container {
+    display: flex; /* Makes the cards layout flexible */
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 20px; /* Adds space between each card */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    padding-top: 20px; /* Adds space at the top of the container */
+}
+
+.difficulty-cards {
+    background-color: #000000; /* Light background for each card */
+    margin: 0 20px 20px 20px;
+    padding: 20px; /* Adds space inside each card */
+    border-radius: 5px; /* Rounds the corners of each card */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+    text-align: center; /* Centers content inside each card */
+}
+
+/* Leaderboard Table */
+table {
+    margin: 20px auto;
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #1b1b2f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+th, td {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+th {
+    background: #000000;
+}
+
+td {
+    background: none;
+    background-color: none;
+}
+
+/* Settings Page */
+
+.settings-slider {
+    margin: 5rem;
+    font-size: 2rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: rgb(0, 0, 0);
+    color: #7300c4;
+}
+
+input[type="range"]::-webkit-slider-runnable-track:hover {
+    background: #ffffff;
+    transition: 1s;
+}
+
+.settings-section, .leaderboard-table {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Footer Section */
 
 footer {
     background: url(./pexels-felixmittermeier-957061.jpg);

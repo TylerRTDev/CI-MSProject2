@@ -9,73 +9,7 @@
         <link rel="stylesheet" href="/styles.css">
 
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-            
-            /* Center content inside each section */
-            .content-wrapper {
-                max-width: 100%;
-                text-align: center; /* Centers text and inline elements horizontally within the section */
-                padding: 20px; /* Adds padding around the section content for spacing */
-            }
 
-            .container-wrapper {
-                background: url(./pexels-felixmittermeier-957061.jpg);
-                margin: 150px auto;
-                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;                border-radius: 20px;
-                max-width: 60%;
-                padding: 20px 100px 20px 100px;
-            }
-
-            /* Additional styling for buttons/links inside the section */
-            .content-wrapper .cta-button {
-                display: inline-block; /* Allows padding and margins to be applied like a button */
-                margin: 10px 10px 20px 10px; /* Adds space between each link or button */
-                padding: 10px 40px; /* Adds space inside the link for a button-like appearance */
-                background-color: rgb(74, 0, 127); /* Sets a background color for contrast */
-                color: hsl(0, 0%, 85%); /* Sets the text color to white for readability */
-                text-decoration: none; /* Removes underline from links */
-                border-radius: 10px; /* Rounds the corners of the button */
-                font-size: 1.5rem;
-                box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-            }
-
-            h1 {
-                margin: 20px; /* Adds space between */
-                font-size: 3rem;
-            }
-
-            p {
-                margin: 20px auto; /* Adds space between */
-                padding: 0 0 20px 0; /* Adds space between */
-                font-size: 1.5rem;
-            }
-
-            .in-text-link {
-                text-decoration: underline;
-            }
-
-            .in-text-link:hover {
-                color:blueviolet;
-                transition: color 0.3s ease; /* Smooth transition effect */
-            }
-
-            /* Optional: Center-align content in the difficulty card container */
-            .difficulty-card-container {
-                display: flex; /* Makes the cards layout flexible */
-                justify-content: center; /* Centers the cards horizontally */
-                gap: 20px; /* Adds space between each card */
-                flex-wrap: wrap; /* Allows wrapping for smaller screens */
-                padding-top: 20px; /* Adds space at the top of the container */
-            }
-
-            .difficulty-cards {
-                background-color: #000000; /* Light background for each card */
-                margin: 0 20px 20px 20px;
-                padding: 20px; /* Adds space inside each card */
-                border-radius: 5px; /* Rounds the corners of each card */
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
-                text-align: center; /* Centers content inside each card */
-            }
 
         </style>
     </head>
@@ -84,21 +18,21 @@
             <a class="website-logo-header" href="index.html"><img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="40" height="40" alt="site-logo"></a>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="#instructions-section">How To Play</a></li>
-                    <li><a href="#difficulty-section">Difficulty</a></li>
-                    <li><a href="">Leaderboard</a></li>
-                    <li><a href="">Settings</a></li>
+                    <li><a href="#title-section">Home</a></li>
+                    <li><a href="./index.html#instructions-section">How To Play</a></li>
+                    <li><a href="./index.html#difficulty-section">Difficulty</a></li>
+                    <li><a href="./leaderboards.html">Leaderboard</a></li>
+                    <li><a href="./settings.html">Settings</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section class="content-wrapper" id="title-section">
-            <div class="container-wrapper">
-                <img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="70" height="70" alt="site-logo">
+        <section class="content-wrapper-home" id="title-section">
+            <div class="container-wrapper-home">
+                <img src="./human-head-with-a-question-mark-inside-svgrepo-com.svg" width="100" height="100" alt="site-logo">
                 <h1>Do You Remember?</h1>
                 <p>
-                    The worlds most challenging memory game, let’s see if you have what it takes to remember...
+                    The most challenging memory game, let’s see if you have what it takes to remember...
                 </p>
                 <div>
                     <a class="cta-button" href="game.html">Quick Play</a>
@@ -147,7 +81,7 @@
             </div>
             <p id="challenge-text">Challenge yourself further and adjust the speed of the game in <a class="in-text-link" href="/settings.html">settings</a>.</p>
             </div>
-            <a class="cta-button" href="">Top Page</a>
+            <a class="cta-button" href="#title-section">Top Page</a>
         </section>
         
         
