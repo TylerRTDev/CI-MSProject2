@@ -75,7 +75,7 @@ function playPattern() {
 function activateButton(buttonId) {
     const button = buttonsContainer.querySelector(`[data-id="${buttonId}"]`);
     button.classList.add('active');
-    setTimeout(() => button.classList.remove('active'), 300);
+    setTimeout(() => button.classList.remove('active'), 500);
 }
 
 // Start game event listener
