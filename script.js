@@ -13,7 +13,7 @@ let gameMode = [];
 let gameScore = 0;
 let gameLevel = 1;
 let gameMessage = 'Watch The Pattern Closely!';
-let gameOverMessage = 'Game Over! You Guesses Wrong. \n ';
+let gameOverMessage = 'Game Over! You Guesses Wrong.\n';
 let levelMultiplier = 0;
 
 // Function to generate a random pattern
@@ -78,6 +78,7 @@ function checkUserInput() {
     }
     else
     {
-        endMessageDisplay.textContent = `${gameOverMessage} Final Score: ${gameScore}`;
+        // endMessageDisplay.textContent = `${gameOverMessage} Final Score: ${gameScore}`;
+        alert(`${gameOverMessage}Final Score: ${gameScore}`);
     }
 }

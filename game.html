@@ -7,83 +7,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles.css">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-            .game-info-bar {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                margin-bottom: 40px;
-            }
-            
-            .content-wrapper {
-                max-width: 100%;
-                text-align: center; /* Centers text and inline elements horizontally within the section */
-                margin: 50px auto; /* Centers the section container itself within the page */
-                padding: 20px; /* Adds padding around the section content for spacing */
-                height: 100vh;
-            }
-            
-            .game-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .button-container {
-                display: grid;
-                grid-template-columns: repeat(2, 200px);
-                gap: 20px;
-            }
-            
-            .pattern-button {
-                width: 200px;
-                height: 200px;
-                border-radius: 20px;
-                background-color: #000000;
-                cursor: pointer;
-                transition: background-color 0.3s;
-                box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-            }
-            
-            #btn1 { background-color: red; }
-            #btn2 { background-color: green; }
-            #btn3 { background-color: blue; }
-            #btn4 { background-color: yellow; }
-            
-            .pattern-button.active {
-                opacity: 0.6;
-            }
-
-            .cta-button {
-                border: none;
-                display: inline-block; /* Allows padding and margins to be applied like a button */
-                margin: 10px 10px 20px 10px; /* Adds space between each link or button */
-                padding: 10px 40px; /* Adds space inside the link for a button-like appearance */
-                background-color: rgb(74, 0, 127); /* Sets a background color for contrast */
-                color: hsl(0, 0%, 85%); /* Sets the text color to white for readability */
-                text-decoration: none; /* Removes underline from links */
-                border-radius: 10px; /* Rounds the corners of the button */
-                font-size: 1.5rem;
-                box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-            }
-            
-            .controls {
-                display: inline;
-                margin-top: 20px;
-            }
-            
-            #message {
-                font-size: 1.2em;
-                margin: 10px;
-            }
-            
-            #player-score {
-                font-size: 1.2em;
-                margin: 10px;
-            }
-        </style>
     </head>
     <body>
         <header>
@@ -99,15 +22,22 @@
             </nav>
         </header>
 
-        <div class="content-wrapper">
+        <section class="content-wrapper-game">
             <div class="game-info-bar">
-                <h2>Difficulty:<br>Easy </h2>
-                <h1>Level:<br>999 </h1>
-                <h2>Mulitplier:<br>2x </h2>
+                <h2>Difficulty:
+                    <select id="difficulty-select" onchange="changeDifficulty()">
+                        <option value="Easy" selected>Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </h2>
+                <h1>Level: 1</h1>
+                <button class="cta-button" id="end-game">End Game</button>
             </div>
             <div class="game-container">
                 <div>
                     <h1 id="score"></h1>
+                    <h1 id="startMessage"></h1>
                 </div>
                 <div class="button-container">
                     <div class="pattern-button" id="btn1"></div>
@@ -117,55 +47,14 @@
                 </div>
                 <div class="controls">
                     <button class="cta-button" id="start-game">Start Game</button>
-                    <button class="cta-button" id="end-game">End Game</button>
-                    <div>
-                        <h1 id="startMessage"></h1>
+                    <h2>Mulitplier:<span id="multiplier"> 1x</span></h2>
+                    <div class="player-instructions">
                         <h1 id="endMessage"></h1>
                     </div>
                 </div>
             </div>
-        </div>
-            
-        <!-- <section>
-            <div class="game-container">
-                <div class="button-container">
-                    <div class="pattern-button" id="btn1"></div>
-                    <div class="pattern-button" id="btn2"></div>
-                    <div class="pattern-button" id="btn3"></div>
-                    <div class="pattern-button" id="btn4"></div>
-                    <div class="pattern-button" id="btn5"></div>
-                </div>
-                <div class="controls">
-                    <button id="start-game">Start Game</button>
-                    <button id="start-game">End Game</button>
-                    <div id="message">Press Start to begin!</div>
-                    <div id="score">Score: 0</div>
-                </div>
-            </div>
         </section>
-
-        <section>
-            <div class="game-container">
-                <div class="button-container">
-                    <div class="pattern-button" id="btn1"></div>
-                    <div class="pattern-button" id="btn2"></div>
-                    <div class="pattern-button" id="btn3"></div>
-                    <div class="pattern-button" id="btn4"></div>
-                    <div class="pattern-button" id="btn5"></div>
-                    <div class="pattern-button" id="btn6"></div>
-                    <div class="pattern-button" id="btn7"></div>
-                    <div class="pattern-button" id="btn8"></div>
-                    <div class="pattern-button" id="btn9"></div>
-                </div>
-                <div class="controls">
-                    <button id="start-game">Start Game</button>
-                    <button id="start-game">End Game</button>
-                    <div id="message">Press Start to begin!</div>
-                    <div id="score">Score: 0</div>
-                </div>
-            </div>
-        </section> -->
-
+            
         <footer>
             <div class="social-icons">
                 <a href="https://www.facebook.com" target="_blank" rel="noopener"><img src="./Resources/Icons/facebook.svg" alt="Facebook">.</a>
@@ -178,4 +67,5 @@
         </footer>
     </body>
     <script src="script.js"></script>
+    <script src="./difficulty-select.js"></script>
 </html>
