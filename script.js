@@ -1,127 +1,84 @@
-const difficultySelect = document.getElementById('difficulty-select');
+const buttons = document.querySelectorAll('.pattern-button');
 const startButton = document.getElementById('start-game');
-const buttonsContainer = document.querySelector('.game-container');
+const resetButton = document.getElementById('');
 const startMessageDisplay = document.getElementById('startMessage');
 const endMessageDisplay = document.getElementById('endMessage');
 const scoreDisplay = document.getElementById('score');
-const levelDisplay = document.querySelector('.game-info-bar h1'); // Adjust this if needed
+const levelDisplay = document.getElementById('level')
 
-let buttons; // Will store the current active grid buttons
+
 let gamePattern = [];
 let userPattern = [];
+let gameMode = []; 
 let gameScore = 0;
 let gameLevel = 1;
-let gameMessage = 'Watch the pattern closely!';
-let gameOverMessage = 'Game Over! You guessed wrong.';
-let gameActive = false;
-
-// Function to initialize the game grid based on difficulty
-function setDifficulty() {
-    // Clear any previous game state
-    resetGame();
-    
-    // Get selected difficulty
-    const difficulty = difficultySelect.value;
-
-    // Hide all button grids
-    document.getElementById('grid-easy').style.display = 'none';
-    document.getElementById('grid-medium').style.display = 'none';
-    document.getElementById('grid-hard').style.display = 'none';
-
-    // Show the selected difficulty grid
-    const selectedGrid = document.getElementById(`grid-${difficulty.toLowerCase()}`);
-    selectedGrid.style.display = 'grid';
-
-    // Update buttons based on the current grid
-    buttons = selectedGrid.querySelectorAll('.pattern-button');
-}
-
-// Function to reset the game
-function resetGame() {
-    gamePattern = [];
-    userPattern = [];
-    gameScore = 0;
-    gameLevel = 1;
-    gameActive = false;
-
-    scoreDisplay.textContent = `Current Score: ${gameScore}`;
-    levelDisplay.textContent = `Level: ${gameLevel}`;
-    startMessageDisplay.textContent = '';
-    endMessageDisplay.textContent = '';
-}
+let gameMessage = 'Watch The Pattern Closely!';
+let gameOverMessage = 'Game Over! You Guesses Wrong.\n';
+let levelMultiplier = 0;
 
 // Function to generate a random pattern
 function generatePattern() {
     const randomIndex = Math.floor(Math.random() * buttons.length);
-    gamePattern.push(buttons[randomIndex].dataset.id); // Using data-id for buttons
+    gamePattern.push(buttons[randomIndex].id);
     playPattern();
 }
 
 // Function to display the current pattern to the user
 function playPattern() {
     let index = 0;
-    startMessageDisplay.textContent = gameMessage;
     const interval = setInterval(() => {
         activateButton(gamePattern[index]);
         index++;
         if (index === gamePattern.length) {
             clearInterval(interval);
-            startMessageDisplay.textContent = 'Your Turn!';
         }
     }, 600);
 }
 
-// Function to activate a button flash
+// Function to activate button flash
 function activateButton(buttonId) {
-    const button = buttonsContainer.querySelector(`[data-id="${buttonId}"]`);
+    const button = document.getElementById(buttonId);
     button.classList.add('active');
     setTimeout(() => button.classList.remove('active'), 300);
 }
 
 // Start game event listener
 startButton.addEventListener('click', () => {
-    resetGame();
-    setDifficulty();
-    gameActive = true;
+    score = 0;
+    gamePattern = [];
+    userPattern = [];
+    scoreDisplay.textContent = `Current Score: ${gameScore}`;
+    startMessageDisplay.textContent = `${gameMessage}`;
     generatePattern();
 });
 
 // Button click event listener for user input
-buttonsContainer.addEventListener('click', (e) => {
-    if (!gameActive) return;
-
-    const clickedButton = e.target.closest('.pattern-button');
-    if (!clickedButton) return;
-
-    const buttonId = clickedButton.dataset.id;
-    userPattern.push(buttonId);
-    activateButton(buttonId);
-    checkUserInput();
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        userPattern.push(button.id);
+        activateButton(button.id);
+        checkUserInput();
+    });
 });
 
 // Function to check if the user's input matches the pattern
 function checkUserInput() {
     const currentStep = userPattern.length - 1;
-
     if (userPattern[currentStep] === gamePattern[currentStep]) {
+        // levelDisplay.textContent = gameLevel++;
         if (userPattern.length === gamePattern.length) {
             gameScore++;
-            gameLevel++;
             scoreDisplay.textContent = `Current Score: ${gameScore}`;
-            levelDisplay.textContent = `Level: ${gameLevel}`;
             userPattern = [];
             setTimeout(() => {
-                startMessageDisplay.textContent = gameMessage;
+                startMessageDisplay.textContent = `${gameMessage}`;
                 generatePattern();
             }, 1000);
         }
-    } else {
-        gameActive = false;
-        endMessageDisplay.textContent = `${gameOverMessage} Final Score: ${gameScore}`;
-        alert(`${gameOverMessage} Final Score: ${gameScore}`);
     }
-};
-
-// Initialize the game grid on page load
-setDifficulty();
-difficultySelect.addEventListener('change', setDifficulty);
+    else
+    {
+        // endMessageDisplay.textContent = `${gameOverMessage} Final Score: ${gameScore}`;
+        alert(`${gameOverMessage}Final Score: ${gameScore}`);
+    }
+}
