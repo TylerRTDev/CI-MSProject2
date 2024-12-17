@@ -7,6 +7,22 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles.css">
+        <style>
+        
+            .medium{
+                gap: 0;
+                width: 150px;
+                height: 150px
+            }
+
+            .hard{
+                gap: 10px;
+                grid-template-columns: none;
+                width: 150px;
+                height: 150px;
+            }
+
+        </style>
     </head>
     <body>
         <header>
@@ -34,16 +50,36 @@
                 <h1>Level: 1</h1>
                 <button class="cta-button" id="end-game">End Game</button>
             </div>
-            <div class="game-container">
-                <div>
-                    <h1 id="score"></h1>
-                    <h1 id="startMessage"></h1>
-                </div>
-                <div class="button-container">
-                    <div class="pattern-button" id="btn1"></div>
-                    <div class="pattern-button" id="btn2"></div>
-                    <div class="pattern-button" id="btn3"></div>
-                    <div class="pattern-button" id="btn4"></div>
+                <div class="game-container">
+                    <!-- Easy Grid -->
+                    <div class="button-container-easy grid" id="grid-easy">
+                        <div class="pattern-button easy"></div>
+                        <div class="pattern-button easy"></div>
+                        <div class="pattern-button easy"></div>
+                        <div class="pattern-button easy"></div>
+                    </div>
+            
+                    <!-- Medium Grid -->
+                    <div class="button-container-med grid" id="grid-medium" style="display: none;">
+                        <div class="pattern-button medium"></div>
+                        <div class="pattern-button medium"></div>
+                        <div class="pattern-button medium"></div>
+                        <div class="pattern-button medium"></div>
+                        <div class="pattern-button medium"></div>
+                    </div>
+            
+                    <!-- Hard Grid -->
+                    <div class="button-container-hard grid" id="grid-hard" style="display: none;">
+                        <div class="pattern-button hard"></div>
+                        <div class="pattern-button hard"></div>
+                        <div class="pattern-button hard"></div>
+                        <div class="pattern-button hard"></div>
+                        <div class="pattern-button hard"></div>
+                        <div class="pattern-button hard"></div>
+                        <div class="pattern-button hard"></div>
+                        <div class="pattern-button hard"></div>
+                        <div class="pattern-button hard"></div>
+                    </div>
                 </div>
                 <div class="controls">
                     <button class="cta-button" id="start-game">Start Game</button>

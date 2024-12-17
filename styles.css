@@ -250,10 +250,18 @@ input[type="range"]::-webkit-slider-runnable-track:hover {
     align-items: center;
 }
 
-.button-container {
+.button-container-easy {
     display: grid;
     grid-template-columns: repeat(2, 200px);
     gap: 20px;
+}
+
+.button-container-med {
+    gap: 0;
+}
+
+.button-container-hard {
+    gap: 10px;
 }
 
 .pattern-button {
@@ -266,10 +274,29 @@ input[type="range"]::-webkit-slider-runnable-track:hover {
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-#btn1 { background-color: red; }
-#btn2 { background-color: green; }
-#btn3 { background-color: blue; }
-#btn4 { background-color: yellow; }
+/* Easy Difficulty Colors */
+#grid-easy .pattern-button:nth-child(1) { background-color: red; }
+#grid-easy .pattern-button:nth-child(2) { background-color: green; }
+#grid-easy .pattern-button:nth-child(3) { background-color: blue; }
+#grid-easy .pattern-button:nth-child(4) { background-color: yellow; }
+
+/* Medium Difficulty Colors and Grid Positions */
+#grid-medium .pattern-button:nth-child(1) { background-color: red; grid-row: 1; grid-column: 1; }
+#grid-medium .pattern-button:nth-child(2) { background-color: green; grid-row: 1; grid-column: 3; }
+#grid-medium .pattern-button:nth-child(3) { background-color: blue; grid-row: 2; grid-column: 2; }
+#grid-medium .pattern-button:nth-child(4) { background-color: yellow; grid-row: 3; grid-column: 1; }
+#grid-medium .pattern-button:nth-child(5) { background-color: purple; grid-row: 3; grid-column: 3; }
+
+/* Hard Difficulty Colors and Grid Positions */
+#grid-hard .pattern-button:nth-child(1) { background-color: red; grid-row: 1; grid-column: 1; }
+#grid-hard .pattern-button:nth-child(2) { background-color: blue; grid-row: 1; grid-column: 3; }
+#grid-hard .pattern-button:nth-child(3) { background-color: #732c00; grid-row: 2; grid-column: 2; }
+#grid-hard .pattern-button:nth-child(4) { background-color: yellow; grid-row: 3; grid-column: 1; }
+#grid-hard .pattern-button:nth-child(5) { background-color: green; grid-row: 3; grid-column: 3; }
+#grid-hard .pattern-button:nth-child(6) { background-color: #FF339B; grid-row: 1; grid-column: 2; }
+#grid-hard .pattern-button:nth-child(7) { background-color: #00CED1; grid-row: 2; grid-column: 1; }
+#grid-hard .pattern-button:nth-child(8) { background-color: #FF6347; grid-row: 2; grid-column: 3; }
+#grid-hard .pattern-button:nth-child(9) { background-color: #8A2BE2; grid-row: 3; grid-column: 2; }
 
 .pattern-button:hover {
     background-color: whitesmoke;
