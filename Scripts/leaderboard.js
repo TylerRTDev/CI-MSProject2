@@ -20,11 +20,13 @@ function displayLeaderboard() {
 
     // Populate Table
     leaderboard.forEach((entry, index) => {
-        const row = `<tr>
+        const row = 
+        `<tr>
             <td>${entry.name}</td>
             <td>#${index + 1}</td>
             <td>${entry.points}</td>
         </tr>`;
+        
         leaderboardBody.insertAdjacentHTML('beforeend', row);
     });
 
