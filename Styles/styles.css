@@ -24,7 +24,7 @@ body {
 
 /* Style for the header section */
 header {
-    background: url(./pexels-felixmittermeier-957061.jpg);
+    background: url(../Resources/pexels-felixmittermeier-957061.jpg);
     padding: 10px 20px; /* Adds space inside the header for better spacing */
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
     position: fixed;
@@ -81,7 +81,7 @@ header nav ul li a:hover {
             
 /* Center content inside each section */
 .content-wrapper-home {
-    background: no-repeat center/100% url(./pexels-felixmittermeier-957061.jpg);
+    background: no-repeat center/100% url(../Resources/pexels-felixmittermeier-957061.jpg);
     max-width: 100%;
     text-align: center; /* Centers text and inline elements horizontally within the section */
     padding: 20px; /* Adds padding around the section content for spacing */
@@ -104,7 +104,7 @@ header nav ul li a:hover {
 }
 
 .container-wrapper {
-    background: url(./pexels-felixmittermeier-957061.jpg);
+    background: url(../Resources/pexels-felixmittermeier-957061.jpg);
     margin: 150px auto;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 20px;
@@ -216,7 +216,6 @@ input[type="range"]::-webkit-slider-runnable-track:hover {
 }
 
 .settings-section, .leaderboard-table {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -329,7 +328,7 @@ input[type="range"]::-webkit-slider-runnable-track:hover {
 /* Footer Section */
 
 footer {
-    background: url(./pexels-felixmittermeier-957061.jpg);
+    background: url(../Resources/pexels-felixmittermeier-957061.jpg);
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
     padding: 20px;
     color: rgb(0, 0, 0);
