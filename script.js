@@ -15,6 +15,26 @@ let gameMessage = 'Watch the pattern closely!';
 let gameOverMessage = 'Game Over! You guessed wrong.';
 let gameActive = false;
 
+// Function to initialize the game grid based on difficulty
+function setDifficulty() {
+    // Clear any previous game state
+    resetGame();
+    
+    // Get selected difficulty
+    const difficulty = difficultySelect.value;
+
+    // Hide all button grids
+    document.getElementById('grid-easy').style.display = 'none';
+    document.getElementById('grid-medium').style.display = 'none';
+    document.getElementById('grid-hard').style.display = 'none';
+
+    // Show the selected difficulty grid
+    const selectedGrid = document.getElementById(`grid-${difficulty.toLowerCase()}`);
+    selectedGrid.style.display = 'grid';
+
+    // Update buttons based on the current grid
+    buttons = selectedGrid.querySelectorAll('.pattern-button');
+}
 
 // Function to reset the game
 function resetGame() {
@@ -55,7 +75,7 @@ function playPattern() {
 function activateButton(buttonId) {
     const button = buttonsContainer.querySelector(`[data-id="${buttonId}"]`);
     button.classList.add('active');
-    setTimeout(() => button.classList.remove('active'), 500);
+    setTimeout(() => button.classList.remove('active'), 300);
 }
 
 // Start game event listener
