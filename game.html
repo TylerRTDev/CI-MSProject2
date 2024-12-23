@@ -6,11 +6,11 @@
         <title>Memory Game</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./Styles/styles.css">
+        <link rel="stylesheet" href="/styles.css">
         <style>
             
             .pattern-button.active {
-                opacity: 50%;
+                opacity: 20%;
             }
 
             .medium{
@@ -36,13 +36,23 @@
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./index.html#instructions-section">How To Play</a></li>
                     <li><a href="./index.html#difficulty-section">Difficulty</a></li>
+                    <li><a href="./leaderboards.html">Leaderboard</a></li>
+                    <li><a href="./settings.html">Settings</a></li>
                 </ul>
             </nav>
         </header>
 
         <section class="content-wrapper-game">
             <div class="game-info-bar">
+                <h2>Difficulty:
+                    <select id="difficulty-select" onchange="changeDifficulty()">
+                        <option value="Easy" selected>Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </h2>
                 <h1>Level: 1</h1>
+                <a href="./settings.html" class="cta-button" id="game-settings">Game Settings</a>
             </div>
 
             <div class="game-container">
@@ -50,16 +60,41 @@
                     <h1 id="score"></h1>
                     <h1 id="startMessage"></h1>
                 </div>
+                <!-- Easy Grid -->
                 <div class="button-container-easy grid" id="grid-easy">
                     <div class="pattern-button" data-id="1"></div>
                     <div class="pattern-button" data-id="2"></div>
                     <div class="pattern-button" data-id="3"></div>
                     <div class="pattern-button" data-id="4"></div>
                 </div>
+
+                <!-- Medium Grid -->
+                <div class="button-container-med grid" id="grid-medium" style="display: none;">
+                    <div class="pattern-button" data-id="1"></div>
+                    <div class="pattern-button" data-id="2"></div>
+                    <div class="pattern-button" data-id="3"></div>
+                    <div class="pattern-button" data-id="4"></div>
+                    <div class="pattern-button" data-id="5"></div>
+                </div>
+
+                <!-- Hard Grid -->
+                <div class="button-container-hard grid" id="grid-hard" style="display: none;">
+                    <div class="pattern-button" data-id="1"></div>
+                    <div class="pattern-button" data-id="2"></div>
+                    <div class="pattern-button" data-id="3"></div>
+                    <div class="pattern-button" data-id="4"></div>
+                    <div class="pattern-button" data-id="5"></div>
+                    <div class="pattern-button" data-id="6"></div>
+                    <div class="pattern-button" data-id="7"></div>
+                    <div class="pattern-button" data-id="8"></div>
+                    <div class="pattern-button" data-id="9"></div>
+                </div>
+
             </div>
 
             <div class="controls">
                 <button class="cta-button" id="start-game">Start Game</button>
+                <h2>Mulitplier:<span id="multiplier"> 1x</span></h2>
                 <div class="player-instructions">
                     <h1 id="endMessage"></h1>
                 </div>
@@ -80,4 +115,5 @@
         </footer>
     </body>
     <script src="script.js"></script>
+    <script src="./difficulty-select.js"></script>
 </html>
