@@ -1,7 +1,7 @@
 # Memory Game: Pattern Matching Challenge
 
 ### Link to the Game: 
-[Insert Link Here Once Deployed]
+https://tylerrtdev.github.io/CI-MSProject2/
 
 ### Overview
 
@@ -80,12 +80,16 @@ Open the `index.html` file directly in your preferred web browser, or use the lo
 The project is organized as follows:
 
 ```plaintext
-memory-game/
+CI-MSProject2/
 │
-├── css/
+|
+├── Resources/
+│   └── etc              # Contains all png/svg/jpg resources for the web pages
+|
+├── Styles/
 │   └── styles.css       # Contains all the styles for the game
 │
-├── js/
+├── Scripts/
 │   └── script.js        # Contains the JavaScript game logic
 │
 ├── index.html           # Main HTML file containing the game layout
@@ -114,14 +118,10 @@ Here are some ideas for future improvements to make the game even more exciting!
 
 ## 🎨 Attribution
 
-This project was created by [Your Name]! It’s built with custom **JavaScript**, **HTML**, and **CSS**.
-
 ### External Resources & Inspirations:
 - [MDN Web Docs](https://developer.mozilla.org/) – For all things web development!
 - [CSS-Tricks](https://css-tricks.com/) – Great tips for responsive layouts.
 - [Simon Game - Wikipedia](https://en.wikipedia.org/wiki/Simon_(game)) – Inspiration for the game mechanics.
-
-Feel free to contribute or suggest ideas! 😊
 
 ---
 
