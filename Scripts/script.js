@@ -7,6 +7,7 @@ const scoreDisplay = document.getElementById('score');
 const levelDisplay = document.querySelector('.game-info-bar h1'); // Adjust this if needed
 
 let buttons; // Will store the current active grid buttons
+let gameSpeed = 1; // Default speed
 let gamePattern = [];
 let userPattern = [];
 let gameScore = 0;
@@ -14,6 +15,13 @@ let gameLevel = 1;
 let gameMessage = 'Watch the pattern closely!';
 let gameOverMessage = 'Game Over! You guessed wrong.';
 let gameActive = false;
+
+// Speed Configuration
+const speedSettings = {
+    1: { playPattern: 1100, activateButton: 300 }, // Default Speed
+    2: { playPattern: 700, activateButton: 200 },  // 2x Speed
+    3: { playPattern: 300, activateButton: 100 },  // 4x Speed
+};
 
 // Function to initialize the game grid based on difficulty
 function setDifficulty() {
@@ -36,6 +44,20 @@ function setDifficulty() {
     buttons = selectedGrid.querySelectorAll('.pattern-button');
 }
 
+// Load Settings from LocalStorage
+function loadSettings() {
+    const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || { gameSpeed: 1 };
+    
+    // Validate and set gameSpeed
+    if (speedSettings[savedSettings.gameSpeed]) {
+        gameSpeed = savedSettings.gameSpeed;
+    } else {
+        gameSpeed = 1; // Fallback to default if invalid speed
+    }
+
+    console.log(`Game Speed Loaded: ${gameSpeed}`);
+}
+
 // Function to reset the game
 function resetGame() {
     gamePattern = [];
@@ -43,24 +65,26 @@ function resetGame() {
     gameScore = 0;
     gameLevel = 1;
     gameActive = false;
-
     scoreDisplay.textContent = `Current Score: ${gameScore}`;
     levelDisplay.textContent = `Level: ${gameLevel}`;
     startMessageDisplay.textContent = '';
     endMessageDisplay.textContent = '';
 }
 
-// Function to generate a random pattern
+// Generate Random Pattern
 function generatePattern() {
     const randomIndex = Math.floor(Math.random() * buttons.length);
-    gamePattern.push(buttons[randomIndex].dataset.id); // Using data-id for buttons
+    gamePattern.push(buttons[randomIndex].dataset.id);
     playPattern();
 }
 
-// Function to display the current pattern to the user
+// Play Pattern Sequentially with Dynamic Speed
 function playPattern() {
     let index = 0;
     startMessageDisplay.textContent = gameMessage;
+
+    const intervalDuration = speedSettings[gameSpeed]?.playPattern || 1100; // Default to 1100ms if undefined
+
     const interval = setInterval(() => {
         activateButton(gamePattern[index]);
         index++;
@@ -68,18 +92,24 @@ function playPattern() {
             clearInterval(interval);
             startMessageDisplay.textContent = 'Your Turn!';
         }
-    }, 600);
+    }, intervalDuration);
 }
 
-// Function to activate a button flash
+// Activate Button Flash with Dynamic Speed
 function activateButton(buttonId) {
-    const button = buttonsContainer.querySelector(`[data-id="${buttonId}"]`);
+    const button = document.querySelector(`[data-id="${buttonId}"]`);
+    if (!button) return;
+
+    const flashDuration = speedSettings[gameSpeed]?.activateButton || 300; // Default to 300ms if undefined
+
     button.classList.add('active');
-    setTimeout(() => button.classList.remove('active'), 300);
+    setTimeout(() => button.classList.remove('active'), flashDuration);
 }
+
 
 // Start game event listener
 startButton.addEventListener('click', () => {
+    loadSettings();
     resetGame();
     setDifficulty();
     gameActive = true;
@@ -113,7 +143,7 @@ function checkUserInput() {
             setTimeout(() => {
                 startMessageDisplay.textContent = gameMessage;
                 generatePattern();
-            }, 1000);
+            }, 50);
         }
     } else {
         gameActive = false;
