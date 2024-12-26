@@ -1,6 +1,4 @@
 // Get elements
-const colorsRange = document.getElementById('colors-per-turn');
-const colorsValue = document.getElementById('colors-value');
 const speedRange = document.getElementById('game-speed');
 const speedValue = document.getElementById('speed-value');
 const saveButton = document.getElementById('save-settings');
@@ -12,16 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         gameSpeed: 1,
     };
 
-    colorsRange.value = savedSettings.colorsPerTurn;
     speedRange.value = savedSettings.gameSpeed;
 
-    colorsValue.textContent = savedSettings.colorsPerTurn;
     speedValue.textContent = `${getSpeedMultiplier(savedSettings.gameSpeed)}x`;
-});
-
-// Update displayed values on slider input
-colorsRange.addEventListener('input', () => {
-    colorsValue.textContent = colorsRange.value;
 });
 
 speedRange.addEventListener('input', () => {
@@ -41,7 +32,6 @@ function getSpeedMultiplier(speed) {
 // Save settings to localStorage
 saveButton.addEventListener('click', () => {
     const settings = {
-        colorsPerTurn: parseInt(colorsRange.value, 10),
         gameSpeed: parseInt(speedRange.value, 10),
     };
 

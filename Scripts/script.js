@@ -4,7 +4,7 @@ const buttonsContainer = document.querySelector('.game-container');
 const startMessageDisplay = document.getElementById('startMessage');
 const endMessageDisplay = document.getElementById('endMessage');
 const scoreDisplay = document.getElementById('score');
-const levelDisplay = document.querySelector('.game-info-bar h1'); // Adjust this if needed
+const levelDisplay = document.querySelector('.game-info-bar h1');
 
 let buttons; // Will store the current active grid buttons
 let gameSpeed = 1; // Default speed
