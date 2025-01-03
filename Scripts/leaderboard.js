@@ -3,11 +3,11 @@ let playerScore;
 
 // Leaderboard Data (Simulating stored scores initially)
 let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [
-    { name: {playerName}, points: {playerScore} },
-    { name: {playerName}, points: {playerScore} },
-    { name: {playerName}, points: {playerScore} },
-    { name: {playerName}, points: {playerScore} },
-    { name: {playerName}, points: {playerScore} }
+    // { name: {playerName}, points: {playerScore} },
+    // { name: {playerName}, points: {playerScore} },
+    // { name: {playerName}, points: {playerScore} },
+    // { name: {playerName}, points: {playerScore} },
+    // { name: {playerName}, points: {playerScore} }
 ];
 
 // Function to Display Leaderboard Data
@@ -39,4 +39,4 @@ document.getElementById("reset-scores").addEventListener("click", () => {
 });
 
 // Initialize Leaderboard on Page Load
-document.addEventListener('DOMContanetLoaded', displayLeaderboard);
+document.addEventListener('DOMContentLoaded', displayLeaderboard);
