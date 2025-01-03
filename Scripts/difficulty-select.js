@@ -19,3 +19,5 @@ function changeDifficulty() {
     console.log("Selected Difficulty:", difficulty);
 }
 
+
+

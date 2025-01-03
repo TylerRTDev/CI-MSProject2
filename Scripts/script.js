@@ -23,14 +23,12 @@ const speedSettings = {
     3: { playPattern: 300, activateButton: 100 },  // 4x Speed
 };
 
-// Function to initialize the game grid based on difficulty
-// function setDifficulty() {
-//     resetGame();
-//     const difficulty = difficultySelect.value;
-//     const selectedGrid = document.getElementById(`grid-${difficulty.toLowerCase()}`);
-//     selectedGrid.style.display = 'grid';
-//     buttons = selectedGrid.querySelectorAll('.pattern-button');
-// }
+// --- Multiplier Configuration ---
+const difficultyMultiplier = {
+    Easy: 1.0,
+    Medium: 1.5,
+    Hard: 2.0,
+};
 
 function setDifficulty() {
     resetGame();
@@ -90,6 +88,17 @@ function checkHighScore(finalScore) {
     }
 }
 
+// Update the multiplier display
+function updateMultiplierDisplay() {
+    const difficulty = difficultySelect.value;
+    const speedMult = getMultiplier(gameSpeed); 
+    const diffMult = difficultyMultiplier[difficulty] || 1.0; // Defaults to 1.0 if difficulty is undefined
+
+    const totalMultiplier = (speedMult * diffMult).toFixed(2); // Calculate and round to 2 decimals
+    document.getElementById('multiplier').textContent = ` ${totalMultiplier}x`;
+    console.log(`Multiplier Updated: Speed(${speedMult}) x Difficulty(${diffMult}) = Total(${totalMultiplier})`);
+}
+
 // Calculate the multiplier directly from gameSpeed
 function getMultiplier(gameSpeed) {
     switch (gameSpeed) {
@@ -117,7 +126,6 @@ function loadSettings() {
     console.log(`Game Speed Loaded: ${gameSpeed}`);
     console.log(`Multiplier Set To: ${getMultiplier(gameSpeed)}x`);
 }
-
 
 // Function to reset the game
 function resetGame() {
@@ -172,10 +180,11 @@ startButton.addEventListener('click', () => {
     loadSettings();
     resetGame();
     setDifficulty();
+    updateMultiplierDisplay();
     gameActive = true;
 
-    // Update Multiplier Display
-    document.getElementById('multiplier').textContent = `${getMultiplier(gameSpeed)}x`;
+    // // Update Multiplier Display
+    // document.getElementById('multiplier').textContent = `${getMultiplier(gameSpeed)}x`;
 
     generatePattern();
 });
@@ -194,24 +203,54 @@ buttonsContainer.addEventListener('click', (e) => {
 });
 
 // Function to check if the user's input matches the pattern
+// function checkUserInput() {
+//     const currentStep = userPattern.length - 1;
+
+//     if (userPattern[currentStep] === gamePattern[currentStep]) {
+//         if (userPattern.length === gamePattern.length) {
+//             // Apply the multiplier to the score
+//             const multiplier = getMultiplier(gameSpeed);
+//             gameScore += Math.round(10 * multiplier); // Increment by 1 * multiplier, rounded to avoid float issues
+            
+//             gameLevel++;
+//             scoreDisplay.textContent = `Current Score: ${gameScore}`;
+//             levelDisplay.textContent = `Level: ${gameLevel}`;
+//             userPattern = [];
+            
+//             setTimeout(() => {
+//                 startMessageDisplay.textContent = gameMessage;
+//                 generatePattern();
+//             }, 1000 / gameSpeed);
+//         }
+//     } else {
+//         gameOver();
+//         resetGame();
+//     }
+// }
+
 function checkUserInput() {
     const currentStep = userPattern.length - 1;
 
     if (userPattern[currentStep] === gamePattern[currentStep]) {
         if (userPattern.length === gamePattern.length) {
+            const difficulty = difficultySelect.value;
+            const speedMult = getMultiplier(gameSpeed);
+            const diffMult = difficultyMultiplier[difficulty] || 1.0;
+            const totalMultiplier = speedMult * diffMult;
+
             // Apply the multiplier to the score
-            const multiplier = getMultiplier(gameSpeed);
-            gameScore += Math.round(10 * multiplier); // Increment by 1 * multiplier, rounded to avoid float issues
-            
+            gameScore += Math.floor(10 * totalMultiplier);
             gameLevel++;
             scoreDisplay.textContent = `Current Score: ${gameScore}`;
             levelDisplay.textContent = `Level: ${gameLevel}`;
+
             userPattern = [];
-            
             setTimeout(() => {
                 startMessageDisplay.textContent = gameMessage;
                 generatePattern();
             }, 1000 / gameSpeed);
+
+            console.log(`Score Updated: Base(1) x Multiplier(${totalMultiplier}) = +${Math.floor(1 * totalMultiplier)}`);
         }
     } else {
         gameOver();
