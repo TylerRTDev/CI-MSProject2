@@ -24,12 +24,30 @@ const speedSettings = {
 };
 
 // Function to initialize the game grid based on difficulty
+// function setDifficulty() {
+//     resetGame();
+//     const difficulty = difficultySelect.value;
+//     const selectedGrid = document.getElementById(`grid-${difficulty.toLowerCase()}`);
+//     selectedGrid.style.display = 'grid';
+//     buttons = selectedGrid.querySelectorAll('.pattern-button');
+// }
+
 function setDifficulty() {
     resetGame();
     const difficulty = difficultySelect.value;
+
+    // Hide all button grids
+    document.getElementById('grid-easy').style.display = 'none';
+    document.getElementById('grid-medium').style.display = 'none';
+    document.getElementById('grid-hard').style.display = 'none';
+
+    // Show the selected grid
     const selectedGrid = document.getElementById(`grid-${difficulty.toLowerCase()}`);
     selectedGrid.style.display = 'grid';
+
+    // Update buttons for the new difficulty
     buttons = selectedGrid.querySelectorAll('.pattern-button');
+    console.log(`Buttons updated for ${difficulty}:`, buttons);
 }
 
 let highScores = JSON.parse(localStorage.getItem('leaderboard')) || [];

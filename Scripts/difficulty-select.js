@@ -2,15 +2,6 @@ function changeDifficulty() {
     const difficulty = document.getElementById('difficulty-select').value;
     const multiplier = document.getElementById('multiplier');
     
-    // Set the multiplier based on the selected difficulty
-    if (difficulty === "Easy") {
-        multiplier.innerText = " 1.0x";
-    } else if (difficulty === "Medium") {
-        multiplier.innerText = " 2.0x";
-    } else if (difficulty === "Hard") {
-        multiplier.innerText = " 4.0x";
-    }
-
     // Hide all button grids
     document.getElementById('grid-easy').style.display = 'none';
     document.getElementById('grid-medium').style.display = 'none';
