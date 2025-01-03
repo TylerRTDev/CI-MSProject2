@@ -2,13 +2,7 @@ let playerName;
 let playerScore; 
 
 // Leaderboard Data (Simulating stored scores initially)
-let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [
-    // { name: {playerName}, points: {playerScore} },
-    // { name: {playerName}, points: {playerScore} },
-    // { name: {playerName}, points: {playerScore} },
-    // { name: {playerName}, points: {playerScore} },
-    // { name: {playerName}, points: {playerScore} }
-];
+let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 
 // Function to Display Leaderboard Data
 function displayLeaderboard() {

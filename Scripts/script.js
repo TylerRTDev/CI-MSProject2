@@ -72,6 +72,16 @@ function checkHighScore(finalScore) {
     }
 }
 
+// Calculate the multiplier directly from gameSpeed
+function getMultiplier(gameSpeed) {
+    switch (gameSpeed) {
+        case 1: return 1.0; // Default Speed
+        case 2: return 2; // 2x Speed
+        case 3: return 2.5; // 4x Speed
+        default: return 1; // Fallback to 1x
+    }
+}
+
 // Load Settings from LocalStorage
 function loadSettings() {
     const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || { gameSpeed: 1 };
@@ -83,8 +93,13 @@ function loadSettings() {
         gameSpeed = 1; // Fallback to default if invalid speed
     }
 
+    // Update Multiplier in UI
+    document.getElementById('multiplier').textContent = `${getMultiplier(gameSpeed)}x`;
+
     console.log(`Game Speed Loaded: ${gameSpeed}`);
+    console.log(`Multiplier Set To: ${getMultiplier(gameSpeed)}x`);
 }
+
 
 // Function to reset the game
 function resetGame() {
@@ -140,6 +155,10 @@ startButton.addEventListener('click', () => {
     resetGame();
     setDifficulty();
     gameActive = true;
+
+    // Update Multiplier Display
+    document.getElementById('multiplier').textContent = `${getMultiplier(gameSpeed)}x`;
+
     generatePattern();
 });
 
@@ -162,11 +181,15 @@ function checkUserInput() {
 
     if (userPattern[currentStep] === gamePattern[currentStep]) {
         if (userPattern.length === gamePattern.length) {
-            gameScore++;
+            // Apply the multiplier to the score
+            const multiplier = getMultiplier(gameSpeed);
+            gameScore += Math.round(10 * multiplier); // Increment by 1 * multiplier, rounded to avoid float issues
+            
             gameLevel++;
             scoreDisplay.textContent = `Current Score: ${gameScore}`;
             levelDisplay.textContent = `Level: ${gameLevel}`;
             userPattern = [];
+            
             setTimeout(() => {
                 startMessageDisplay.textContent = gameMessage;
                 generatePattern();
@@ -174,10 +197,9 @@ function checkUserInput() {
         }
     } else {
         gameOver();
-
-        resetGame();   
+        resetGame();
     }
-};
+}
 
 function gameOver() {
     gameActive = false;
