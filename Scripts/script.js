@@ -182,10 +182,6 @@ startButton.addEventListener('click', () => {
     setDifficulty();
     updateMultiplierDisplay();
     gameActive = true;
-
-    // // Update Multiplier Display
-    // document.getElementById('multiplier').textContent = `${getMultiplier(gameSpeed)}x`;
-
     generatePattern();
 });
 
@@ -201,32 +197,6 @@ buttonsContainer.addEventListener('click', (e) => {
     activateButton(buttonId);
     checkUserInput();
 });
-
-// Function to check if the user's input matches the pattern
-// function checkUserInput() {
-//     const currentStep = userPattern.length - 1;
-
-//     if (userPattern[currentStep] === gamePattern[currentStep]) {
-//         if (userPattern.length === gamePattern.length) {
-//             // Apply the multiplier to the score
-//             const multiplier = getMultiplier(gameSpeed);
-//             gameScore += Math.round(10 * multiplier); // Increment by 1 * multiplier, rounded to avoid float issues
-            
-//             gameLevel++;
-//             scoreDisplay.textContent = `Current Score: ${gameScore}`;
-//             levelDisplay.textContent = `Level: ${gameLevel}`;
-//             userPattern = [];
-            
-//             setTimeout(() => {
-//                 startMessageDisplay.textContent = gameMessage;
-//                 generatePattern();
-//             }, 1000 / gameSpeed);
-//         }
-//     } else {
-//         gameOver();
-//         resetGame();
-//     }
-// }
 
 function checkUserInput() {
     const currentStep = userPattern.length - 1;

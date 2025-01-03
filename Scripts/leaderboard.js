@@ -21,9 +21,6 @@ function displayLeaderboard() {
         </tr>`;
         leaderboardBody.insertAdjacentHTML('beforeend', row);
     });
-
-    // Save Updated Leaderboard to Local Storage
-    // localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 }
 
 // Reset Button Functionality
