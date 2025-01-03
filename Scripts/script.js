@@ -75,9 +75,9 @@ function checkHighScore(finalScore) {
 // Calculate the multiplier directly from gameSpeed
 function getMultiplier(gameSpeed) {
     switch (gameSpeed) {
-        case 1: return 1.0; // Default Speed
-        case 2: return 2; // 2x Speed
-        case 3: return 2.5; // 4x Speed
+        case 1: return 0.5; // Default Speed
+        case 2: return 1; // 2x Speed
+        case 3: return 1.5; // 4x Speed
         default: return 1; // Fallback to 1x
     }
 }
