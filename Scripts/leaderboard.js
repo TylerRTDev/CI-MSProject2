@@ -2,7 +2,7 @@ let playerName;
 let playerScore; 
 
 // Leaderboard Data (Simulating stored scores initially)
-const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [
+let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [
     { name: {playerName}, points: {playerScore} },
     { name: {playerName}, points: {playerScore} },
     { name: {playerName}, points: {playerScore} },
@@ -29,7 +29,7 @@ function displayLeaderboard() {
     });
 
     // Save Updated Leaderboard to Local Storage
-    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+    // localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 }
 
 // Reset Button Functionality
@@ -39,4 +39,4 @@ document.getElementById("reset-scores").addEventListener("click", () => {
 });
 
 // Initialize Leaderboard on Page Load
-displayLeaderboard();
+document.addEventListener('DOMContanetLoaded', displayLeaderboard);

@@ -4,16 +4,17 @@ function changeDifficulty() {
     
     // Set the multiplier based on the selected difficulty
     if (difficulty === "Easy") {
-        multiplier.innerText = " 1x";
+        multiplier.innerText = " 1.0x";
     } else if (difficulty === "Medium") {
-        multiplier.innerText = " 2x";
+        multiplier.innerText = " 2.0x";
     } else if (difficulty === "Hard") {
-        multiplier.innerText = " 4x";
+        multiplier.innerText = " 4.0x";
     }
 
-    document.getElementById("grid-easy").style.display = "none";
-    document.getElementById("grid-medium").style.display = "none";
-    document.getElementById("grid-hard").style.display = "none";
+    // Hide all button grids
+    document.getElementById('grid-easy').style.display = 'none';
+    document.getElementById('grid-medium').style.display = 'none';
+    document.getElementById('grid-hard').style.display = 'none';
 
     if (difficulty === "Easy") {
         document.getElementById("grid-easy").style.display = "grid";

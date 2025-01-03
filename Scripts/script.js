@@ -25,23 +25,51 @@ const speedSettings = {
 
 // Function to initialize the game grid based on difficulty
 function setDifficulty() {
-    // Clear any previous game state
     resetGame();
-    
-    // Get selected difficulty
     const difficulty = difficultySelect.value;
-
-    // Hide all button grids
-    document.getElementById('grid-easy').style.display = 'none';
-    document.getElementById('grid-medium').style.display = 'none';
-    document.getElementById('grid-hard').style.display = 'none';
-
-    // Show the selected difficulty grid
     const selectedGrid = document.getElementById(`grid-${difficulty.toLowerCase()}`);
     selectedGrid.style.display = 'grid';
-
-    // Update buttons based on the current grid
     buttons = selectedGrid.querySelectorAll('.pattern-button');
+}
+
+let highScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
+
+// Load High Scores
+function loadHighScores() {
+    highScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
+}
+
+// Save High Scores
+function saveHighScores() {
+    localStorage.setItem('leaderboard', JSON.stringify(highScores));
+}
+
+// Function to check if the player's score qualifies for the leaderboard
+function checkHighScore(finalScore) {
+    // Retrieve the current leaderboard from localStorage
+    let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+
+    // Ensure the leaderboard is sorted and limited to Top 5
+    leaderboard.sort((a, b) => b.points - a.points);
+    leaderboard = leaderboard.slice(0, 5);
+
+    // Check if the score qualifies for the leaderboard
+    if (leaderboard.length < 5 || finalScore > leaderboard[leaderboard.length - 1].points) {
+        const playerName = prompt("🎉 Congratulations! You achieved a new high score! 🎯\nEnter your name:");
+        
+        if (playerName) {
+            leaderboard.push({ name: playerName, points: finalScore });
+            leaderboard.sort((a, b) => b.points - a.points);
+            leaderboard = leaderboard.slice(0, 5); // Keep only Top 5
+            
+            // Save back to localStorage
+            localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+        }
+
+        alert(`🎖️ Your score of ${finalScore} has been added to the leaderboard!`);
+    } else {
+        alert(`Game Over! Final Score: ${finalScore}`);
+    }
 }
 
 // Load Settings from LocalStorage
@@ -106,7 +134,6 @@ function activateButton(buttonId) {
     setTimeout(() => button.classList.remove('active'), flashDuration);
 }
 
-
 // Start game event listener
 startButton.addEventListener('click', () => {
     loadSettings();
@@ -143,15 +170,30 @@ function checkUserInput() {
             setTimeout(() => {
                 startMessageDisplay.textContent = gameMessage;
                 generatePattern();
-            }, 50);
+            }, 1000 / gameSpeed);
         }
     } else {
-        gameActive = false;
-        endMessageDisplay.textContent = `${gameOverMessage} Final Score: ${gameScore}`;
-        alert(`${gameOverMessage} Final Score: ${gameScore}`);
+        gameOver();
+
+        resetGame();   
     }
 };
 
+function gameOver() {
+    gameActive = false;
+    endMessageDisplay.textContent = `${gameOverMessage} Final Score: ${gameScore}`;
+    alert(`${gameOverMessage} Final Score: ${gameScore}`);
+
+    checkHighScore(gameScore);
+}
+
 // Initialize the game grid on page load
-setDifficulty();
+function initializeGame() {
+    loadSettings();
+    loadHighScores();
+    setDifficulty();
+    resetGame();
+}
+
+document.addEventListener('DOMContentLoaded', initializeGame);
 difficultySelect.addEventListener('change', setDifficulty);
