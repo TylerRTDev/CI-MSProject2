@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./Styles/styles.css">
+        <link rel="stylesheet" href="./Styles/media-queries.css">
 
         <style>
 
@@ -29,12 +30,12 @@
 
         <section class="content-wrapper-home" id="title-section">
             <div class="container-wrapper-home">
-                <img src="./Resources/Icons/human-head-with-a-question-mark-inside-svgrepo-com.svg" width="100" height="100" alt="site-logo">
+                <img src="./Resources/Icons/human-head-with-a-question-mark-inside-svgrepo-com.svg" alt="site-logo">
                 <h1>Do You Remember?</h1>
                 <p>
                     The most challenging memory game, let’s see if you have what it takes to remember...
                 </p>
-                <div>
+                <div class="hero-buttons">
                     <a class="cta-button" href="game.html">Quick Play</a>
                     <a class="cta-button" href="#difficulty-section">Choose Difficulty</a>
                     <a class="cta-button" href="#instructions-section">How To Play</a>
@@ -58,7 +59,7 @@
                         If you click the wrong colour, the game ends, and your final score will be displayed. To win, you’ll need sharp focus and a great memory!
                     </p>
                 </div>
-            <a class="cta-button" href="">Start Game</a>
+            <a class="cta-button" href="./game.html?difficulty=Easy">Start Game</a>
             </div>
         </section>
 
@@ -68,20 +69,22 @@
             <p>
                 Sharpen your memory and put your skills to the test. Choose from 3 levels of difficulty to get started:
             </p>
+            <p class="tip-text">Tip:<i> Choose a high difficulty for increased score!</i></p>
+
             <div class="difficulty-card-container">
                 <div class="difficulty-cards">
-                    <a class="cta-button" href="./game.html">Easy</a>
+                    <a class="cta-button" href="./game.html?difficulty=Easy">Easy</a>
                 </div>
                 <div class="difficulty-cards">
-                    <a class="cta-button" href="./medium-game.html">Medium</a>
+                    <a class="cta-button" href="./game.html?difficulty=Medium">Medium</a>
                 </div>
                 <div class="difficulty-cards">
-                    <a class="cta-button" href="./hard-game.html">Hard</a>
+                    <a class="cta-button" href="./game.html?difficulty=Hard">Hard</a>
                 </div>
             </div>
             <p id="challenge-text">Challenge yourself further and adjust the speed of the game in <a class="in-text-link" href="./settings.html">settings</a>.</p>
             </div>
-            <a class="cta-button" href="#title-section">Top Page</a>
+            <a class="top-button" href="#title-section">Top Page</a>
         </section>
         
         
@@ -97,4 +100,5 @@
         </footer>
     </body>
     <script src="./Scripts/script.js"></script>
+    
 </html>

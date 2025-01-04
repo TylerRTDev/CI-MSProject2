@@ -1,43 +1,40 @@
 // Get elements
-const colorsRange = document.getElementById('colors-per-turn');
-const colorsValue = document.getElementById('colors-value');
 const speedRange = document.getElementById('game-speed');
 const speedValue = document.getElementById('speed-value');
 const saveButton = document.getElementById('save-settings');
 
 // Load settings from localStorage
 document.addEventListener('DOMContentLoaded', () => {
-    const savedColors = localStorage.getItem('colorsPerTurn') || 1;
-    const savedSpeed = localStorage.getItem('gameSpeed') || 1;
+    const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || {
+        colorsPerTurn: 1,
+        gameSpeed: 1,
+    };
 
-    colorsRange.value = savedColors;
-    speedRange.value = savedSpeed;
+    speedRange.value = savedSettings.gameSpeed;
 
-    colorsValue.textContent = savedColors;
-    speedValue.textContent = `${getSpeedMultiplier(savedSpeed)}x`;
-});
-
-// Update displayed values on input change
-colorsRange.addEventListener('input', () => {
-    colorsValue.textContent = colorsRange.value;
+    speedValue.textContent = `${getSpeedMultiplier(savedSettings.gameSpeed)}x`;
 });
 
 speedRange.addEventListener('input', () => {
     speedValue.textContent = `${getSpeedMultiplier(speedRange.value)}x`;
 });
 
-// Function to calculate speed multiplier
+// Calculate speed multiplier
 function getSpeedMultiplier(speed) {
-    switch (parseInt(speed)) {
-        case 1: return 1; // Default speed
-        case 2: return 2; // Double the default speed
-        case 3: return 4; // Double the speed of level 2
+    switch (parseInt(speed, 10)) {
+        case 1: return 1;
+        case 2: return 2;
+        case 3: return 4;
+        default: return 1;
     }
 }
 
 // Save settings to localStorage
 saveButton.addEventListener('click', () => {
-    localStorage.setItem('colorsPerTurn', colorsRange.value);
-    localStorage.setItem('gameSpeed', speedRange.value);
-    alert('Settings saved!');
+    const settings = {
+        gameSpeed: parseInt(speedRange.value, 10),
+    };
+
+    localStorage.setItem('gameSettings', JSON.stringify(settings));
+    alert('Settings Saved Successfully!');
 });

@@ -1,0 +1,276 @@
+
+@media (max-width: 1831px) {
+    p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 1683px) {
+    .container-wrapper-home {
+        padding: 20px 10px 20px 10px;
+    }
+}
+
+@media (max-width: 1663px) {
+    .difficulty-card-container {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 1391px) {
+    .container-wrapper {
+        padding: 20px 50px 20px 50px;
+    }
+}
+
+@media (max-width: 1383px) {
+    .container-wrapper-home {
+        padding: 20px 0px 20px 0px;
+    }
+}
+
+@media (max-width: 1349px) {
+    header nav ul li {
+        margin-left: 40px;
+        font-size: 1.3rem;
+    }
+
+    .content-wrapper-home .content-wrapper, .cta-button, .reset-button, .settings-button, .cta-game-button, .top-button {
+        margin: 20px 10px 20px 10px; /* Adds space between each link or button */
+        padding: 5px 20px; /* Adds space inside the link for a button-like appearance */
+        font-size: 1.3rem;
+    }
+    
+    .cta-button:hover, .reset-button:hover, .settings-button:hover {
+        transform: scale(1);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .tip-text {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1.3rem;
+    }
+
+    .difficulty-cards {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content-wrapper-home {
+        background: no-repeat center url(../Resources/pexels-felixmittermeier-957061.jpg);
+    }
+
+    .hero-buttons, .difficulty-card-container {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .game-info-bar {
+        flex-direction: column;
+    }
+
+    .cta-button, .reset-button, .settings-button, .cta-game-button {
+        padding: 5px 10px; /* Adds space inside the link for a button-like appearance */
+        font-size: 1.1rem;
+        width: 90%;
+    }
+    
+    .cta-button:hover, .reset-button:hover, .settings-button:hover {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 912px) {
+    header nav ul li {
+        margin-left: 30px;
+        font-size: 1.1rem;
+    }
+
+    .website-logo-header {
+        left: 20px;
+    }
+
+    .website-logo-header img {
+        width: 35px;
+    }
+
+    .settings-slider {
+        margin: 2rem;
+        font-size: 2rem;
+        text-shadow: var(--text-shadow-h1);
+    }
+}
+
+@media (max-width: 791px) {
+    header nav ul li {
+        margin-left: 30px;
+        font-size: 1.1rem;
+    }
+
+    .website-logo-header {
+        left: 20px;
+    }
+
+    .website-logo-header img {
+        width: 35px;
+    }
+
+    .settings-slider {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 782px) {
+    p {
+        font-size: 1.1rem;
+    }
+
+    .tip-text {
+        font-size: 1.3rem;
+    }
+
+    table {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 714px) {
+    header nav ul li {
+        margin-left: 30px;
+        font-size: 1rem;
+    }
+
+    .website-logo-header img {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container-wrapper {
+        max-width: 80%;
+    }
+
+    .container-wrapper-home {
+        margin: 30px auto;
+    }
+
+    .container-wrapper-home img {
+        width: 70px;
+        height: 70px;
+    }
+
+    img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 624px) {
+    .settings-slider {
+        margin: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 592px) {
+    header nav ul li {
+        margin-left: 30px;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .tip-text {
+        font-size: 1.1rem;
+    }
+
+
+    img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 490px) {
+    header nav ul li {
+        margin-left: 15px;
+    }
+
+    table {
+        font-size: 0.5rem;
+    }
+
+    .settings-slider {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 473px) {
+    .container-wrapper-home img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .container-wrapper {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .pattern-button {
+        width:100px;
+        height: 100px;
+    }
+
+    .button-container-easy {
+        grid-template-columns: repeat(2, 100px);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 414px) {
+    header nav ul li {
+        margin-left: 15px;
+        font-size: 0.7rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+    
+    .tip-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 377px) {
+    header nav ul li {
+        margin-left: 11px;
+        font-size: 0.6rem;
+    }
+}
+
+@media (min-width: 1024) {
+
+}
