@@ -20,6 +20,7 @@
 @media (max-width: 1391px) {
     .container-wrapper {
         padding: 20px 50px 20px 50px;
+        max-width: 80%;
     }
 }
 
@@ -30,15 +31,9 @@
 }
 
 @media (max-width: 1349px) {
-    header nav ul li {
-        margin-left: 40px;
-        font-size: 1.3rem;
-    }
-
     .content-wrapper-home .content-wrapper, .cta-button, .reset-button, .settings-button, .cta-game-button, .top-button {
         margin: 20px 10px 20px 10px; /* Adds space between each link or button */
         padding: 5px 20px; /* Adds space inside the link for a button-like appearance */
-        font-size: 1.3rem;
     }
     
     .cta-button:hover, .reset-button:hover, .settings-button:hover {
@@ -63,15 +58,27 @@
 }
 
 @media (max-width: 1024px) {
+    header nav ul li {
+        font-size: 1.1rem;
+        margin: 0 15px 0 15px;
+    }
+
     .content-wrapper-home {
         background: no-repeat center url(../Resources/pexels-felixmittermeier-957061.jpg);
     }
 
-    .hero-buttons, .difficulty-card-container {
+    .hero-buttons {
         justify-content: space-evenly;
         flex-wrap: wrap;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
+    }
+
+    .difficulty-card-container {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
     }
 
     .game-info-bar {
@@ -79,9 +86,8 @@
     }
 
     .cta-button, .reset-button, .settings-button, .cta-game-button {
-        padding: 5px 10px; /* Adds space inside the link for a button-like appearance */
-        font-size: 1.1rem;
-        width: 90%;
+        padding: 15px 20px; /* Adds space inside the link for a button-like appearance */
+        font-size: 1.3rem;
     }
     
     .cta-button:hover, .reset-button:hover, .settings-button:hover {
@@ -90,11 +96,6 @@
 }
 
 @media (max-width: 912px) {
-    header nav ul li {
-        margin-left: 30px;
-        font-size: 1.1rem;
-    }
-
     .website-logo-header {
         left: 20px;
     }
@@ -112,16 +113,11 @@
 
 @media (max-width: 791px) {
     header nav ul li {
-        margin-left: 30px;
-        font-size: 1.1rem;
-    }
-
-    .website-logo-header {
-        left: 20px;
+        font-size: 0.95rem;
     }
 
     .website-logo-header img {
-        width: 35px;
+        display: none;
     }
 
     .settings-slider {
@@ -145,12 +141,7 @@
 
 @media (max-width: 714px) {
     header nav ul li {
-        margin-left: 30px;
-        font-size: 1rem;
-    }
-
-    .website-logo-header img {
-        display: none;
+        margin: 0 9px 0 9px;
     }
 
     h1 {
@@ -184,7 +175,6 @@
 
 @media (max-width: 592px) {
     header nav ul li {
-        margin-left: 30px;
         font-size: 1rem;
     }
 
@@ -208,7 +198,7 @@
 
 @media (max-width: 490px) {
     header nav ul li {
-        margin-left: 15px;
+        font-size: 0.8rem;
     }
 
     table {
@@ -221,6 +211,10 @@
 }
 
 @media (max-width: 473px) {
+    header nav ul li {
+        font-size: 0.5rem;
+    }
+
     .container-wrapper-home img {
         width: 50px;
         height: 50px;
@@ -246,9 +240,9 @@
 }
 
 @media (max-width: 414px) {
-    header nav ul li {
-        margin-left: 15px;
-        font-size: 0.7rem;
+    .cta-button, .reset-button, .settings-button, .cta-game-button {
+        padding: 10px 15px; /* Adds space inside the link for a button-like appearance */
+        font-size: 1.3rem;
     }
 
     h1 {
@@ -266,8 +260,7 @@
 
 @media (max-width: 377px) {
     header nav ul li {
-        margin-left: 11px;
-        font-size: 0.6rem;
+        font-size: 0.45rem;
     }
 }
 
