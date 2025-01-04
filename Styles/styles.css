@@ -125,7 +125,7 @@ header nav ul li a:hover {
     margin: 150px auto;
     box-shadow: rgba(137, 43, 226, 0.72) 0px 2px 100px 24px, rgba(0, 0, 0, 0.555) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.555) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.555) 0px -79px 40px 0px inset;
     border-radius: 20px;
-    max-width: 70%;
+    max-width: 50%;
     padding: 20px 100px 20px 100px;
 }
 
@@ -281,7 +281,6 @@ input[type="range"]::-webkit-slider-runnable-track:hover {
     text-align: center; /* Centers text and inline elements horizontally within the section */
     margin: 50px auto; /* Centers the section container itself within the page */
     padding: 20px; /* Adds padding around the section content for spacing */
-    height: 100vh;
 }
 
 .game-container {
