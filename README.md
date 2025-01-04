@@ -1,128 +1,169 @@
-# Memory Game: Pattern Matching Challenge
+# Do You Remember
 
-### Link to the Game: 
-https://tylerrtdev.github.io/CI-MSProject2/
+Project: https://tylerrtdev.github.io/CI-MSProject2/
 
-### Overview
+![Game Screenshot](assets/images/game-screenshot.png)
 
-The Memory Game is a simple yet challenging single-player web-based pattern-matching game inspired by classic games like *Simon* and *Bop It*. The goal of the game is for the player to repeat an increasingly complex sequence of visual patterns. The game starts with a simple pattern, and as the player successfully matches the pattern, the length and complexity of the pattern increase, testing the player’s memory.
+## Table of Contents
 
-### Purpose
-
-The primary purpose of this project is to:
-- Challenge users' memory and focus through an engaging and interactive pattern-matching game.
-- Offer an intuitive and fun game experience where the player can attempt to beat their previous score.
-- Enhance web development skills by incorporating dynamic functionality with JavaScript, HTML, and CSS.
-
-### Value to Users
-
-This game provides significant value to users by:
-- Offering an enjoyable way to improve memory and cognitive skills through a progressively difficult challenge.
-- Giving players real-time feedback on their progress, allowing them to track how well they are doing.
-- Allowing users to reset and replay the game to try and achieve higher scores each time.
-
-### How to Play
-
-1. Press the "Start Game" button to begin the game.
-2. Watch the sequence of buttons (each button corresponds to a different color) light up.
-3. When the pattern finishes, repeat the sequence by clicking the buttons in the same order.
-4. If you input the correct sequence, the pattern will grow by one step, and you must repeat the longer pattern.
-5. If you input the wrong sequence, the game ends, and you will see your score (how many rounds you completed).
-6. Try to beat your previous score by improving your memory and pattern recognition skills!
-
-### Game Features
-
-- **Dynamic Pattern Generation**: Each game starts with a simple pattern, but as players succeed, the pattern length increases.
-- **User Interaction**: Players interact by clicking the correct sequence of buttons based on the pattern they observed.
-- **Feedback System**: Immediate visual feedback is given after every button press, showing whether the player was correct or not. If incorrect, the game ends and displays the player's score.
-- **Score Tracking**: The game keeps track of how many patterns the player successfully repeats, acting as the game score.
-- **Responsive Design**: The game layout is designed to be responsive and playable on both desktop and mobile devices.
-
-### Value to Site Owner
-
-- The site owner can monitor the popularity of the game and see how well users engage with it.
-- The owner can also use the game themselves to improve memory skills or to demonstrate interactive web development to potential clients or employers.
-- As the game requires no backend, it is easy to deploy and maintain, and can be updated with new features (e.g., different themes, sounds, or difficulty levels) based on user feedback.
-
-### Deployment Procedure
-
-#### 1. Obtain the Project Files:
-
-You can obtain the project files either by cloning the repository or downloading them directly from GitHub.
-
-##### **Option A: Clone the Repository:**
-1. **Open a terminal** on your local machine.
-2. **Run the following command** to clone the repository:
-
-```bash
-git clone https://github.com/TylerRTDev/CI-MSProject2.git
-cd CI-MSProject2
-```
-#### Option B: Download as ZIP
-1. Visit the repository's GitHub page and click on the **"Code"** button.
-2. Choose **"Download ZIP"** to download the entire project.
-3. Extract the ZIP file on your computer and open the folder.
-
-### ⚙️ Set Up a Local Web Server (Optional):
-You can run the game on a local server for testing purposes. Simply use a built-in Python server:
-
-```bash
-python3 -m http.server 3000
-```
-
-Access the game in your browser at: [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
-
-### 🌐 View the Game in Your Browser:
-Open the `index.html` file directly in your preferred web browser, or use the local server method mentioned above.
-
-## 🏗️ Project Structure
-
-The project is organized as follows:
-
-```plaintext
-CI-MSProject2/
-│
-|
-├── Resources/
-│   └── etc              # Contains all png/svg/jpg resources for the web pages
-|
-├── Styles/
-│   └── styles.css       # Contains all the styles for the game
-│
-├── Scripts/
-│   └── script.js        # Contains the JavaScript game logic
-│
-├── index.html           # Main HTML file containing the game layout
-│
-└── README.md            # You're reading it! 😄
-```
-
-## 🧠 Information Architecture
-
-The game consists of a single HTML page with a simple, structured layout:
-
-- **Main Game Area**: The color buttons that light up in sequence.
-- **Control Section**: Includes the "Start Game" button, score display, and feedback messages.
-
-💡 The game uses **CSS Grid** and **Flexbox** to ensure it’s responsive and adapts to different screen sizes.
-
-## 🔧 Future Enhancements
-
-Here are some ideas for future improvements to make the game even more exciting! 🎉
-
-- 🔊 **Sound Effects**: Add auditory feedback for each button click.
-- 🎨 **Themes**: Allow players to select different visual themes.
-- 🏆 **High Score Tracking**: Use local storage to track the highest score across sessions.
-- ⚙️ **Difficulty Settings**: Include levels of difficulty (e.g., faster patterns, more colors).
-- 🏅 **Leaderboard**: Add a leaderboard for users to compare scores.
-
-## 🎨 Attribution
-
-### External Resources & Inspirations:
-- [MDN Web Docs](https://developer.mozilla.org/) – For all things web development!
-- [CSS-Tricks](https://css-tricks.com/) – Great tips for responsive layouts.
-- [Simon Game - Wikipedia](https://en.wikipedia.org/wiki/Simon_(game)) – Inspiration for the game mechanics.
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Game Logic Explanation](#game-logic-explanation)
+- [Settings Integration](#settings-integration)
+- [Leaderboard Functionality](#leaderboard-functionality)
+- [Testing Procedures](#testing-procedures)
+- [Deployment Guide](#deployment-guide)
+- [Version Control Practices](#version-control-practices)
+- [UX Design & Accessibility Compliance](#ux-design--accessibility-compliance)
+- [Future Enhancements](#future-enhancements)
+- [Author and Contact Information](#author-and-contact-information)
 
 ---
 
-With the added fun elements, this README should engage your audience while giving them all the details they need!
+## 📌 Project Overview
+
+The **Do You Remember** game is an interactive web-based game designed to challenge and enhance users' memory skills. Players are presented with patterns of colored buttons that they must memorize and replicate correctly to progress. The game offers adjustable difficulty settings, customizable gameplay speed, and a leaderboard to track top scores.
+
+---
+
+## 🚀 Features
+
+- **Dynamic Difficulty Levels:** Easy, Medium, and Hard modes for tailored gameplay.
+- **Adjustable Game Speed:** Customize speed settings for enhanced difficulty.
+- **Leaderboard System:** Tracks the top 5 players' high scores.
+- **Responsive Design:** Optimized for desktop and mobile devices.
+- **Persistent Settings:** Settings are saved locally for seamless user experience.
+
+---
+
+## 💻 Technologies Used
+
+- **HTML5:** Structure and layout.
+- **CSS3:** Styling and responsive design.
+- **JavaScript (ES6+):** Game logic and interactivity.
+- **LocalStorage:** Persistent data storage.
+- **Git & GitHub:** Version control and hosting.
+
+---
+
+## ⚙️ Setup and Installation
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/TylerRTDev/CI-MSProject2.git
+   ```
+2. **Navigate to the Project Folder:**
+   ```bash
+   cd CI-MSProject2
+   ```
+3. **Open the Game:**
+   - Open `index.html` in your preferred browser.
+   - Alternatively, use a local development server.
+
+---
+
+## 🧠 Game Logic Explanation
+
+### **Gameplay Overview:**
+- The game generates a random sequence of colored buttons.
+- Players must memorize and replicate the sequence.
+- Each correct pattern increases the score and advances the level.
+
+### **Key Functions:**
+1. **generatePattern:** Creates a random pattern.
+2. **playPattern:** Displays the pattern sequentially.
+3. **checkUserInput:** Validates the player's input against the generated pattern.
+4. **resetGame:** Resets all game parameters.
+
+---
+
+## 🛠️ Settings Integration
+
+Players can customize their gameplay experience via the **Settings Page:**
+
+- **Game Speed:** Adjust playback speed (0.5x, 1x, 1.5x).
+- **Difficulty Levels:** Predefined settings for Easy, Medium, and Hard modes.
+
+All settings are stored in `localStorage`, ensuring they persist across sessions.
+
+---
+
+## 🏆 Leaderboard Functionality
+
+### **How It Works:**
+- At the end of each game, scores are evaluated.
+- If the player's score qualifies for the Top 5, they are prompted to enter their name.
+- Scores are ranked and stored in `localStorage`.
+
+### **Key Features:**
+- Only the highest scores are recorded.
+- Duplicate entries are avoided.
+- Players are notified if they beat a previous high score.
+
+---
+
+## 🧪 Testing Procedures
+
+### **Manual Testing:**
+- Verified game logic, pattern generation, and validation.
+- Checked game settings and leaderboard functionality.
+- Ensured responsive design on multiple devices.
+
+### **Tools Used:**
+- Browser Developer Tools
+- Manual Playthroughs
+- Console Debugging
+
+---
+
+## 🚀 Deployment Guide
+
+The game is deployed using **GitHub Pages:**
+
+1. **Push Changes:** Ensure all updates are pushed to the repository.
+2. **Enable GitHub Pages:**
+   - Go to repository settings.
+   - Select `main` branch and `/root` directory in GitHub Pages.
+3. **Access the Game:**
+   - Visit: `https://tylerrtdev.github.io/CI-MSProject2/`
+
+---
+
+## 📂 Version Control Practices
+
+- **Feature Branches:** Used for new features and bug fixes.
+- **Frequent Commits:** Regular updates with clear commit messages.
+- **Tags:** Significant versions tagged for clarity.
+
+---
+
+## 🎨 UX Design & Accessibility Compliance
+
+- **Semantic HTML:** Enhances clarity and accessibility.
+- **Responsive Design:** Optimized for mobile and desktop.
+- **ARIA Labels:** Used for improved screen reader compatibility.
+- **Color Contrast:** Meets WCAG standards.
+
+---
+
+## 🔮 Future Enhancements
+
+- **Multiplayer Mode:** Real-time competition.
+- **Additional Levels:** Custom difficulty settings.
+- **Advanced Animations:** Smooth transitions and visual effects.
+
+---
+
+## 👤 Author and Contact Information
+
+**Developed by:** Tyler Kerr  
+**Email:** tylerrtdev@outlook.com  
+**GitHub:** [https://github.com/TylerRTDev/CI-MSProject2](https://github.com/TylerRTDev)  
+
+---
+
+
+*This project was developed as part of the Level 5 Diploma in Web Application Development.*
+
