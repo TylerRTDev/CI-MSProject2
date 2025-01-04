@@ -26,8 +26,8 @@ const speedSettings = {
 // --- Multiplier Configuration ---
 const difficultyMultiplier = {
     Easy: 1.0,
-    Medium: 1.5,
-    Hard: 2.0,
+    Medium: 1.2,
+    Hard: 1.4,
 };
 
 function setDifficulty() {
@@ -46,6 +46,8 @@ function setDifficulty() {
     // Update buttons for the new difficulty
     buttons = selectedGrid.querySelectorAll('.pattern-button');
     console.log(`Buttons updated for ${difficulty}:`, buttons);
+
+    updateMultiplierDisplay()
 }
 
 let highScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
@@ -105,7 +107,7 @@ function getMultiplier(gameSpeed) {
         case 1: return 0.5; // Default Speed
         case 2: return 1; // 2x Speed
         case 3: return 1.5; // 4x Speed
-        default: return 1; // Fallback to 1x
+        default: return 0.5; // Fallback to 1x
     }
 }
 
@@ -125,6 +127,7 @@ function loadSettings() {
 
     console.log(`Game Speed Loaded: ${gameSpeed}`);
     console.log(`Multiplier Set To: ${getMultiplier(gameSpeed)}x`);
+    
 }
 
 // Function to reset the game
@@ -134,7 +137,7 @@ function resetGame() {
     gameScore = 0;
     gameLevel = 1;
     gameActive = false;
-    scoreDisplay.textContent = `Current Score: ${gameScore}`;
+    scoreDisplay.textContent = `Your Score: ${gameScore}`;
     levelDisplay.textContent = `Level: ${gameLevel}`;
     startMessageDisplay.textContent = '';
     endMessageDisplay.textContent = '';
@@ -211,7 +214,7 @@ function checkUserInput() {
             // Apply the multiplier to the score
             gameScore += Math.floor(10 * totalMultiplier);
             gameLevel++;
-            scoreDisplay.textContent = `Current Score: ${gameScore}`;
+            scoreDisplay.textContent = `Your Score: ${gameScore}`;
             levelDisplay.textContent = `Level: ${gameLevel}`;
 
             userPattern = [];
@@ -220,7 +223,7 @@ function checkUserInput() {
                 generatePattern();
             }, 1000 / gameSpeed);
 
-            console.log(`Score Updated: Base(1) x Multiplier(${totalMultiplier}) = +${Math.floor(1 * totalMultiplier)}`);
+            console.log(`Score Updated: Base(10) x Multiplier(${totalMultiplier}) = +${Math.floor(1 * totalMultiplier)}`);
         }
     } else {
         gameOver();
