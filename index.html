@@ -20,10 +20,9 @@
             <a class="website-logo-header" href="index.html"><img src="./Resources/Icons/human-head-with-a-question-mark-inside-svgrepo-com.svg" width="40" height="40" alt="site-logo"></a>
             <nav>
                 <ul>
-                    <li><a href="#title-section" style="color: white">Home</a></li>
-
-                    <li><a href="./leaderboards.html">Leaderboard</a></li>
-                    <li><a href="./settings.html">Settings</a></li>
+                    <li><a onmouseenter="clickSound()" href="#title-section" style="color: white">Home</a></li>
+                    <li><a onmouseenter="clickSound()" href="./leaderboards.html">Leaderboard</a></li>
+                    <li><a onmouseenter="clickSound()" href="./settings.html">Settings</a></li>
                 </ul>
             </nav>
         </header>
@@ -35,14 +34,14 @@
         <section class="content-wrapper-home" id="title-section">
             <div class="container-wrapper-home">
                 <img src="./Resources/Icons/human-head-with-a-question-mark-inside-svgrepo-com.svg" alt="site-logo">
-                <h1>Do You Remember?</h1>
+                <h1>Do You Remember... ❔</h1>
                 <p>
                     The most challenging memory game, let’s see if you have what it takes to remember...
                 </p>
                 <div class="hero-buttons">
-                    <a class="cta-button" href="game.html" style="color: white">Quick Play</a>
-                    <a class="cta-button" href="#difficulty-section">Choose Difficulty</a>
-                    <a class="cta-button" href="#instructions-section">How To Play</a>
+                    <a onmouseover="selectSound()" class="cta-button" href="./game.html" style="color: white">Quick Game 🐇</a>
+                    <a onmouseover="selectSound()" onclick="scrollEffect()" class="cta-button" href="#difficulty-section">Choose Difficulty 🚧</a>
+                    <a onmouseover="selectSound()" onclick="scrollEffect()" class="cta-button" href="#instructions-section">How To Play 📄</a>
                 </div>
                 
             </div>
@@ -50,7 +49,7 @@
 
         <section class="content-wrapper" id="instructions-section">
             <div class="container-wrapper">
-                <h1>How To Play</h1>
+                <h1>How To Play 📜</h1>
                 <div>
                     <p>
                         Your goal is to memorize and repeat the sequence of colours shown on the grid. 
@@ -63,13 +62,13 @@
                         If you click the wrong colour, the game ends, and your final score will be displayed. To win, you’ll need sharp focus and a great memory!
                     </p>
                 </div>
-            <a class="cta-button" href="./game.html?difficulty=Easy">Start Game</a>
+            <a onmouseover="selectSound()" class="cta-button" href="./game.html?difficulty=Easy">Start Game 🎮</a>
             </div>
         </section>
 
         <section class="content-wrapper" id="difficulty-section">
             <div class="container-wrapper">
-                <h1>Game Difficulty</h1>
+                <h1>Game Difficulty 🎭</h1>
             <p>
                 Sharpen your memory and put your skills to the test. Choose from 3 levels of difficulty to get started:
             </p>
@@ -77,18 +76,18 @@
 
             <div class="difficulty-card-container">
                 <div class="difficulty-cards">
-                    <a class="cta-button" href="./game.html?difficulty=Easy">Easy</a>
+                    <a onmouseenter="selectSound()" class="cta-button" href="./game.html?difficulty=Easy">Easy ⭐</a>
                 </div>
                 <div class="difficulty-cards">
-                    <a class="cta-button" href="./game.html?difficulty=Medium">Medium</a>
+                    <a onmouseover="selectSound()" class="cta-button" href="./game.html?difficulty=Medium">Medium 🏅</a>
                 </div>
                 <div class="difficulty-cards">
-                    <a class="cta-button" href="./game.html?difficulty=Hard">Hard</a>
+                    <a onmouseover="selectSound()" class="cta-button" href="./game.html?difficulty=Hard">Hard 👑</a>
                 </div>
             </div>
-            <p id="challenge-text">Challenge yourself further and adjust the speed of the game in <a class="in-text-link" href="./settings.html">settings</a>.</p>
+            <p id="challenge-text">Challenge yourself further and adjust the speed of the game in <a onmouseover="settingsSound()" class="in-text-link" href="./settings.html">settings</a>.</p>
             </div>
-            <a class="top-button" href="#title-section">Top Page</a>
+            <a onmouseenter="clickSound()" onclick="scrollEffect()" class="top-button" href="#title-section">Top Page 🔝</a>
         </section>
         
         
@@ -104,5 +103,5 @@
         </footer>
     </body>
     <script src="./Scripts/script.js"></script>
-    
+    <script src="./Scripts/gameSound.js"></script>
 </html>
