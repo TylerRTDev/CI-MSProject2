@@ -8,17 +8,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./Styles/styles.css">
         <link rel="stylesheet" href="./Styles/media-queries.css">
+        Music from #Uppbeat (free for Creators!):
+        https://uppbeat.io/t/sulyya/imaginatarium
 </head>
 <body>
     <header>
         <a class="website-logo-header" href="index.html"><img src="./Resources/Icons/human-head-with-a-question-mark-inside-svgrepo-com.svg" width="40" height="40" alt="site-logo"></a>
         <nav>
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./index.html#instructions-section">How To Play</a></li>
-                <li><a href="./index.html#difficulty-section">Difficulty</a></li>
+                <li><a onmouseenter="clickSound()" href="./index.html">Home</a></li>
+                <li><a onmouseenter="clickSound()" href="./index.html#instructions-section">How To Play</a></li>
+                <li><a onmouseenter="clickSound()" href="./index.html#difficulty-section">Difficulty</a></li>
                 <li><a href="./leaderboards.html" style="color: white">Leaderboard</a></li>
-                <li><a href="./settings.html">Settings</a></li>
+                <li><a onmouseenter="clickSound()" href="./settings.html">Settings</a></li>
             </ul>
         </nav>
     </header>
@@ -27,11 +29,11 @@
 
         <div class="container-wrapper">
                 <!-- Leaderboard Header -->
-            <h1>Ranked Leaderboard</h1>
+            <h1>Leaderboard 🏆</h1>
             <p>Scores are based on the number of correct sequences completed. Try to climb the ranks and beat your high score!</p>
 
             <!-- Reset Button -->
-            <button class="reset-button" id="reset-scores">Reset Scores</button>
+            <button onmouseover="caution()" class="reset-button" id="reset-scores">Reset Scores 🔄</button>
 
             <!-- Leaderboard Table -->
             <table>
@@ -48,8 +50,8 @@
             </table>
 
             <!-- Top Page Button -->
-            <a href="./settings.html" class="settings-button">Settings</a>
             <p class="tip-text">Tip:<i> Aim for Speed and Complexity!</i><br><br> Play on higher difficulties and faster speeds to earn bonus points and rank higher on the leaderboard... Ready for the challenge?</p>
+            <a onmouseover="settingsSound()" href="./settings.html" class="settings-button">Settings 🔧</a>
         </div>
         
 
@@ -68,4 +70,5 @@
 
 </body>
 <script src="./Scripts/leaderboard.js"></script>
+<script src="./Scripts/gameSound.js"></script>
 </html>

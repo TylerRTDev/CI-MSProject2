@@ -6,15 +6,7 @@ const endMessageDisplay = document.getElementById('endMessage');
 const scoreDisplay = document.getElementById('score');
 const levelDisplay = document.querySelector('.game-info-bar h1');
 
-let buttons; // Will store the current active grid buttons
-let gameSpeed = 1; // Default speed
-let gamePattern = [];
-let userPattern = [];
-let gameScore = 0;
-let gameLevel = 1;
-let gameMessage = 'Watch the pattern closely!';
-let gameOverMessage = 'Game Over! You guessed wrong.';
-let gameActive = false;
+var delayInMilliseconds = 1000; //1 second
 
 // Speed Configuration
 const speedSettings = {
@@ -29,6 +21,16 @@ const difficultyMultiplier = {
     Medium: 1.2,
     Hard: 1.4,
 };
+
+let buttons; // Will store the current active grid buttons
+let gameSpeed = 1; // Default speed
+let gamePattern = [];
+let userPattern = [];
+let gameScore = 0;
+let gameLevel = 1;
+let gameMessage = 'Watch the pattern closely! 👀';
+let gameOverMessage = 'You guessed wrong 😲 Game Over! 😳';
+let gameActive = false;
 
 function setDifficulty() {
     resetGame();
@@ -73,7 +75,7 @@ function checkHighScore(finalScore) {
 
     // Check if the score qualifies for the leaderboard
     if (leaderboard.length < 5 || finalScore > leaderboard[leaderboard.length - 1].points) {
-        const playerName = prompt("🎉 Congratulations! You achieved a new high score! 🎯\nEnter your name:");
+        const playerName = prompt("🎉 Congratulations! ✨ You achieved a new high score! 📈\nEnter your name:");
         
         if (playerName) {
             leaderboard.push({ name: playerName, points: finalScore });
@@ -137,7 +139,7 @@ function resetGame() {
     gameScore = 0;
     gameLevel = 1;
     gameActive = false;
-    scoreDisplay.textContent = `Your Score: ${gameScore}`;
+    scoreDisplay.textContent = `📋 Your Score: ${gameScore}`;
     levelDisplay.textContent = `Level: ${gameLevel}`;
     startMessageDisplay.textContent = '';
     endMessageDisplay.textContent = '';
@@ -185,6 +187,7 @@ startButton.addEventListener('click', () => {
     setDifficulty();
     updateMultiplierDisplay();
     gameActive = true;
+    gameStart();
     generatePattern();
 });
 
@@ -199,6 +202,7 @@ buttonsContainer.addEventListener('click', (e) => {
     userPattern.push(buttonId);
     activateButton(buttonId);
     checkUserInput();
+    clickSound();
 });
 
 function checkUserInput() {
@@ -221,21 +225,26 @@ function checkUserInput() {
             setTimeout(() => {
                 startMessageDisplay.textContent = gameMessage;
                 generatePattern();
-            }, 1000 / gameSpeed);
+            }, 5000 / gameSpeed);
 
+            setTimeout(() => {
+                levelUp();
+            }, 500);
             console.log(`Score Updated: Base(10) x Multiplier(${totalMultiplier}) = +${Math.floor(1 * totalMultiplier)}`);
         }
     } else {
-        gameOver();
-        resetGame();
+
+        endGame();
+        setTimeout(() => {
+            gameOver();
+            resetGame();
+        }, 1000);
     }
 }
 
 function gameOver() {
     gameActive = false;
-    endMessageDisplay.textContent = `${gameOverMessage} Final Score: ${gameScore}`;
     alert(`${gameOverMessage} Final Score: ${gameScore}`);
-
     checkHighScore(gameScore);
 }
 

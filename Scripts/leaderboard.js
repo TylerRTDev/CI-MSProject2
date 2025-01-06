@@ -1,5 +1,5 @@
 let playerName;
-let playerScore; 
+let playerScore;
 
 // Leaderboard Data (Simulating stored scores initially)
 let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
@@ -26,7 +26,11 @@ function displayLeaderboard() {
 // Reset Button Functionality
 document.getElementById("reset-scores").addEventListener("click", () => {
     localStorage.removeItem('leaderboard');
-    window.location.reload();
+    saveBtn();
+    setTimeout(() => {
+        window.location.reload();
+        alert('ℹ Leaderboard Reset!')
+        }, 1000);
 });
 
 // Initialize Leaderboard on Page Load
