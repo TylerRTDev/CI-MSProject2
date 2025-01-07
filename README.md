@@ -1,4 +1,4 @@
-# Do You Remember
+# Do You Remember...?
 
 ![Game Screenshot](assets/images/game-screenshot.png)
 
@@ -31,11 +31,33 @@
 
 ---
 
-## 📌 Project Overview
 
-The **Do You Remember** game is an interactive web-based game designed to challenge and enhance users' memory skills. Players are presented with patterns of colored buttons that they must memorize and replicate correctly to progress. The game offers adjustable difficulty settings, customizable gameplay speed, and a leaderboard to track top scores.
+
+## 📌 **Project Overview**
+
+The **Do You Remember** game is an engaging and interactive web-based memory game designed to test and improve players' memory skills through progressively challenging levels. Players are presented with a sequence of colored buttons that they must memorize and replicate accurately to advance. The game offers multiple difficulty levels, adjustable game speed, real-time score tracking, and an integrated leaderboard system. Designed with responsiveness in mind, the game ensures seamless gameplay on desktop, mobile, and tablet devices. It also emphasizes accessibility, intuitive user experience, and visually appealing animations and sounds to keep players engaged.
+
+Key highlights include:
+- **Dynamic Pattern Generation** for unique gameplay experiences every session.
+- **Interactive User Interface** with real-time feedback.
+- **Customizable Settings** to adjust speed and difficulty.
+- **Persistent Data Storage** using LocalStorage for settings and scores.
+- **Leaderboard Integration** to encourage competition.
+
+The game serves as both a fun challenge and an educational tool for enhancing cognitive abilities.
 
 ---
+
+## 📝 **Project Rationale**
+
+The primary goal of the **Do You Remember** game is to create an accessible and enjoyable memory-enhancing experience that appeals to a wide range of users, from casual players seeking entertainment to individuals looking for cognitive training. With the increasing reliance on digital platforms, interactive games like this offer a unique opportunity to combine fun with cognitive skill development.
+
+The rationale behind this project is driven by the following objectives:
+1. **Educational Value:** Memory games have been shown to improve cognitive functions such as attention, focus, and short-term memory.
+2. **Entertainment Factor:** By incorporating visually appealing designs, sound effects, and animations, the game aims to deliver an entertaining experience.
+3. **Inclusivity:** The game is designed to be accessible across devices and user-friendly for individuals of all age groups.
+4. **Replayability:** With dynamic patterns, adjustable difficulty, and a competitive leaderboard, the game encourages repeat play sessions.
+5. **Technical Showcase:** The project demonstrates the integration of JavaScript, LocalStorage, and responsive design principles to deliver a seamless web application.
 
 ## 🚀 Features
 
@@ -46,6 +68,81 @@ The **Do You Remember** game is an interactive web-based game designed to challe
 - **Persistent Settings:** Settings are saved locally for seamless user experience.
 
 ---
+
+## 🎯 **Project Objectives**
+- I aim to implement **Dynamic Pattern Generation** where each game session presents a unique sequence.
+- I want players to enjoy **Multiple Difficulty Levels**, including Easy, Medium, and Hard modes.
+- I aim to provide **Adjustable Game Speed** for customizable challenge levels.
+- I want the **User Interface** to offer real-time feedback with animations and sound effects.
+- I aim to integrate a **Leaderboard System** to foster competition among players.
+- I want to ensure **Local Storage Integration** so that user preferences and scores persist.
+- I aim to deliver a **Responsive Design** optimized for desktops, tablets, and mobile devices.
+- I want to include **Sound Effects** for actions like clicks, successes, and errors.
+- I want **Score Tracking** to update in real-time during gameplay.
+- I aim to provide **Customizable Settings** for game speed, difficulty, and preferences.
+- I want to implement **Visual Animations** to make the game aesthetically appealing.
+- I aim for an **Easy Restart Mechanism** that resets the game with a single click.
+- I want **In-Game Instructions** to be clear and accessible at all times.
+- I aim to handle **Real-Time Errors** gracefully with alerts and safeguards.
+- I want **Session Persistence** so players can resume from where they left off.
+- I aim to include **Social Sharing Links** for sharing achievements online.
+- I aim for **Mobile-Friendly Controls**, including optimized button layouts.
+- I want to include **Background Music** with optional controls for immersion.
+- I aim for a **Secure Codebase** with proper validations and safeguards.
+
+---
+
+## 📱 **Responsive Design Goals**
+- Ensure seamless gameplay on both mobile and desktop devices.
+- Optimize layout for various screen resolutions.
+- Utilize responsive CSS for dynamic content adjustment.
+- Provide touch-friendly controls for mobile users.
+
+---
+
+## 🧩 **Game Mechanics**
+- **Pattern Generation:** Random sequences generated dynamically.
+- **User Interaction:** Real-time response to player inputs.
+- **Difficulty Scaling:** Adjustable game speed and complexity.
+- **Score Tracking:** Immediate feedback and score updates after each round.
+
+---
+
+## 🏅 **Rewards and Achievements**
+- Real-time visual and audio feedback for successful actions.
+- Display achievements based on milestones (e.g., levels cleared, high scores).
+- Highlight Top Players on the leaderboard page.
+
+---
+
+## 🙋‍♀️ **User Goals**
+1. I want to enjoy a fun and engaging memory game.
+2. I want clear and easy-to-follow game instructions.
+3. I want to track my score and level progression.
+4. I want the game to provide immediate feedback when I make a move.
+5. I want to easily reset or restart the game.
+6. I want the game to work seamlessly on both desktop and mobile devices.
+7. I want the game to have visually appealing designs and animations.
+8. I want to compete with others through a leaderboard system.
+
+---
+
+## 👩‍💼 **Client Goals**
+1. I want the site to be simple to navigate and use.
+2. I want to give the user a means of contacting the site owner.
+3. I want the game to be intuitive and easy to understand, so that users of all ages can enjoy it.
+4. I want the site to be accessible on multiple platforms (such as web, mobile, and tablets), so that users can play it on their preferred devices.
+5. I want the site to have a visually appealing interface with good design principles and high-quality images, so that it attracts and engages users from the moment they visit.
+
+---
+
+## 💼 **Developer Goals**
+1. I want a well-designed website that catches the attention of users.
+2. I want a responsive website where the functionality is not impacted by screen size.
+3. I want easy navigation that is intuitive and responsive.
+4. I want a website designed with accessibility in mind.
+5. I want a finished product that will proudly be displayed within my portfolio.
+
 
 ## 💻 Technologies Used
 
@@ -83,6 +180,9 @@ The **Do You Remember** game is an interactive web-based game designed to challe
 ### **Pattern Logic Functions**
 
 #### **1. generatePattern**
+<details>
+<summary>View Code</summary>
+
 ```javascript
 function generatePattern() {
     const randomIndex = Math.floor(Math.random() * buttons.length);
@@ -90,42 +190,82 @@ function generatePattern() {
     playPattern();
 }
 ```
+</details>
+
 - **Purpose:** Generates a random pattern by selecting a button ID from the grid and adds it to `gamePattern`.
 - **Dependencies:** `buttons` (updated by `setDifficulty`), `playPattern`.
 - **Previous Iteration:** Earlier versions used hardcoded button IDs and failed on difficulty changes.
 
-### **Local Storage Functions**
+#### **2. resetGame**
 
-#### **1. loadSettings**
+<details>
+<summary>View Code</summary>
+
 ```javascript
-function loadSettings() {
-    const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || { gameSpeed: 1 };
-    if (speedSettings[savedSettings.gameSpeed]) {
-        gameSpeed = savedSettings.gameSpeed;
+function resetGame() {
+    gamePattern = [];
+    userPattern = [];
+    gameScore = 0;
+    gameLevel = 1;
+    gameActive = false;
+    scoreDisplay.textContent = `📋 Your Score: ${gameScore}`;
+    levelDisplay.textContent = `Level: ${gameLevel}`;
+    startMessageDisplay.textContent = '';
+    endMessageDisplay.textContent = '';
+}
+```
+</details>
+
+- **Purpose:** Resets the game state, clearing patterns, score, and messages.
+- **Dependencies:** `scoreDisplay`, `levelDisplay`, `startMessageDisplay`, `endMessageDisplay`.
+
+---
+
+#### **3. checkUserInput**
+<details>
+  <summary>View Code</summary>
+
+```javascript
+function checkUserInput() {
+    const currentStep = userPattern.length - 1;
+
+    if (userPattern[currentStep] === gamePattern[currentStep]) {
+        if (userPattern.length === gamePattern.length) {
+            const difficulty = difficultySelect.value;
+            const speedMult = getMultiplier(gameSpeed);
+            const diffMult = difficultyMultiplier[difficulty] || 1.0;
+            const totalMultiplier = speedMult * diffMult;
+
+            gameScore += Math.floor(10 * totalMultiplier);
+            gameLevel++;
+            scoreDisplay.textContent = `Your Score: ${gameScore}`;
+            levelDisplay.textContent = `Level: ${gameLevel}`;
+
+            userPattern = [];
+            setTimeout(() => {
+                startMessageDisplay.textContent = gameMessage;
+                generatePattern();
+            }, 5000 / gameSpeed);
+
+            setTimeout(() => {
+                levelUp();
+            }, 500);
+        }
     } else {
-        gameSpeed = 1;
+        endGame();
+        setTimeout(() => {
+            gameOver();
+            resetGame();
+        }, 1000);
     }
 }
 ```
-- **Purpose:** Loads user-selected game settings (e.g., speed, difficulty) from `localStorage`.
-- **Dependencies:** `speedSettings`.
-- **Previous Iteration:** Didn’t validate invalid or missing `gameSpeed` settings.
+</details>
 
-# Do You Remember
+- **Purpose:** Validates the user's input pattern against the game-generated pattern.
+- **Dependencies:** `difficultySelect`, `scoreDisplay`, `levelDisplay`, `generatePattern`.
 
-![Game Screenshot](assets/images/game-screenshot.png)
-
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup and Installation](#setup-and-installation)
-- [Game Logic Explanation](#game-logic-explanation)
-  - [Pattern Logic Functions](#pattern-logic-functions)
-  - [Settings Functions](#settings-functions)
-  - [Leaderboard Functions](#leaderboard-functions)
-
+---
 
 ## 💾 Local Storage
 
@@ -138,6 +278,10 @@ Local Storage is used throughout the game to ensure settings and player progress
 ### **Local Storage Functions**
 
 #### **1. loadSettings**
+
+<details>
+<summary>View Code</summary>
+
 ```javascript
 function loadSettings() {
     const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || { gameSpeed: 1 };
@@ -148,17 +292,59 @@ function loadSettings() {
     }
 }
 ```
+</details>
+
 - **Purpose:** Loads user-selected game settings (e.g., speed, difficulty) from `localStorage`.
 - **Dependencies:** `speedSettings`.
 
+---
+
 #### **2. saveHighScores**
+<details>
+<summary>View Code</summary>
+
 ```javascript
 function saveHighScores() {
     localStorage.setItem('leaderboard', JSON.stringify(highScores));
 }
 ```
+</details>
+
 - **Purpose:** Saves the top 5 player scores to `localStorage`.
 - **Dependencies:** `highScores`.
+
+---
+
+#### **4. checkHighScore**
+<details>
+<summary>View Code</summary>
+
+```javascript
+function checkHighScore(finalScore) {
+    let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+    leaderboard.sort((a, b) => b.points - a.points);
+    leaderboard = leaderboard.slice(0, 5);
+
+    if (leaderboard.length < 5 || finalScore > leaderboard[leaderboard.length - 1].points) {
+        const playerName = prompt("🎉 Congratulations! Enter your name:");
+
+        if (playerName) {
+            leaderboard.push({ name: playerName, points: finalScore });
+            leaderboard.sort((a, b) => b.points - a.points);
+            leaderboard = leaderboard.slice(0, 5);
+            localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+        }
+
+        alert(`🎖️ Your score of ${finalScore} has been added to the leaderboard!`);
+    } else {
+        alert(`Game Over! Final Score: ${finalScore}`);
+    }
+}
+```
+</details>
+
+- **Purpose:** Checks if the user's score qualifies for the Top 5 leaderboard and updates it.
+- **Dependencies:** `localStorage`.
 
 ---
 
@@ -168,12 +354,17 @@ function saveHighScores() {
 Sound enhances interactivity in the game with effects on `onclick` and `mouseover` events. Sounds include button clicks, level progression, and game over alerts.
 
 ### **Web Sound Functions**
+<details>
+<summary>View Code</summary>
+
 ```javascript
 function clickSound() {
     var audio = new Audio('Resources/Audio/btnClick.mp3');
     audio.play();
 }
 ```
+</details>
+
 - **Purpose:** Plays a click sound when a button is pressed.
 
 ### **Server Sound Functions**
@@ -192,6 +383,54 @@ function clickSound() {
 - **Purpose:** Adjusted paths ensure sounds play correctly in server environments.
 - **Differences:** Paths use double backslashes (`..\\`) instead of single slashes.
 
+#### **1. saveSettingsBtn**
+<details>
+  <summary>View Code</summary>
+
+```javascript
+function saveSettingsBtn() {
+    var audio = new Audio("Resources/Audio/settingSaveBtn.mp3");
+    audio.play();
+}
+```
+</details>
+
+- **Purpose:** Plays a sound when settings are saved.
+
+---
+
+#### **2. scrollEffect**
+<details>
+  <summary>View Code</summary>
+
+```javascript
+function scrollEffect() {
+    var audio = new Audio("Resources/Audio/warp.mp3");
+    audio.play();
+}
+```
+</details>
+
+- **Purpose:** Plays a sound effect when navigating using smooth scroll.
+
+---
+
+#### **3. caution**
+<details>
+  <summary>View Code</summary>
+
+```javascript
+function caution() {
+    var audio = new Audio("Resources/Audio/caution.mp3");
+    audio.play();
+}
+```
+</details>
+
+- **Purpose:** Plays a caution sound effect when interacting with reset or critical actions.
+
+---
+
 ## 🛠️ Settings Integration
 
 Players can customize their gameplay experience via the **Settings Page:**
@@ -204,6 +443,9 @@ All settings are stored in `localStorage`, ensuring they persist across sessions
 ### **Settings Functions**
 
 #### **1. getSpeedMultiplier**
+<details>
+<summary>View Code</summary>
+
 ```javascript
 function getSpeedMultiplier(speed) {
     switch (parseInt(speed, 10)) {
@@ -214,12 +456,57 @@ function getSpeedMultiplier(speed) {
     }
 }
 ```
+</details>
+
 - **Purpose:** Calculates the speed multiplier based on user-selected game speed.
 - **Dependencies:** `speedRange`.
 - **Previous Iteration:** Lacked proper validation for invalid inputs.
 
+---
+
+
+#### **2. getSpeedMultiplier**
+<details>
+<summary>View Code</summary>
+
+```javascript
+function getSpeedMultiplier(speed) {
+    switch (parseInt(speed, 10)) {
+        case 1: return 1;
+        case 2: return 2;
+        case 3: return 4;
+        default: return 1;
+    }
+}
+```
+</details>
+
+- **Purpose:** Converts speed values into a numerical multiplier.
+- **Dependencies:** `speedRange`.
 
 ---
+
+
+#### **3. loadSettings**
+<details>
+<summary>View Code</summary>
+
+```javascript
+function loadSettings() {
+    const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || { gameSpeed: 1 };
+    if (speedSettings[savedSettings.gameSpeed]) {
+        gameSpeed = savedSettings.gameSpeed;
+    } else {
+        gameSpeed = 1;
+    }
+}
+```
+</details>
+
+- **Purpose:** Loads game settings, such as speed, from `localStorage`.
+
+---
+
 
 ## 🏆 Leaderboard Functionality
 
@@ -236,6 +523,9 @@ function getSpeedMultiplier(speed) {
 ### **Leaderboard Functions**
 
 #### **1. displayLeaderboard**
+<details>
+<summary>View Code</summary>
+
 ```javascript
 function displayLeaderboard() {
     const leaderboardBody = document.getElementById("leaderboard-body");
@@ -247,10 +537,54 @@ function displayLeaderboard() {
     });
 }
 ```
+</details>
+
 - **Purpose:** Displays the leaderboard data on the UI.
 - **Dependencies:** `leaderboard`.
 
 ---
+
+#### **2. resetLeaderboard**
+<details>
+<summary>View Code</summary>
+
+```javascript
+document.getElementById("reset-scores").addEventListener("click", () => {
+    localStorage.removeItem('leaderboard');
+    saveBtn();
+    setTimeout(() => {
+        window.location.reload();
+        alert('ℹ Leaderboard Reset!');
+    }, 1000);
+});
+```
+</details>
+
+- **Purpose:** Clears the leaderboard from `localStorage` and refreshes the page.
+- **Dependencies:** `leaderboard`, `saveBtn`.
+
+---
+
+#### **3. displayLeaderboard**
+<details>
+<summary>View Code</summary>
+
+```javascript
+function displayLeaderboard() {
+    const leaderboardBody = document.getElementById("leaderboard-body");
+    leaderboardBody.innerHTML = "";
+
+    leaderboard.sort((a, b) => b.points - a.points);
+    leaderboard.forEach((entry, index) => {
+        const row = `<tr><td>${entry.name}</td><td>#${index + 1}</td><td>${entry.points}</td></tr>`;
+        leaderboardBody.insertAdjacentHTML('beforeend', row);
+    });
+}
+```
+</details>
+
+- **Purpose:** Dynamically displays leaderboard scores on the UI.
+- **Dependencies:** `leaderboardBody`.
 
 ---
 
