@@ -182,6 +182,7 @@ header nav ul li a:hover {
 .container-wrapper-home img {
     width: 100px;
     height: 100px;
+    animation: float 4s ease-in-out infinite;
 }
 
 .container-wrapper {
