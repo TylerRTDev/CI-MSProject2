@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.section-icon {
+	animation: float 6s ease-in-out infinite;
+}
 
 :root { /* Variables for shadow on text/sections etc background colour also */
     --text-shadow-nav: 0px 2px 14px rgb(255, 255, 255);
@@ -328,6 +346,10 @@ input[type="range"]::-webkit-slider-runnable-track:hover {
     margin: 50px auto; /* Centers the section container itself within the page */
     padding: 20px; /* Adds padding around the section content for spacing */
     min-height: 100vh;
+}
+
+.container-wrapper h1 {
+    animation: float 4s ease-in-out infinite;
 }
 
 .game-container {
