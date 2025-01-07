@@ -57,3 +57,7 @@ function scrollEffect() {
     var audio = new Audio("Resources/Audio/warp.mp3");
     audio.play();
 }
+
+window.onload = function() {
+    document.getElementById("bg_audio").play();
+}
