@@ -1,7 +1,5 @@
 # Do You Remember
 
-Project: https://tylerrtdev.github.io/CI-MSProject2/
-
 ![Game Screenshot](assets/images/game-screenshot.png)
 
 ## Table of Contents
@@ -11,8 +9,19 @@ Project: https://tylerrtdev.github.io/CI-MSProject2/
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
 - [Game Logic Explanation](#game-logic-explanation)
+   - [Overview](#gameplay-overview)
+  - [Pattern Logic Functions](#pattern-logic-functions)
+- [Local Storage](#local-storage)
+  - [Overview](#overview)
+  - [Local Storage Functions](#local-storage-functions)
 - [Settings Integration](#settings-integration)
+  - [Settings Functions](#settings-functions)
 - [Leaderboard Functionality](#leaderboard-functionality)
+  - [Leaderboard Functions](#leaderboard-functions)
+  
+- [Sound Integration](#sound-integration)
+  - [Web Sound Functions](#web-sound-functions)
+  - [Server Sound Functions](#server-sound-functions)
 - [Testing Procedures](#testing-procedures)
 - [Deployment Guide](#deployment-guide)
 - [Version Control Practices](#version-control-practices)
@@ -71,13 +80,117 @@ The **Do You Remember** game is an interactive web-based game designed to challe
 - Players must memorize and replicate the sequence.
 - Each correct pattern increases the score and advances the level.
 
-### **Key Functions:**
-1. **generatePattern:** Creates a random pattern.
-2. **playPattern:** Displays the pattern sequentially.
-3. **checkUserInput:** Validates the player's input against the generated pattern.
-4. **resetGame:** Resets all game parameters.
+### **Pattern Logic Functions**
+
+#### **1. generatePattern**
+```javascript
+function generatePattern() {
+    const randomIndex = Math.floor(Math.random() * buttons.length);
+    gamePattern.push(buttons[randomIndex].dataset.id);
+    playPattern();
+}
+```
+- **Purpose:** Generates a random pattern by selecting a button ID from the grid and adds it to `gamePattern`.
+- **Dependencies:** `buttons` (updated by `setDifficulty`), `playPattern`.
+- **Previous Iteration:** Earlier versions used hardcoded button IDs and failed on difficulty changes.
+
+### **Local Storage Functions**
+
+#### **1. loadSettings**
+```javascript
+function loadSettings() {
+    const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || { gameSpeed: 1 };
+    if (speedSettings[savedSettings.gameSpeed]) {
+        gameSpeed = savedSettings.gameSpeed;
+    } else {
+        gameSpeed = 1;
+    }
+}
+```
+- **Purpose:** Loads user-selected game settings (e.g., speed, difficulty) from `localStorage`.
+- **Dependencies:** `speedSettings`.
+- **Previous Iteration:** Didn’t validate invalid or missing `gameSpeed` settings.
+
+# Do You Remember
+
+![Game Screenshot](assets/images/game-screenshot.png)
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Game Logic Explanation](#game-logic-explanation)
+  - [Pattern Logic Functions](#pattern-logic-functions)
+  - [Settings Functions](#settings-functions)
+  - [Leaderboard Functions](#leaderboard-functions)
+
+
+## 💾 Local Storage
+
+### **Overview:**
+Local Storage is used throughout the game to ensure settings and player progress persist across browser sessions. Key areas of usage include:
+- **Game Settings:** Game speed and difficulty preferences are stored and retrieved.
+- **Leaderboard:** Player high scores are saved and displayed.
+- **Session Data:** Tracks the current game state if the page is refreshed.
+
+### **Local Storage Functions**
+
+#### **1. loadSettings**
+```javascript
+function loadSettings() {
+    const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || { gameSpeed: 1 };
+    if (speedSettings[savedSettings.gameSpeed]) {
+        gameSpeed = savedSettings.gameSpeed;
+    } else {
+        gameSpeed = 1;
+    }
+}
+```
+- **Purpose:** Loads user-selected game settings (e.g., speed, difficulty) from `localStorage`.
+- **Dependencies:** `speedSettings`.
+
+#### **2. saveHighScores**
+```javascript
+function saveHighScores() {
+    localStorage.setItem('leaderboard', JSON.stringify(highScores));
+}
+```
+- **Purpose:** Saves the top 5 player scores to `localStorage`.
+- **Dependencies:** `highScores`.
 
 ---
+
+## 🔊 Sound Integration
+
+### **Overview:**
+Sound enhances interactivity in the game with effects on `onclick` and `mouseover` events. Sounds include button clicks, level progression, and game over alerts.
+
+### **Web Sound Functions**
+```javascript
+function clickSound() {
+    var audio = new Audio('Resources/Audio/btnClick.mp3');
+    audio.play();
+}
+```
+- **Purpose:** Plays a click sound when a button is pressed.
+
+### **Server Sound Functions**
+For server compatibility, relative paths are adjusted:
+<details>
+  <summary>Server Sound Function Example</summary>
+
+```javascript
+function clickSound() {
+    var audio = new Audio('..\\Resources\\Audio\\btnClick.mp3');
+    audio.play();
+}
+```
+</details>
+
+- **Purpose:** Adjusted paths ensure sounds play correctly in server environments.
+- **Differences:** Paths use double backslashes (`..\\`) instead of single slashes.
 
 ## 🛠️ Settings Integration
 
@@ -87,6 +200,24 @@ Players can customize their gameplay experience via the **Settings Page:**
 - **Difficulty Levels:** Predefined settings for Easy, Medium, and Hard modes.
 
 All settings are stored in `localStorage`, ensuring they persist across sessions.
+
+### **Settings Functions**
+
+#### **1. getSpeedMultiplier**
+```javascript
+function getSpeedMultiplier(speed) {
+    switch (parseInt(speed, 10)) {
+        case 1: return 1;
+        case 2: return 2;
+        case 3: return 4;
+        default: return 1;
+    }
+}
+```
+- **Purpose:** Calculates the speed multiplier based on user-selected game speed.
+- **Dependencies:** `speedRange`.
+- **Previous Iteration:** Lacked proper validation for invalid inputs.
+
 
 ---
 
@@ -101,6 +232,25 @@ All settings are stored in `localStorage`, ensuring they persist across sessions
 - Only the highest scores are recorded.
 - Duplicate entries are avoided.
 - Players are notified if they beat a previous high score.
+
+### **Leaderboard Functions**
+
+#### **1. displayLeaderboard**
+```javascript
+function displayLeaderboard() {
+    const leaderboardBody = document.getElementById("leaderboard-body");
+    leaderboardBody.innerHTML = "";
+    leaderboard.sort((a, b) => b.points - a.points);
+    leaderboard.forEach((entry, index) => {
+        const row = `<tr><td>${entry.name}</td><td>#${index + 1}</td><td>${entry.points}</td></tr>`;
+        leaderboardBody.insertAdjacentHTML('beforeend', row);
+    });
+}
+```
+- **Purpose:** Displays the leaderboard data on the UI.
+- **Dependencies:** `leaderboard`.
+
+---
 
 ---
 
@@ -163,7 +313,4 @@ The game is deployed using **GitHub Pages:**
 **GitHub:** [https://github.com/TylerRTDev/CI-MSProject2](https://github.com/TylerRTDev)  
 
 ---
-
-
-*This project was developed as part of the Level 5 Diploma in Web Application Development.*
 
