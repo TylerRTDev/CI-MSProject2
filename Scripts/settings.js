@@ -34,6 +34,7 @@ saveButton.addEventListener('click', () => {
     const settings = {
         gameSpeed: parseInt(speedRange.value, 10),
     };
+    saveBtn();
 
     localStorage.setItem('gameSettings', JSON.stringify(settings));
     alert('Settings Saved Successfully!');

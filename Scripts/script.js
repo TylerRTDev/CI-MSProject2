@@ -29,7 +29,7 @@ let userPattern = [];
 let gameScore = 0;
 let gameLevel = 1;
 let gameMessage = 'Watch the pattern closely! 👀';
-let gameOverMessage = 'You guessed wrong 😲 Game Over! 😳';
+let gameOverMessage = 'You guessed wrong 😲 Game Over! 🤒';
 let gameActive = false;
 
 function setDifficulty() {

@@ -15,8 +15,8 @@
         <nav>
             <ul>
                 <li><a onmouseenter="clickSound()" href="./index.html">Home</a></li>
-                <li><a onmouseenter="clickSound()" href="./index.html#instructions-section">How To Play</a></li>
-                <li><a onmouseenter="clickSound()" href="./index.html#difficulty-section">Difficulty</a></li>
+                <li><a onmouseenter="clickSound()" onclick="scrollEffect()" href="./index.html#instructions-section">How To Play</a></li>
+                <li><a onmouseenter="clickSound()" onclick="scrollEffect()" href="./index.html#difficulty-section">Difficulty</a></li>
                 <li><a onmouseenter="clickSound()" href="./leaderboards.html">Leaderboard</a></li>
                 <li><a href="./settings.html" style="color: white">Settings</a></li>
             </ul>
@@ -25,6 +25,7 @@
     </header>
 
     <section class="content-wrapper settings-section">
+        <audio id="bg_audio" src="./Resources/Audio/main.mp3" autoplay loop></audio>
         <div class="container-wrapper">
             <!-- Settings Header -->
             <h1>Game Settings <span class="section-icon">🔧</span></h1>
@@ -39,7 +40,7 @@
             </div>
 
             <!-- Save Button -->
-            <button onmouseover="saveSettingsBtn()" onclick="saveBtn()" class="save-settings" id="save-settings" style="color: white">Save Settings 💾</button>
+            <button onmouseover="caution()" class="reset-button" id="save-settings" style="color: white">Save Settings 💾</button>
             <a onmouseover="selectSound()" href="./game.html" class="settings-button">Back to Game 🔙</a>
         </div>
     </section>
