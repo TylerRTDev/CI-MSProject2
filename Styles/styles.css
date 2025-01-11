@@ -226,6 +226,10 @@ header nav ul li a:hover {
     transition: .5s;
 }
 
+.settings-button {
+    display: none;
+}
+
 .save-settings, .top-button {
     animation: float 4s ease-in-out infinite;
 }

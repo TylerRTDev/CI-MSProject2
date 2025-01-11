@@ -58,6 +58,8 @@ function scrollEffect() {
     audio.play();
 }
 
-window.onload = function() {
-    document.getElementById("bg_audio").play();
-}
+// if (!['leaderboards.html', 'index.html'].includes(window.location.pathname)) {
+//     window.onload = function() {
+//         document.getElementById("bg_audio").play();
+//     };
+// }

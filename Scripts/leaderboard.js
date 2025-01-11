@@ -35,3 +35,7 @@ document.getElementById("reset-scores").addEventListener("click", () => {
 
 // Initialize Leaderboard on Page Load
 document.addEventListener('DOMContentLoaded', displayLeaderboard);
+
+if (window.location.pathname.endsWith('leaderboards.html')) {
+    document.addEventListener('DOMContentLoaded', displayLeaderboard);
+}
