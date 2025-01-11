@@ -31,12 +31,12 @@
 }
 
 @media (max-width: 1349px) {
-    .content-wrapper-home .content-wrapper, .cta-button, .reset-button, .settings-button, .cta-game-button, .top-button {
+    .content-wrapper-home .content-wrapper, .cta-button, .reset-button, .settings-button, .cta-game-button, .top-button, .settings-back-button {
         margin: 20px 10px 20px 10px; /* Adds space between each link or button */
         padding: 5px 20px; /* Adds space inside the link for a button-like appearance */
     }
     
-    .cta-button:hover, .reset-button:hover, .settings-button:hover {
+    .cta-button:hover, .reset-button:hover, .settings-button:hover, .settings-back-button:hover {
         transform: scale(1);
     }
 
@@ -85,12 +85,12 @@
         flex-direction: column;
     }
 
-    .cta-button, .reset-button, .settings-button, .cta-game-button {
+    .cta-button, .reset-button, .settings-button, .cta-game-button, .settings-back-button {
         padding: 15px 20px; /* Adds space inside the link for a button-like appearance */
         font-size: 1.3rem;
     }
     
-    .cta-button:hover, .reset-button:hover, .settings-button:hover {
+    .cta-button:hover, .reset-button:hover, .settings-button:hover, .settings-back-button:hover {
         transform: scale(1);
     }
 }
@@ -240,7 +240,7 @@
 }
 
 @media (max-width: 414px) {
-    .cta-button, .reset-button, .settings-button, .cta-game-button {
+    .cta-button, .reset-button, .settings-button, .cta-game-button, .settings-back-button {
         padding: 10px 15px; /* Adds space inside the link for a button-like appearance */
         font-size: 1.3rem;
     }

@@ -265,20 +265,15 @@ function initializeGame() {
 }
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     if (typeof initializeGame === 'function') {
-//         initializeGame();
-//     }
+document.addEventListener('DOMContentLoaded', () => {
 
-//     const backToGameButton = document.querySelector('.settings-back-button');
-//     const urlParams = new URLSearchParams(window.location.search);
+    const backToGameButton = document.querySelector('.settings-back-button');
+    const urlParams = new URLSearchParams(window.location.search);
 
-//     const fromParam = urlParams.get('from');
-//     console.log('Query Parameter (from):', fromParam);
+    const fromParam = urlParams.get('from');
+    console.log('Query Parameter (from):', fromParam);
 
-//     if (fromParam === 'game') {
-//         backToGameButton.style.display = 'inline-block';
-//     } else {
-//         backToGameButton.style.display = 'none';
-//     }
-// });
+    if (fromParam === 'game') {
+        backToGameButton.style.display = 'inline-block';
+    }
+});
