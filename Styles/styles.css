@@ -313,9 +313,9 @@ td {
 
 /* Settings Page */
 
-/* .settings-back-button {
+.settings-back-button {
     display: none;
-} */
+}
 
 .settings-slider {
     margin: 3rem;

@@ -32,6 +32,39 @@ let gameMessage = 'Watch the pattern closely! 👀';
 let gameOverMessage = 'You guessed wrong 😲 Game Over! 🤒';
 let gameActive = false;
 
+if (window.location.pathname.endsWith('game.html')) {
+
+    document.addEventListener('DOMContentLoaded', initializeGame);
+    difficultySelect.addEventListener('change', setDifficulty);
+
+    // Start game event listener
+    startButton.addEventListener('click', () => {
+        loadSettings();
+        resetGame();
+        setDifficulty();
+        updateMultiplierDisplay();
+        gameActive = true;
+        gameStart();
+        generatePattern();
+    });
+
+    // Button click event listener for user input
+buttonsContainer.addEventListener('click', (e) => {
+    if (!gameActive) return;
+
+    const clickedButton = e.target.closest('.pattern-button');
+    if (!clickedButton) return;
+
+    const buttonId = clickedButton.dataset.id;
+    userPattern.push(buttonId);
+    activateButton(buttonId);
+    checkUserInput();
+    clickSound();
+});
+
+}
+
+
 function setDifficulty() {
     resetGame();
     const difficulty = difficultySelect.value;
@@ -180,31 +213,6 @@ function activateButton(buttonId) {
     setTimeout(() => button.classList.remove('active'), flashDuration);
 }
 
-// Start game event listener
-startButton.addEventListener('click', () => {
-    loadSettings();
-    resetGame();
-    setDifficulty();
-    updateMultiplierDisplay();
-    gameActive = true;
-    gameStart();
-    generatePattern();
-});
-
-// Button click event listener for user input
-buttonsContainer.addEventListener('click', (e) => {
-    if (!gameActive) return;
-
-    const clickedButton = e.target.closest('.pattern-button');
-    if (!clickedButton) return;
-
-    const buttonId = clickedButton.dataset.id;
-    userPattern.push(buttonId);
-    activateButton(buttonId);
-    checkUserInput();
-    clickSound();
-});
-
 function checkUserInput() {
     const currentStep = userPattern.length - 1;
 
@@ -256,5 +264,21 @@ function initializeGame() {
     resetGame();
 }
 
-document.addEventListener('DOMContentLoaded', initializeGame);
-difficultySelect.addEventListener('change', setDifficulty);
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     if (typeof initializeGame === 'function') {
+//         initializeGame();
+//     }
+
+//     const backToGameButton = document.querySelector('.settings-back-button');
+//     const urlParams = new URLSearchParams(window.location.search);
+
+//     const fromParam = urlParams.get('from');
+//     console.log('Query Parameter (from):', fromParam);
+
+//     if (fromParam === 'game') {
+//         backToGameButton.style.display = 'inline-block';
+//     } else {
+//         backToGameButton.style.display = 'none';
+//     }
+// });
