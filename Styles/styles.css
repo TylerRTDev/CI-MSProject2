@@ -195,7 +195,7 @@ header nav ul li a:hover {
 }
 
 /* Additional styling for buttons/links inside the section */
-.content-wrapper-home .content-wrapper, .cta-button, .reset-button, .settings-button, .cta-game-button, .top-button, .save-settings {
+.content-wrapper-home .content-wrapper, .cta-button, .reset-button, .settings-button, .cta-game-button, .top-button, .save-settings, .settings-back-button {
     transition: .2s;
     border: none;
     display: inline-block; /* Allows padding and margins to be applied like a button */
@@ -219,16 +219,13 @@ header nav ul li a:hover {
     transition: 0.5s;
 }
 
-.cta-button:hover, .reset-button:hover, .settings-button:hover {
+.cta-button:hover, .reset-button:hover, .settings-button:hover, .settings-back-button:hover {
     color: rgb(255, 255, 255);
     text-shadow: var(--text-shadow-buttons);
     transform: scale(1.1);
     transition: .5s;
 }
 
-.settings-button {
-    display: none;
-}
 
 .save-settings, .top-button {
     animation: float 4s ease-in-out infinite;
@@ -315,6 +312,10 @@ td {
 }
 
 /* Settings Page */
+
+/* .settings-back-button {
+    display: none;
+} */
 
 .settings-slider {
     margin: 3rem;
