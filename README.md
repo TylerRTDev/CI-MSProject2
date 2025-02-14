@@ -1,6 +1,6 @@
 # Do You Remember...?
 
-![Game Screenshot](assets/images/game-screenshot.png)
+![Game Screenshot](Resources\game-mock-ss.png)
 
 ## Table of Contents
 
