@@ -10,16 +10,16 @@ var delayInMilliseconds = 1000; //1 second
 
 // Speed Configuration
 const speedSettings = {
-    1: { playPattern: 1100, activateButton: 300 }, // Default Speed
-    2: { playPattern: 700, activateButton: 200 },  // 2x Speed
-    3: { playPattern: 300, activateButton: 100 },  // 4x Speed
+    "1": {playPattern: 1100, activateButton: 300}, // Default Speed
+    "2": {playPattern: 700, activateButton: 200},  // 2x Speed
+    "3": {playPattern: 300, activateButton: 100}  // 4x Speed
 };
 
 // --- Multiplier Configuration ---
 const difficultyMultiplier = {
     Easy: 1.0,
     Medium: 1.2,
-    Hard: 1.4,
+    Hard: 1.4
 };
 
 let buttons; // Will store the current active grid buttons
@@ -32,13 +32,12 @@ let gameMessage = 'Watch the pattern closely! 👀';
 let gameOverMessage = 'You guessed wrong 😲 Game Over! 🤒';
 let gameActive = false;
 
-if (window.location.pathname.endsWith('game.html')) {
-
-    document.addEventListener('DOMContentLoaded', initializeGame);
-    difficultySelect.addEventListener('change', setDifficulty);
+if (window.location.pathname.endsWith("game.html")) {
+    document.addEventListener("DOMContentLoaded", initializeGame);
+    difficultySelect.addEventListener("change", setDifficulty);
 
     // Start game event listener
-    startButton.addEventListener('click', () => {
+    startButton.addEventListener("click", function () {
         loadSettings();
         resetGame();
         setDifficulty();
@@ -49,19 +48,22 @@ if (window.location.pathname.endsWith('game.html')) {
     });
 
     // Button click event listener for user input
-buttonsContainer.addEventListener('click', (e) => {
-    if (!gameActive) return;
+    buttonsContainer.addEventListener("click", function (e) {
+        if (!gameActive) { 
+            return;
+        }
 
-    const clickedButton = e.target.closest('.pattern-button');
-    if (!clickedButton) return;
+        const clickedButton = e.target.closest(".pattern-button");
+        if (!clickedButton) { 
+            return;
+        }
 
-    const buttonId = clickedButton.dataset.id;
-    userPattern.push(buttonId);
-    activateButton(buttonId);
-    checkUserInput();
-    clickSound();
-});
-
+        const buttonId = clickedButton.dataset.id;
+        userPattern.push(buttonId);
+        activateButton(buttonId);
+        checkUserInput();
+        clickSound();
+    });
 }
 
 
@@ -82,44 +84,50 @@ function setDifficulty() {
     buttons = selectedGrid.querySelectorAll('.pattern-button');
     console.log(`Buttons updated for ${difficulty}:`, buttons);
 
-    updateMultiplierDisplay()
+    updateMultiplierDisplay();
 }
 
-let highScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
+let highScores = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
 // Load High Scores
 function loadHighScores() {
-    highScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
+    highScores = JSON.parse(localStorage.getItem("leaderboard")) || [];
 }
 
 // Save High Scores
 function saveHighScores() {
-    localStorage.setItem('leaderboard', JSON.stringify(highScores));
+    localStorage.setItem("leaderboard", JSON.stringify(highScores));
 }
 
 // Function to check if the player's score qualifies for the leaderboard
 function checkHighScore(finalScore) {
     // Retrieve the current leaderboard from localStorage
-    let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+    let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
     // Ensure the leaderboard is sorted and limited to Top 5
     leaderboard.sort((a, b) => b.points - a.points);
     leaderboard = leaderboard.slice(0, 5);
 
     // Check if the score qualifies for the leaderboard
-    if (leaderboard.length < 5 || finalScore > leaderboard[leaderboard.length - 1].points) {
-        const playerName = prompt("🎉 Congratulations! ✨ You achieved a new high score! 📈\nEnter your name:");
-        
+    if (
+        leaderboard.length < 5 ||
+        finalScore > leaderboard[leaderboard.length - 1].points
+    ) {
+        const message =
+            "🎉 Congratulations! ✨ You achieved a new high score! 📈\n" +
+            "Enter your name:";
+        const playerName = prompt(message);
         if (playerName) {
             leaderboard.push({ name: playerName, points: finalScore });
             leaderboard.sort((a, b) => b.points - a.points);
             leaderboard = leaderboard.slice(0, 5); // Keep only Top 5
-            
+
             // Save back to localStorage
-            localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+            localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
         }
 
-        alert(`🎖️ Your score of ${finalScore} has been added to the leaderboard!`);
+        const alertMessage = `🎖️ Your score of ${finalScore} has been added to the leaderboard!`;
+        alert(alertMessage);
     } else {
         alert(`Game Over! Final Score: ${finalScore}`);
     }
@@ -149,7 +157,7 @@ function getMultiplier(gameSpeed) {
 // Load Settings from LocalStorage
 function loadSettings() {
     const savedSettings = JSON.parse(localStorage.getItem('gameSettings')) || { gameSpeed: 1 };
-    
+
     // Validate and set gameSpeed
     if (speedSettings[savedSettings.gameSpeed]) {
         gameSpeed = savedSettings.gameSpeed;
@@ -162,7 +170,7 @@ function loadSettings() {
 
     console.log(`Game Speed Loaded: ${gameSpeed}`);
     console.log(`Multiplier Set To: ${getMultiplier(gameSpeed)}x`);
-    
+
 }
 
 // Function to reset the game
@@ -192,20 +200,24 @@ function playPattern() {
 
     const intervalDuration = speedSettings[gameSpeed]?.playPattern || 1100; // Default to 1100ms if undefined
 
-    const interval = setInterval(() => {
+    const interval = setInterval(function () { // Converted to function expression
         activateButton(gamePattern[index]);
-        index++;
+        index += 1; // Fixed increment issue
+
         if (index === gamePattern.length) {
             clearInterval(interval);
-            startMessageDisplay.textContent = 'Your Turn!';
+            startMessageDisplay.textContent = "Your Turn!";
         }
     }, intervalDuration);
 }
 
+
 // Activate Button Flash with Dynamic Speed
 function activateButton(buttonId) {
     const button = document.querySelector(`[data-id="${buttonId}"]`);
-    if (!button) return;
+    if (!button) {
+        return;
+    }
 
     const flashDuration = speedSettings[gameSpeed]?.activateButton || 300; // Default to 300ms if undefined
 
@@ -225,17 +237,17 @@ function checkUserInput() {
 
             // Apply the multiplier to the score
             gameScore += Math.floor(10 * totalMultiplier);
-            gameLevel++;
+            gameLevel+=1;
             scoreDisplay.textContent = `Your Score: ${gameScore}`;
             levelDisplay.textContent = `Level: ${gameLevel}`;
 
             userPattern = [];
-            setTimeout(() => {
+            setTimeout(function() {
                 startMessageDisplay.textContent = gameMessage;
                 generatePattern();
             }, 5000 / gameSpeed);
 
-            setTimeout(() => {
+            setTimeout(function() {
                 levelUp();
             }, 500);
             console.log(`Score Updated: Base(10) x Multiplier(${totalMultiplier}) = +${Math.floor(1 * totalMultiplier)}`);
@@ -243,7 +255,7 @@ function checkUserInput() {
     } else {
 
         endGame();
-        setTimeout(() => {
+        setTimeout(function() {
             gameOver();
             resetGame();
         }, 1000);
@@ -264,16 +276,14 @@ function initializeGame() {
     resetGame();
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const backToGameButton = document.querySelector('.settings-back-button');
+document.addEventListener("DOMContentLoaded", function () {
+    const backToGameButton = document.querySelector(".settings-back-button");
     const urlParams = new URLSearchParams(window.location.search);
 
-    const fromParam = urlParams.get('from');
-    console.log('Query Parameter (from):', fromParam);
+    const fromParam = urlParams.get("from");
+    console.log("Query Parameter (from):", fromParam);
 
-    if (fromParam === 'game') {
-        backToGameButton.style.display = 'inline-block';
+    if (fromParam === "game") {
+        backToGameButton.style.display = "inline-block";
     }
 });

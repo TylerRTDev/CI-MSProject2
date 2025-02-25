@@ -40,26 +40,20 @@ function speedScale() {
 
 function correct() {
     var audio = new Audio("Resources/Audio/correctSound.mp3");
-    audio.play(); 
+    audio.play();
 }
 
 function levelUp() {
     var audio = new Audio("Resources/Audio/levelup.mp3");
-    audio.play(); 
+    audio.play();
 }
 
 function endGame() {
     var audio = new Audio("Resources/Audio/gameOver.mp3");
-    audio.play(); 
+    audio.play();
 }
 
 function scrollEffect() {
     var audio = new Audio("Resources/Audio/warp.mp3");
     audio.play();
 }
-
-// if (!['leaderboards.html', 'index.html'].includes(window.location.pathname)) {
-//     window.onload = function() {
-//         document.getElementById("bg_audio").play();
-//     };
-// }

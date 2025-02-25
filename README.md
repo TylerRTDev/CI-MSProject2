@@ -4,30 +4,25 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup and Installation](#setup-and-installation)
-- [Game Logic Explanation](#game-logic-explanation)
-   - [Overview](#gameplay-overview)
-  - [Pattern Logic Functions](#pattern-logic-functions)
-- [Local Storage](#local-storage)
-  - [Overview](#overview)
-  - [Local Storage Functions](#local-storage-functions)
-- [Settings Integration](#settings-integration)
-  - [Settings Functions](#settings-functions)
-- [Leaderboard Functionality](#leaderboard-functionality)
-  - [Leaderboard Functions](#leaderboard-functions)
-  
-- [Sound Integration](#sound-integration)
-  - [Web Sound Functions](#web-sound-functions)
-  - [Server Sound Functions](#server-sound-functions)
-- [Testing Procedures](#testing-procedures)
-- [Deployment Guide](#deployment-guide)
-- [Version Control Practices](#version-control-practices)
-- [UX Design & Accessibility Compliance](#ux-design--accessibility-compliance)
-- [Future Enhancements](#future-enhancements)
-- [Author and Contact Information](#author-and-contact-information)
+- [Project Overview](#-project-overview)
+- [Project Rationale](#-project-rationale)
+- [Features](#-features)
+- [Objectives](#-project-objectives)
+- [Goals and Values](#-mixed-goals)
+- [Setup and Installation](#-setup-and-installation)
+- [Game Logic Explanation](#-game-logic-explanation)
+   - [Mechanics](#game-mechanics)
+   - [Flow](#gameplay-flow-overview)
+   - [Pattern Logic Functions](#-pattern-logic-functions)
+   - [Local Storage](#-local-storage)
+   - [Sound Integration](#-sound-integration)
+   - [Settings Integration](#️-settings-integration)
+   - [Leaderboard Functionality](#-leaderboard-functionality)
+- [Deployment Guide](#-deployment-guide)
+- [Version Control Practices](#-version-control-practices)
+- [UX Design & Accessibility Compliance](#-ux-design--accessibility-compliance)
+- [Future Enhancements](#-future-enhancements)
+- [Author and Contact Information](#-author-and-contact-information)
 
 ---
 
@@ -45,6 +40,14 @@ Key highlights include:
 - **Leaderboard Integration** to encourage competition.
 
 The game serves as both a fun challenge and an educational tool for enhancing cognitive abilities.
+
+### 💻 Technologies Used
+
+- **HTML5:** Structure and layout.
+- **CSS3:** Styling and responsive design.
+- **JavaScript (ES6+):** Game logic and interactivity.
+- **LocalStorage:** Persistent data storage.
+- **Git & GitHub:** Version control and hosting.
 
 ---
 
@@ -92,7 +95,34 @@ The rationale behind this project is driven by the following objectives:
 
 ---
 
-## 📱 **Responsive Design Goals**
+## 🎯 Goals & Values
+
+### Value to Users
+- **Engaging Gameplay:** Provides a fun and interactive memory game experience.
+- **Clear Instructions:** Easy-to-follow guides help players understand game mechanics quickly.
+- **Score and Level Tracking:** Players can monitor their progress throughout the game.
+- **Immediate Feedback:** Instant responses to player actions enhance engagement and learning.
+- **Easy Reset & Restart:** Allows players to reset or restart the game at any time for a fresh experience.
+- **Cross-Platform Compatibility:** Ensures smooth gameplay across desktop and mobile devices.
+- **Visually Appealing Design:** High-quality graphics and animations enhance the user experience.
+- **Competitive Leaderboard:** Encourages competition by allowing players to see and compare top scores.
+
+### 👩‍💼 **Client Goals**
+1. I want the site to be simple to navigate and use.
+2. I want to give the user a means of contacting the site owner.
+3. I want the game to be intuitive and easy to understand, so that users of all ages can enjoy it.
+4. I want the site to be accessible on multiple platforms (such as web, mobile, and tablets), so that users can play it on their preferred devices.
+5. I want the site to have a visually appealing interface with good design principles and high-quality images, so that it attracts and engages users from the moment they visit.
+
+
+### 💼 **Developer Goals**
+1. I want a well-designed website that catches the attention of users.
+2. I want a responsive website where the functionality is not impacted by screen size.
+3. I want easy navigation that is intuitive and responsive.
+4. I want a website designed with accessibility in mind.
+5. I want a finished product that will proudly be displayed within my portfolio.
+
+### 📱 **Responsive Design Goals**
 - Ensure seamless gameplay on both mobile and desktop devices.
 - Optimize layout for various screen resolutions.
 - Utilize responsive CSS for dynamic content adjustment.
@@ -100,84 +130,85 @@ The rationale behind this project is driven by the following objectives:
 
 ---
 
-## 🧩 **Game Mechanics**
-- **Pattern Generation:** Random sequences generated dynamically.
-- **User Interaction:** Real-time response to player inputs.
-- **Difficulty Scaling:** Adjustable game speed and complexity.
-- **Score Tracking:** Immediate feedback and score updates after each round.
-
----
-
-## 🏅 **Rewards and Achievements**
-- Real-time visual and audio feedback for successful actions.
-- Display achievements based on milestones (e.g., levels cleared, high scores).
-- Highlight Top Players on the leaderboard page.
-
----
-
-## 🙋‍♀️ **User Goals**
-1. I want to enjoy a fun and engaging memory game.
-2. I want clear and easy-to-follow game instructions.
-3. I want to track my score and level progression.
-4. I want the game to provide immediate feedback when I make a move.
-5. I want to easily reset or restart the game.
-6. I want the game to work seamlessly on both desktop and mobile devices.
-7. I want the game to have visually appealing designs and animations.
-8. I want to compete with others through a leaderboard system.
-
----
-
-## 👩‍💼 **Client Goals**
-1. I want the site to be simple to navigate and use.
-2. I want to give the user a means of contacting the site owner.
-3. I want the game to be intuitive and easy to understand, so that users of all ages can enjoy it.
-4. I want the site to be accessible on multiple platforms (such as web, mobile, and tablets), so that users can play it on their preferred devices.
-5. I want the site to have a visually appealing interface with good design principles and high-quality images, so that it attracts and engages users from the moment they visit.
-
----
-
-## 💼 **Developer Goals**
-1. I want a well-designed website that catches the attention of users.
-2. I want a responsive website where the functionality is not impacted by screen size.
-3. I want easy navigation that is intuitive and responsive.
-4. I want a website designed with accessibility in mind.
-5. I want a finished product that will proudly be displayed within my portfolio.
-
-
-## 💻 Technologies Used
-
-- **HTML5:** Structure and layout.
-- **CSS3:** Styling and responsive design.
-- **JavaScript (ES6+):** Game logic and interactivity.
-- **LocalStorage:** Persistent data storage.
-- **Git & GitHub:** Version control and hosting.
-
----
-
 ## ⚙️ Setup and Installation
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/TylerRTDev/CI-MSProject2.git
-   ```
-2. **Navigate to the Project Folder:**
-   ```bash
-   cd CI-MSProject2
-   ```
-3. **Open the Game:**
-   - Open `index.html` in your preferred browser.
-   - Alternatively, use a local development server.
+
+### Deployment Procedure
+
+All steps below can be performed using <u>***Visual Studio Code***</u>.
+
+To deploy the Pump Fitness Gym website, follow these detailed steps:
+
+### 1. Obtain the Project Files:
+
+You can obtain the project files either by cloning the repository or downloading them directly from GitHub.
+
+#### **Option A: Clone the Repository:**
+
+Cloning the repository allows you to have a local copy of the website's codebase, which you can easily update if the original repository changes.
+
+1. **Open a terminal** on your local machine.
+2. **Run the following command** to clone the repository:
+
+```cmd
+git clone https://github.com/TylerRTDev/CI-MSProject2.git 
+```
+This command will download the repository into a folder named `CI-MSProject2`.
+
+3. **Navigate to the project directory:**
+
+```cmd
+cd CI-MSProject2
+```
+This places you inside the project directory where all the website files are located.
+
+### Set Up the Environment:
+
+Ensure you have a web server environment such as Apache or Nginx. For local testing, you can use a simple server with Python:
+
+```cmd
+python3 -m http.server 3000
+```
+This will start the python server.
+
+### Configure Domain:
+1. **Open a new terminal and type the following:**
+```cmd
+ipconfig
+```
+This will give you the ability to see what your ip address is.
+
+2. **Copy the IP Address and combine it to the server address:**
+
+Domain URL: `https://[your-ip-address-here]:3000/`
+
+When you use `127.0.0.1` in a web browser, you're connecting to a server running on your own computer.
+
+Open your web browser and navigate to your domain to verify that the website is working as expected.
+
+### Test the Deployment:
+
+If you have set up the server correctly you should also be able to navigate to the site via the following link: ***Domain URL example***: **```http://127.0.0.1:3000/```**
+
+You can also use your own IP Address as an alternative.
 
 ---
 
 ## 🧠 Game Logic Explanation
 
-### **Gameplay Overview:**
+### **Game Mechanics**
+- **Pattern Generation:** Random sequences generated dynamically.
+- **User Interaction:** Real-time response to player inputs.
+- **Difficulty Scaling:** Adjustable game speed and complexity.
+- **Score Tracking:** Immediate feedback and score updates after each round.
+
+### **Gameplay Flow Overview:**
 - The game generates a random sequence of colored buttons.
 - Players must memorize and replicate the sequence.
 - Each correct pattern increases the score and advances the level.
+- Player score evaluated and added to the leaderboard if it qualifies. 
 
-### **Pattern Logic Functions**
+### 🧩 **Pattern Logic Functions**
 
 #### **1. generatePattern**
 <details>
@@ -195,6 +226,8 @@ function generatePattern() {
 - **Purpose:** Generates a random pattern by selecting a button ID from the grid and adds it to `gamePattern`.
 - **Dependencies:** `buttons` (updated by `setDifficulty`), `playPattern`.
 - **Previous Iteration:** Earlier versions used hardcoded button IDs and failed on difficulty changes.
+
+---
 
 #### **2. resetGame**
 
@@ -315,7 +348,7 @@ function saveHighScores() {
 
 ---
 
-#### **4. checkHighScore**
+#### **3. checkHighScore**
 <details>
 <summary>View Code</summary>
 
@@ -586,19 +619,6 @@ function displayLeaderboard() {
 - **Purpose:** Dynamically displays leaderboard scores on the UI.
 - **Dependencies:** `leaderboardBody`.
 
----
-
-## 🧪 Testing Procedures
-
-### **Manual Testing:**
-- Verified game logic, pattern generation, and validation.
-- Checked game settings and leaderboard functionality.
-- Ensured responsive design on multiple devices.
-
-### **Tools Used:**
-- Browser Developer Tools
-- Manual Playthroughs
-- Console Debugging
 
 ---
 
