@@ -1,6 +1,6 @@
 # Do You Remember...?
 
-![Game Screenshot](Resources\game-mock-ss.png)
+![Game Screenshot](.\resources\game-mock-ss.png)
 
 ## Table of Contents
 
@@ -664,7 +664,7 @@ The game is deployed using **GitHub Pages:**
 
 **Developed by:** Tyler Kerr  
 **Email:** tylerrtdev@outlook.com  
-**GitHub:** [https://github.com/TylerRTDev/CI-MSProject2](https://github.com/TylerRTDev)  
+**GitHub:** [https://github.com/TylerRTDev](https://github.com/TylerRTDev)  
 
 ---
 
