@@ -98,14 +98,32 @@ The rationale behind this project is driven by the following objectives:
 ## 🎯 Goals & Values
 
 ### Value to Users
-- **Engaging Gameplay:** Provides a fun and interactive memory game experience.
 - **Clear Instructions:** Easy-to-follow guides help players understand game mechanics quickly.
+![Game Screenshot](./Resources/how%20to%20play.png)
+
 - **Score and Level Tracking:** Players can monitor their progress throughout the game.
-- **Immediate Feedback:** Instant responses to player actions enhance engagement and learning.
-- **Easy Reset & Restart:** Allows players to reset or restart the game at any time for a fresh experience.
+![Game Screenshot](./Resources/level%20and%20score.png)
+
 - **Cross-Platform Compatibility:** Ensures smooth gameplay across desktop and mobile devices.
-- **Visually Appealing Design:** High-quality graphics and animations enhance the user experience.
+![Game Screenshot](./Resources/game-mock-ss.png)
+
 - **Competitive Leaderboard:** Encourages competition by allowing players to see and compare top scores.
+![Game Screenshot](./Resources/game%20leaderboard.png)
+![Game Screenshot](./Resources/achieved%20high%20score.png)
+![Game Screenshot](./Resources/add%20score.png)
+
+- **Challenging Gameplay:** Players can choose higher difficulties with complex patterns.
+![Game Screenshot](./Resources/game%20difficulty.png)
+![Game Screenshot](./Resources/easy%20difficulty.png)
+![Game Screenshot](./Resources/medium%20difficulty.png)
+![Game Screenshot](./Resources/hard%20difficulty.png)
+
+- **Tailored Experience:** Ensure players can adjust in game settings for a varied gameplay experience.
+![Game Screenshot](./Resources/game%20settings%201x.png)
+![Game Screenshot](./Resources/game%20settings%202x.png)
+![Game Screenshot](./Resources/game%20settings%204x.png)
+
+
 
 ### 👩‍💼 **Client Goals**
 1. I want the site to be simple to navigate and use.
