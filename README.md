@@ -99,29 +99,29 @@ The rationale behind this project is driven by the following objectives:
 
 ### Value to Users
 - **Clear Instructions:** Easy-to-follow guides help players understand game mechanics quickly.
-![Game Screenshot](./Resources/how%20to%20play.png)
+![Game Screenshot](./Resources/how-to-play.png)
 
 - **Score and Level Tracking:** Players can monitor their progress throughout the game.
-![Game Screenshot](./Resources/level%20and%20score.png)
+![Game Screenshot](./Resources/level-and-score.png)
 
 - **Cross-Platform Compatibility:** Ensures smooth gameplay across desktop and mobile devices.
 ![Game Screenshot](./Resources/game-mock-ss.png)
 
 - **Competitive Leaderboard:** Encourages competition by allowing players to see and compare top scores.
-![Game Screenshot](./Resources/game%20leaderboard.png)
-![Game Screenshot](./Resources/achieved%20high%20score.png)
-![Game Screenshot](./Resources/add%20score.png)
+![Game Screenshot](./Resources/game-leaderboard.png)
+![Game Screenshot](./Resources/achieved-high-score.png)
+![Game Screenshot](./Resources/add-score.png)
 
 - **Challenging Gameplay:** Players can choose higher difficulties with complex patterns.
-![Game Screenshot](./Resources/game%20difficulty.png)
-![Game Screenshot](./Resources/easy%20difficulty.png)
-![Game Screenshot](./Resources/medium%20difficulty.png)
-![Game Screenshot](./Resources/hard%20difficulty.png)
+![Game Screenshot](./Resources/game-difficulty.png)
+![Game Screenshot](./Resources/easy-difficulty.png)
+![Game Screenshot](./Resources/medium-difficulty.png)
+![Game Screenshot](./Resources/hard-difficulty.png)
 
 - **Tailored Experience:** Ensure players can adjust in game settings for a varied gameplay experience.
-![Game Screenshot](./Resources/game%20settings%201x.png)
-![Game Screenshot](./Resources/game%20settings%202x.png)
-![Game Screenshot](./Resources/game%20settings%204x.png)
+![Game Screenshot](./Resources/game-settings-1x.png)
+![Game Screenshot](./Resources/game-settings-2x.png)
+![Game Screenshot](./Resources/game-settings-4x.png)
 
 
 
@@ -680,7 +680,7 @@ The game is deployed using **GitHub Pages:**
 
 ## 👤 Author and Contact Information
 
-**Developed by:** Tyler Kerr  
+**Developed by:** TylerRTDev
 **Email:** tylerrtdev@outlook.com  
 **GitHub:** [https://github.com/TylerRTDev](https://github.com/TylerRTDev)  
 
