@@ -94,7 +94,7 @@ body {
 
 /* Style for the header section */
 header {
-    background: url(../Resources/pexels-felixmittermeier-957061.jpg);
+    background: url(../resources/pexels-felixmittermeier-957061.jpg);
     padding: 10px 20px; /* Adds space inside the header for better spacing */
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
     position: fixed;
@@ -153,7 +153,7 @@ header nav ul li a:hover {
             
 /* Center content inside each section */
 .content-wrapper-home {
-    background: no-repeat center/100% url(../Resources/pexels-felixmittermeier-957061.jpg);
+    background: no-repeat center/100% url(../resources/pexels-felixmittermeier-957061.jpg);
     max-width: 100%;
     text-align: center; /* Centers text and inline elements horizontally within the section */
     padding: 20px; /* Adds padding around the section content for spacing */
@@ -184,7 +184,7 @@ header nav ul li a:hover {
 }
 
 .container-wrapper {
-    background: url(../Resources/pexels-felixmittermeier-957061.jpg);
+    background: url(../resources/pexels-felixmittermeier-957061.jpg);
     margin: 150px auto;
     box-shadow: rgba(137, 43, 226, 0.72) 0px 2px 100px 24px, rgba(0, 0, 0, 0.555) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.555) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.555) 0px -79px 40px 0px inset;
     border-radius: 20px;
@@ -477,7 +477,7 @@ input[type="range"]::-webkit-slider-runnable-track:hover {
 /* Footer Section */
 
 footer {
-    background: url(../Resources/pexels-felixmittermeier-957061.jpg);
+    background: url(../resources/pexels-felixmittermeier-957061.jpg);
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.668);
     padding: 20px;
     color: rgb(0, 0, 0);
