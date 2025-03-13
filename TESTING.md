@@ -30,7 +30,7 @@ HTML was validated using the [W3C HTML Validation Service](https://validator.w3.
 <details>
   <summary>HTML Validation</summary>
 
-![HTML Validation](/Resources/HTML%20Validation.png)
+![HTML Validation](/Resources/HTML-Validation.png)
 </details>
 
 ### CSS Validation
@@ -39,7 +39,7 @@ CSS validation was performed via the [W3C CSS Validation Service](https://jigsaw
 <details>
   <summary>CSS Validation</summary>
 
-![CSS Validation](/Resources/CSS%20Validation.png)
+![CSS Validation](/Resources/CSS-Validation.png)
 </details>
 
 ### JavaScript Validation
@@ -111,6 +111,9 @@ The game was tested on multiple browsers, including:
 - Mozilla Firefox
 - Microsoft Edge
 
+![Lighthouse Test](/Resources/Lighthouse.png)
+
+
 All major features—from game logic and sound integration to responsive layout—functioned consistently across these browsers.
 
 ### Testing User Stories
@@ -132,10 +135,10 @@ User stories guided testing to ensure the game meets user expectations:
 #### Game Logic and Interaction
 | Feature                  | Action                                                    | Expected Result                                                                                                       | Status  | Comments                            |
 |--------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|---------|-------------------------------------|
-| Play Now (Game Start)    | Enter a valid sequence length and click "Play Now"        | The game generates a random pattern, displays the sequence length, and hides the play button and selector             | Passed  | N/A                                 |
+| Play Now (Start Game)    | Enter a valid sequence length and click "Start Game"        | The game generates a random pattern, displays the sequence length, and hides the play button and selector             | Passed  | N/A                                 |
 | User Input (Correct)     | Replicate the generated pattern correctly                 | Score increases, level advances, and a new pattern is generated                                                       | Passed  | N/A                                 |
 | User Input (Incorrect)   | Input an incorrect sequence                               | Game over modal appears with final score; game resets after a brief delay                                             | Passed  | N/A                                 |
-| Reset Functionality      | Click reset at various game stages                        | Game area resets, score and level revert to initial state, and UI elements reappear                                    | Passed  | N/A                                 |
+| Reset Functionality      | Click "Start Game" at various game stages                        | Game area resets, score and level revert to initial state, and UI elements reappear                                    | Passed  | N/A                                 |
 
 #### Leaderboard Functionality
 The leaderboard records the **top 5 scores** only. When a player achieves a high score, they are prompted to enter their name, which will be displayed on the leaderboard alongside their score and ranking. Players also have the ability to reset the leaderboard, removing all stored scores and names.
@@ -143,6 +146,7 @@ The leaderboard records the **top 5 scores** only. When a player achieves a high
 | Feature                     | Action                                     | Expected Result                                              | Status  | Comments |
 |-----------------------------|--------------------------------------------|--------------------------------------------------------------|---------|----------|
 | High Score Entry            | Complete a game with a high score          | Prompt appears for name entry if score qualifies for top 5  | Passed  | N/A      |
+| Player Score Entry                 | Complete a game with a score under top 5   | Prompt appears for score                                     | Passed  | N/A      |
 | Leaderboard Display         | View the leaderboard                       | Displays top 5 scores sorted in descending order             | Passed  | N/A      |
 | Name and Score Visibility   | Enter a name with a high score             | Name and score appear correctly on the leaderboard           | Passed  | N/A      |
 | Leaderboard Reset           | Click the reset leaderboard button         | All names and scores are cleared from the leaderboard       | Passed  | N/A      |
@@ -155,8 +159,21 @@ The game's difficulty setting directly impacts the score multiplier. The difficu
 | Adjust Game Difficulty | Select different difficulty levels | Score multiplier increases with higher difficulties | Passed  | N/A      |
 | Change Game Speed      | Adjust game speed in settings      | Score is calculated based on speed multiplier       | Passed  | N/A      |
 
-### Automated Testing (Optional)
+### Automated Testing
 While the bulk of testing was manual, automated testing was considered for future enhancements. Core game logic functions (e.g., `generatePattern`, `resetGame`, `checkUserInput`) are candidates for unit tests using frameworks such as Jest.
+
+Automated testing involves writing scripts or using tools to execute test cases without human intervention. It allows for repetitive, consistent, and fast validation of the software’s functionality, making it ideal for catching regressions (bugs introduced after changes).
+
+#### When to Use Automated Testing in Do You Rememeber?:
+
+Testing Core Game Logic: 
+
+- Write unit tests (e.g., using Jest for JavaScript) to validate core game functions such as:
+  - Generating random sequences correctly.
+  - Storing and retrieving scores from localStorage.
+  - Verifying if the user’s input matches the generated sequence.
+- Performance Testing: Automated tools can check how the game handles different difficulty levels and speed settings.
+- Regression Testing: If you update the game (e.g., changing difficulty settings), automated tests ensure existing features still work as expected.
 
 ---
 
