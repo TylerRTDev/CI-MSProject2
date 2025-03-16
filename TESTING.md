@@ -39,7 +39,7 @@ CSS validation was performed via the [W3C CSS Validation Service](https://jigsaw
 <details>
   <summary>CSS Validation</summary>
 
-![CSS Validation](/Resources/CSS-Validation.png)
+![CSS Validation](/resources/CSS-Validation.png)
 </details>
 
 ### JavaScript Validation
@@ -50,7 +50,7 @@ JSLint returned no issues, confirming that the JavaScript code meets its validat
 <details>
   <summary>difficulty-select.js JSLint Results</summary>
 
-![Difficulty Warnings](/Resources/difficulty-select.png)
+![Difficulty Warnings](/resources/difficulty-select.png)
 </details>
 
 JSLint returned no issues, confirming that the JavaScript code meets its validation standards.
@@ -58,8 +58,8 @@ JSLint returned no issues, confirming that the JavaScript code meets its validat
 <details>
   <summary>gameSound.js JSLint Results</summary>
 
-![Sound Warnings](/Resources/gameSound.png)
-![Sound Options](/Resources/gameSound-options.png)
+![Sound Warnings](/resources/gameSound.png)
+![Sound Options](/resources/gameSound-options.png)
 </details>
 
 JSLint returned no issues, confirming that the JavaScript code meets its validation standards.
@@ -67,8 +67,8 @@ JSLint returned no issues, confirming that the JavaScript code meets its validat
 <details>
   <summary>leaderboard.js JSLint Results</summary>
 
-![leaderboard Warnings](/Resources/leaderboard.png)
-![leaderboard Options](/Resources/leaderboard-options.png)
+![leaderboard Warnings](/resources/leaderboard.png)
+![leaderboard Options](/resources/leaderboard-options.png)
 </details>
 
 JSLint returned no issues, confirming that the JavaScript code meets its validation standards.
@@ -76,8 +76,8 @@ JSLint returned no issues, confirming that the JavaScript code meets its validat
 <details>
   <summary>queryString.js JSLint Results</summary>
 
-![Query Warning](/Resources/queryString.png)
-![Query Warning](/Resources/quertyString-options.png)
+![Query Warning](/resources/queryString.png)
+![Query Warning](/resources/quertyString-options.png)
 
 </details>
 
@@ -88,8 +88,8 @@ The linter flagged an unexpected issue with .toFixed(2), despite it being a vali
 <details>
   <summary>script.js JSLint Results</summary>
 
-![Script Warning](/Resources/script.png)
-![Script Options](/Resources/settings-options.png)
+![Script Warning](/resources/script.png)
+![Script Options](/resources/settings-options.png)
 
 </details>
 
@@ -98,8 +98,8 @@ The linter flagged warnings for lines exceeding 80 characters, but these do not 
 <details>
   <summary>settings.js JSLint Results</summary>
 
-![Settings Warning](/Resources/settings.png)
-![Settings Warning](/Resources/settings-options.png)
+![Settings Warning](/resources/settings.png)
+![Settings Warning](/resources/settings-options.png)
 </details>
 
 ### Performance
@@ -111,7 +111,7 @@ The game was tested on multiple browsers, including:
 - Mozilla Firefox
 - Microsoft Edge
 
-![Lighthouse Test](/Resources/Lighthouse.png)
+![Lighthouse Test](/resources/Lighthouse.png)
 
 
 All major features—from game logic and sound integration to responsive layout—functioned consistently across these browsers.

@@ -1,6 +1,6 @@
 # Do You Remember...?
 
-![Game Screenshot](./Resources/game-mock-ss.png)
+![Game Screenshot](./resources/game-mock-ss.png)
 
 ## Table of Contents
 
@@ -99,29 +99,29 @@ The rationale behind this project is driven by the following objectives:
 
 ### Value to Users
 - **Clear Instructions:** Easy-to-follow guides help players understand game mechanics quickly.
-![Game Screenshot](./Resources/how-to-play.png)
+![Game Screenshot](./resources/how-to-play.png)
 
 - **Score and Level Tracking:** Players can monitor their progress throughout the game.
-![Game Screenshot](./Resources/level-and-score.png)
+![Game Screenshot](./resources/level-and-score.png)
 
 - **Cross-Platform Compatibility:** Ensures smooth gameplay across desktop and mobile devices.
-![Game Screenshot](./Resources/game-mock-ss.png)
+![Game Screenshot](./resources/game-mock-ss.png)
 
 - **Competitive Leaderboard:** Encourages competition by allowing players to see and compare top scores.
-![Game Screenshot](./Resources/game-leaderboard.png)
-![Game Screenshot](./Resources/achieved-high-score.png)
-![Game Screenshot](./Resources/add-score.png)
+![Game Screenshot](./resources/game-leaderboard.png)
+![Game Screenshot](./resources/achieved-high-score.png)
+![Game Screenshot](./resources/add-score.png)
 
 - **Challenging Gameplay:** Players can choose higher difficulties with complex patterns.
-![Game Screenshot](./Resources/game-difficulty.png)
-![Game Screenshot](./Resources/easy-difficulty.png)
-![Game Screenshot](./Resources/medium-difficulty.png)
-![Game Screenshot](./Resources/hard-difficulty.png)
+![Game Screenshot](./resources/game-difficulty.png)
+![Game Screenshot](./resources/easy-difficulty.png)
+![Game Screenshot](./resources/medium-difficulty.png)
+![Game Screenshot](./resources/hard-difficulty.png)
 
 - **Tailored Experience:** Ensure players can adjust in game settings for a varied gameplay experience.
-![Game Screenshot](./Resources/game-settings-1x.png)
-![Game Screenshot](./Resources/game-settings-2x.png)
-![Game Screenshot](./Resources/game-settings-4x.png)
+![Game Screenshot](./resources/game-settings-1x.png)
+![Game Screenshot](./resources/game-settings-2x.png)
+![Game Screenshot](./resources/game-settings-4x.png)
 
 
 
@@ -410,7 +410,7 @@ Sound enhances interactivity in the game with effects on `onclick` and `mouseove
 
 ```javascript
 function clickSound() {
-    var audio = new Audio('Resources/Audio/btnClick.mp3');
+    var audio = new Audio('resources/audio/btnClick.mp3');
     audio.play();
 }
 ```
@@ -425,7 +425,7 @@ For server compatibility, relative paths are adjusted:
 
 ```javascript
 function clickSound() {
-    var audio = new Audio('..\\Resources\\Audio\\btnClick.mp3');
+    var audio = new Audio('..\\resources\\audio\\btnClick.mp3');
     audio.play();
 }
 ```
@@ -440,7 +440,7 @@ function clickSound() {
 
 ```javascript
 function saveSettingsBtn() {
-    var audio = new Audio("Resources/Audio/settingSaveBtn.mp3");
+    var audio = new Audio("resources/audio/settingSaveBtn.mp3");
     audio.play();
 }
 ```
@@ -456,7 +456,7 @@ function saveSettingsBtn() {
 
 ```javascript
 function scrollEffect() {
-    var audio = new Audio("Resources/Audio/warp.mp3");
+    var audio = new Audio("resources/audio/warp.mp3");
     audio.play();
 }
 ```
@@ -472,7 +472,7 @@ function scrollEffect() {
 
 ```javascript
 function caution() {
-    var audio = new Audio("Resources/Audio/caution.mp3");
+    var audio = new Audio("resources/audio/caution.mp3");
     audio.play();
 }
 ```
