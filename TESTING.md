@@ -30,7 +30,7 @@ HTML was validated using the [W3C HTML Validation Service](https://validator.w3.
 <details>
   <summary>HTML Validation</summary>
 
-![HTML Validation](/resources/HTML-Validation.png)
+![HTML Validation](/resources/html-check-validation.png)
 </details>
 
 ### CSS Validation
@@ -39,7 +39,7 @@ CSS validation was performed via the [W3C CSS Validation Service](https://jigsaw
 <details>
   <summary>CSS Validation</summary>
 
-![CSS Validation](/resources/CSS-Validation.png)
+![CSS Validation](/resources/css-check-validation.png)
 </details>
 
 ### JavaScript Validation
@@ -111,7 +111,7 @@ The game was tested on multiple browsers, including:
 - Mozilla Firefox
 - Microsoft Edge
 
-![Lighthouse Test](/resources/Lighthouse.png)
+![Lighthouse Test](/resources/lighthouse-performance.png)
 
 
 All major features—from game logic and sound integration to responsive layout—functioned consistently across these browsers.
