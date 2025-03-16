@@ -30,7 +30,7 @@ HTML was validated using the [W3C HTML Validation Service](https://validator.w3.
 <details>
   <summary>HTML Validation</summary>
 
-![HTML Validation](/Resources/HTML-Validation.png)
+![HTML Validation](/resources/HTML-Validation.png)
 </details>
 
 ### CSS Validation
