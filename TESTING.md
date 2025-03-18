@@ -20,7 +20,7 @@ Manual testing (user testing) was conducted by interacting with the game—click
    - [Sound Integration](#sound-integration)
    - [Game Difficulty and Score Multiplier](#game-difficulty-and-score-multiplier)
    - [Leaderboard Functionality](#leaderboard-functionality)
-9. [Automated Testing (Optional)](#automated-testing-optional)
+9. [Automated Testing (Optional)](#automated-testing)
 
 ---
 
