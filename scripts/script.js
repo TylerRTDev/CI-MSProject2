@@ -22,15 +22,15 @@ const difficultyMultiplier = {
     Hard: 1.4
 };
 
-let buttons; // Will store the current active grid buttons
-let gameSpeed = 1; // Default speed
-let gamePattern = [];
-let userPattern = [];
-let gameScore = 0;
-let gameLevel = 1;
-let gameMessage = 'Watch the pattern closely! 👀';
-let gameOverMessage = 'You guessed wrong 😲 Game Over! 🤒';
-let gameActive = false;
+var buttons; // Will store the current active grid buttons
+var gameSpeed = 1; // Default speed
+var gamePattern = [];
+var userPattern = [];
+var gameScore = 0;
+var gameLevel = 1;
+var gameMessage = 'Watch the pattern closely! 👀';
+var gameOverMessage = 'You guessed wrong 😲 Game Over! 🤒';
+var gameActive = false;
 
 if (window.location.pathname.endsWith("game.html")) {
     document.addEventListener("DOMContentLoaded", initializeGame);

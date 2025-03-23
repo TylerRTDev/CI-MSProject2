@@ -645,10 +645,13 @@ function displayLeaderboard() {
 
 The game is deployed using **GitHub Pages:**
 
+
+
 1. **Push Changes:** Ensure all updates are pushed to the repository.
 2. **Enable GitHub Pages:**
    - Go to repository settings.
    - Select `main` branch and `/root` directory in GitHub Pages.
+   ![Deployment Screenshot](./resources/deployment.png)
 3. **Access the Game:**
    - Visit: `https://tylerrtdev.github.io/CI-MSProject2/`
 
