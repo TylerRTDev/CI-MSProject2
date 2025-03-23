@@ -21,6 +21,7 @@ Manual testing (user testing) was conducted by interacting with the game—click
    - [Game Difficulty and Score Multiplier](#game-difficulty-and-score-multiplier)
    - [Leaderboard Functionality](#leaderboard-functionality)
 9. [Automated Testing (Optional)](#automated-testing-optional)
+10. [Project Documentation](README.md)
 
 ---
 
