@@ -11,6 +11,7 @@
 - [Goals and Values](#-mixed-goals)
 - [Setup and Installation](#-setup-and-installation)
 - [Game Logic Explanation](#-game-logic-explanation)
+- [UI/UX Design](#-wireframe-design)
    - [Mechanics](#game-mechanics)
    - [Flow](#gameplay-flow-overview)
    - [Pattern Logic Functions](#-pattern-logic-functions)
@@ -210,6 +211,81 @@ Open your web browser and navigate to your domain to verify that the website is 
 If you have set up the server correctly you should also be able to navigate to the site via the following link: ***Domain URL example***: **```http://127.0.0.1:3000/```**
 
 You can also use your own IP Address as an alternative.
+
+## 🎨 Wireframe Designs
+
+### **Desktop**
+
+<details>
+<summary>View Designs</summary>
+
+#### **Homepage**
+![Homepage Desktop Screenshot](./resources/homepage-desktop.png)
+
+#### **How To Play**
+![How To Play Desktop Screenshot](./resources/how-desktop.png)
+
+#### **Difficulty**
+![Difficulty Desktop Screenshot](./resources/difficulty-desktop.png)
+
+#### **Leaderboard**
+![Leaderboard Desktop Screenshot](./resources/leaderboard-desktop.png)
+
+#### **Settings**
+![Settings Desktop Screenshot](./resources/settings-desktop.png)
+
+#### **Game** - *Easy/Medium/Hard*
+![Game Mobile Desktop](./resources/game-desktop.png)
+</details>
+
+
+### **Tablet**
+
+<details>
+<summary>View Designs</summary>
+
+#### **Homepage**
+![Leaderboard Tablet Screenshot](./resources/homepage-tablet.png)
+
+#### **How To Play**
+![How To Play Tablet Screenshot](./resources/how-tablet.png)
+
+#### **Difficulty**
+![Difficulty Tablet Screenshot](./resources/difficulty-tablet.png)
+
+#### **Leaderboard**
+![Leaderboard Tablet Screenshot](./resources/leaderboard-tablet.png)
+
+#### **Settings**
+![Settings Tablet Screenshot](./resources/settings-tablet.png)
+
+#### **Game** - *Easy/Medium/Hard*
+![Settings Tablet Screenshot](./resources/game-tablet.png)
+</details>
+
+### **Mobile**
+
+<details>
+<summary>View Designs</summary>
+
+#### **Homepage**
+![Leaderboard Mobile Screenshot](./resources/homepage-mobile.png)
+
+#### **How To Play**
+![How To Play Mobile Screenshot](./resources/how-mobile.png)
+
+#### **Difficulty**
+![Difficulty Mobile Screenshot](./resources/difficulty-mobile.png)
+
+#### **Leaderboard**
+![Leaderboard Mobile Screenshot](./resources/leaderboard-mobile.png)
+
+#### **Settings**
+![Settings Mobile Screenshot](./resources/settings-mobile.png)
+
+#### **Game** - *Easy/Medium/Hard*
+![Settings Mobile Screenshot](./resources/game-mobile.png)
+</details>
 
 ---
 

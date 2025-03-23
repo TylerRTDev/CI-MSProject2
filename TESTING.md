@@ -117,6 +117,17 @@ The game was tested on multiple browsers, including:
 
 All major features—from game logic and sound integration to responsive layout—functioned consistently across these browsers.
 
+### Responsiveness Testing
+The game's layout and elements were tested across various devices to ensure proper responsiveness and usability on different screen sizes. The design adapts fluidly to desktop, tablet, and mobile views to offer a consistent and accessible experience.
+
+| Device Type | Screen Sizes Tested | UI Layout & Scaling | Interactions | Modal Behavior | Scroll/Overflow | Audio & Visual Feedback | Result |
+|-------------|----------------------|----------------------|--------------|----------------|------------------|--------------------------|--------|
+| **Desktop** | 1920x1080, 1440x900 | Full horizontal layout with centered game area and balanced spacing | Mouse clicks and hover effects are responsive | Modals appear centered and overlay the screen cleanly | No overflow; fits within viewport | Hover animations and sound effects trigger instantly | ✅ Pass |
+| **Tablet** | 768x1024 (portrait), 1024x768 (landscape) | Layout adjusts slightly to fit tighter width; elements still readable | Touch input is smooth; buttons responsive | Modals scale well and remain centered | Slight scroll within modal content (expected) | Button sound and visuals remain intact | ✅ Pass |
+| **Mobile** | 375x667, 414x896, 360x640 | Single-column stacking; buttons fill width and are finger-friendly | Tap targets behave well; smooth response time | Full-width modals appear vertically centered and easily dismissible | Main game area scrolls as needed; no broken layout | Feedback sounds and animations function consistently | ✅ Pass |
+
+**Result:** The game is fully responsive and performs as intended on desktop, tablet, and mobile devices, ensuring accessibility and playability across platforms.** The game is fully responsive and performs as intended on desktop, tablet, and mobile devices, ensuring accessibility and playability across platforms.** The game is fully responsive and performs as intended on desktop, tablet, and mobile devices, ensuring accessibility and playability across platforms.
+
 ### Testing User Stories
 User stories guided testing to ensure the game meets user expectations:
 - **First-Time Visitor:** Clear instructions are provided via the "How to Play" modal.
