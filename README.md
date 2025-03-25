@@ -8,10 +8,10 @@
 - [Project Rationale](#-project-rationale)
 - [Features](#-features)
 - [Objectives](#-project-objectives)
-- [Goals and Values](#-mixed-goals)
-- [Setup and Installation](#-setup-and-installation)
+- [Goals and Values](#-goals--values)
+- [Setup and Installation](#️-setup-and-installation)
 - [Game Logic Explanation](#-game-logic-explanation)
-- [UI/UX Design](#-wireframe-design)
+- [UI/UX Design](#-wireframe-designs)
    - [Mechanics](#game-mechanics)
    - [Flow](#gameplay-flow-overview)
    - [Pattern Logic Functions](#-pattern-logic-functions)
@@ -152,7 +152,6 @@ The rationale behind this project is driven by the following objectives:
 
 ## ⚙️ Setup and Installation
 
-
 ### Deployment Procedure
 
 All steps below can be performed using <u>***Visual Studio Code***</u>.
@@ -287,7 +286,6 @@ You can also use your own IP Address as an alternative.
 ![Settings Mobile Screenshot](./resources/game-mobile.png)
 </details>
 
----
 
 ## 🧠 Game Logic Explanation
 
@@ -762,7 +760,9 @@ The game is deployed using **GitHub Pages:**
 
 **Developed by:** TylerRTDev
 **Email:** tylerrtdev@outlook.com  
-**GitHub:** [https://github.com/TylerRTDev](https://github.com/TylerRTDev)  
+**GitHub:** [https://github.com/TylerRTDev](https://github.com/TylerRTDev)
+**X:** [https://x.com/TylerRTDev](https://x.com/TylerRTDev)
+**Instagram:** [https://www.instagram.com/tylerrtdev/](https://www.instagram.com/tylerrtdev/)
 
 ---
 

@@ -3,24 +3,24 @@
 Testing for the "Do You Remember" game focused primarily on manual testing to ensure robust game logic and an optimal user experience, with automated testing considered only for core logic functions. The following sections outline the various testing procedures used throughout development.
 
 ### Overview
-Manual testing (user testing) was conducted by interacting with the game—clicking buttons, entering sequence lengths, and verifying real-time feedback—to ensure that the game logic, responsiveness, and UI elements work as intended. Although automated testing using frameworks such as Jest was explored for core functions (e.g., `generatePattern`, `resetGame`, `checkUserInput`), it was not fully implemented so that more development time could be dedicated to refining the game experience.
+Manual testing (user testing) was conducted by interacting with the game—clicking buttons, entering sequence lengths, and verifying real-time feedback—to ensure that the game logic, responsiveness, and UI elements work as intended. Although automated testing using frameworks such as Jest was explored for core functions (e.g. `generatePattern`, `resetGame`, `checkUserInput`), it was not fully implemented so that more development time could be dedicated to refining the game experience.
 
 ### Table Of Contents
 1. [HTML Validation](#html-validation)
 2. [CSS Validation](#css-validation)
 3. [JavaScript Validation](#javascript-validation)
-4. [Accessibility](#accessibility)
+4. [Accessibility](#-accessibility)
+   - [Landing Page](#landing-page-accessibility)
+   - [404 Page](#404-page-accessibility)
 5. [Performance](#performance)
 6. [Browser Compatibility](#browser-compatibility)
 7. [Testing User Stories](#testing-user-stories)
 8. [Manual Testing](#manual-testing)
    - [General UI and Navigation](#general-ui-and-navigation)
    - [Game Logic and Interaction](#game-logic-and-interaction)
-   - [Leaderboard and Local Storage](#leaderboard-and-local-storage)
-   - [Sound Integration](#sound-integration)
    - [Game Difficulty and Score Multiplier](#game-difficulty-and-score-multiplier)
    - [Leaderboard Functionality](#leaderboard-functionality)
-9. [Automated Testing (Optional)](#automated-testing-optional)
+9. [Automated Testing (Optional)](#automated-testing)
 10. [Project Documentation](README.md)
 
 ---
@@ -110,6 +110,53 @@ JSLint returned no issues, confirming that the JavaScript code meets its validat
 </details>
 
 JSLint returned no issues, confirming that the JavaScript code meets its validation standards.
+
+### ♿ Accessibility
+
+Accessibility was considered throughout the development of the **Do You Remember...?** project. Both the **Landing page** and the **404 page** were tested manually and evaluated using the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/).
+
+#### **Landing Page Accessibility**
+
+| Feature                  | Result                                                                 |
+|--------------------------|------------------------------------------------------------------------|
+| **Keyboard Navigation**  | All interactive elements (buttons, settings, modals) are accessible using keyboard navigation (Tab, Enter). |
+| **Semantic HTML**        | Proper use of HTML structure such as `<header>`, `<main>`, and `<footer>`. |
+| **Alt Text**             | Visual elements include appropriate or intentionally omitted `alt` attributes based on context. |
+| **Color Contrast**       | Buttons and text maintain good contrast ratios for readability.        |
+| **Focus Management**     | Modals trap focus and allow smooth keyboard interaction when active.   |
+
+**WAVE Summary (Landing Page):**  
+No major accessibility issues were found. Minor alerts such as redundant link references (logo linking to homepage in both header and footer) were noted but do not interfere with usability.
+
+<details>
+  <summary>Accessibility Results: Homepage</summary>
+
+![Accessibility Landing Page](/resources/accessibility-game.png)
+
+- *The 9 contrast errors reported here are most likely caused by design-specific hover effects that temporarily reduce color contrast between text and background when users interact with buttons or icons.*
+
+</details>
+
+
+
+#### **404 Page Accessibility**
+
+| Feature                        | Result                                                                |
+|--------------------------------|-----------------------------------------------------------------------|
+| **Clear Messaging**            | “404” is visually prominent, and accompanying text clearly describes the error. |
+| **Navigation Recovery**        | Page resets back to a valid URL which is the landing page.  |
+| **Color Contrast & Typography**| Text is easy to read with sufficient contrast and spacing.            |
+
+**WAVE Summary (404 Page):**  
+Minor alerts appeared due to repetitive links, but no critical issues were found. The page remains fully navigable and accessible to users.
+
+<details>
+  <summary>Accessibility Results: 404</summary>
+
+![Accessibility Results: 404](/resources/accessibility-404.png)
+</details>
+
+---
 
 ### Performance
 Performance was measured using [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools. The game scored well across performance metrics, including load time and accessibility. Tests on a variety of devices (laptops, tablets, and mobile devices) confirmed that the game remains responsive and visually consistent.
