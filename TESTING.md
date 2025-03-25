@@ -137,6 +137,8 @@ User stories guided testing to ensure the game meets user expectations:
 
 ### Manual Testing
 
+Manual testing involves a human tester executing test cases by interacting directly with the application. It is useful for evaluating user experience, layout behavior, and real-time interactions. In this project, manual testing was used extensively to verify gameplay logic, validate UI responsiveness across devices, test score tracking, settings persistence, and ensure all modals, buttons functioned as expected in a real-world usage scenario.
+
 #### General UI and Navigation
 | Feature            | Action                                          | Expected Result                                                                | Status  | Comments          |
 |--------------------|-------------------------------------------------|--------------------------------------------------------------------------------|---------|-------------------|

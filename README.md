@@ -157,13 +157,13 @@ The rationale behind this project is driven by the following objectives:
 
 All steps below can be performed using <u>***Visual Studio Code***</u>.
 
-To deploy the Pump Fitness Gym website, follow these detailed steps:
+To deploy the Do You Remember website, follow these detailed steps:
 
 ### 1. Obtain the Project Files:
 
 You can obtain the project files either by cloning the repository or downloading them directly from GitHub.
 
-#### **Option A: Clone the Repository:**
+#### **Clone the Repository:**
 
 Cloning the repository allows you to have a local copy of the website's codebase, which you can easily update if the original repository changes.
 
@@ -214,7 +214,7 @@ You can also use your own IP Address as an alternative.
 
 ## 🎨 Wireframe Designs
 
-### **Desktop**
+### **Desktop (1080x1920)**
 
 <details>
 <summary>View Designs</summary>
@@ -239,7 +239,7 @@ You can also use your own IP Address as an alternative.
 </details>
 
 
-### **Tablet**
+### **Tablet (768x1024)**
 
 <details>
 <summary>View Designs</summary>
@@ -263,7 +263,7 @@ You can also use your own IP Address as an alternative.
 ![Settings Tablet Screenshot](./resources/game-tablet.png)
 </details>
 
-### **Mobile**
+### **Mobile - (360x640)**
 
 <details>
 <summary>View Designs</summary>
