@@ -46,8 +46,6 @@ CSS validation was performed via the [W3C CSS Validation Service](https://jigsaw
 ### JavaScript Validation
 The JavaScript code was tested using [JSLint](https://www.jslint.com/) to identify potential issues and enforce best practices. The validation process flagged several stylistic warnings, including preferences for var over let, enforcing alphabetical property order, and restricting line lengths. However, these warnings were primarily cosmetic and did not impact functionality, readability, or performance. Additionally, .toFixed(2) was incorrectly flagged as an unexpected expression despite its valid use in rounding calculations. After reviewing these warnings, only those that provided meaningful improvements to the code were implemented, while unnecessary stylistic suggestions were intentionally ignored. This ensured that the core game functions—such as pattern generation, user input verification, and score tracking—worked as expected without introducing unnecessary modifications.
 
-JSLint returned no issues, confirming that the JavaScript code meets its validation standards.
-
 <details>
   <summary>difficulty-select.js JSLint Results</summary>
 
@@ -84,7 +82,7 @@ JSLint returned no issues, confirming that the JavaScript code meets its validat
 
 The linter provided several stylistic warnings that do not affect the functionality, readability, or performance of the code. First, it enforced the use of var instead of let, despite let being the modern best practice due to its block-scoped behavior, which prevents unintended modifications. 
 
-The linter flagged an unexpected issue with .toFixed(2), despite it being a valid method for rounding numbers to two decimal places. Since this does not affect execution, and modern JavaScript engines handle it correctly, this warning has been intentionally ignored, as it does not indicate a real issue.
+- *The linter flagged an unexpected issue with .toFixed(2), despite it being a valid method for rounding numbers to two decimal places. Since this does not affect execution, and modern JavaScript engines handle it correctly, this warning has been intentionally ignored, as it does not indicate a real issue.*
 
 <details>
   <summary>script.js JSLint Results</summary>
@@ -102,6 +100,16 @@ The linter flagged warnings for lines exceeding 80 characters, but these do not 
 ![Settings Warning](/resources/settings.png)
 ![Settings Warning](/resources/settings-options.png)
 </details>
+
+JSLint returned no issues, confirming that the JavaScript code meets its validation standards.
+
+<details>
+  <summary>redirect.js JSLint Results</summary>
+
+![Redirect Warning](/resources/redirect.png)
+</details>
+
+JSLint returned no issues, confirming that the JavaScript code meets its validation standards.
 
 ### Performance
 Performance was measured using [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools. The game scored well across performance metrics, including load time and accessibility. Tests on a variety of devices (laptops, tablets, and mobile devices) confirmed that the game remains responsive and visually consistent.
