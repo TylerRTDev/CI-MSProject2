@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
-    <script>
-        setTimeout(() => {
-            window.location.href = "index.html"; // Redirect to home page
-        }, 3000);
-    </script>
-</head>
-<body>
-    <h1>Oops! Page Not Found</h1>
-    <p>Redirecting you back to the main page...</p>
-    <p>THIS IS A TEST</p>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="memory game, brain training, pattern recall, interactive memory challenge, memory skill improvement, fun brain game, cognitive training, leaderboard competition, TylerRTDev">
+        <meta name="description" content="Test and improve your memory skills with Do You Remember? - A fun, interactive pattern recall game with dynamic difficulty levels and a competitive leaderboard.">
+        <meta name="author" content="Tyler Kerr">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Page Not Found</title>
+        <link rel="stylesheet" href="./styles/styles.css">
+        <link rel="stylesheet" href="./styles/media-queries.css">
+        <link rel="icon" type="image/x-icon" href="./resources/icons/favicon.ico">
+    </head>
+    <body>
+        <div class="global-overlay">
+            <div class="shadow-overlay"></div>
+        </div>
+
+        <div>
+            <img class="bg-image" src="./resources/pexels-felixmittermeier-957061.jpg" alt="background image">
+        </div>
+
+        <section class="content-wrapper" id="instructions-section">
+            <div class="container-wrapper">
+                <h1>Memory Error 404 🧠</h1>
+                <div>
+                    <p>Looks like that page wasn’t part of the sequence...</p>
+                    <p>Redirecting you back to try again!</p>
+                </div>
+            </div>
+        </section>        
+        
+        <script src="./scripts/redirect.js"></script>
+    </body>
 </html>
